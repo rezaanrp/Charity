@@ -1,0 +1,23 @@
+﻿@model CharityTestCore.Models.ErrorViewModel
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+@section Scripts{
+
+}
+
+@section Head{
+}
+@section Body{
+    <div class="wrappic1">
+        <img src="~/pics/logo.png" alt="LOGO">
+
+    </div>
+    <form class="flex-w flex-c-m contact100-form validate-form p-t-55">
+        <button class="flex-c-m s1-txt3 size3 how-btn trans-04 where1" onclick="location.href='@Url.Action("RegisterEptQuestion", "EPTTest")';return false;">   شروع ثبت تست </button>
+        <button class="flex-c-m s1-txt3 size3 how-btn trans-04 where1" onclick="location.href='@Url.Action("Index", "Dashboard")';return false;">ورود به پنل مدیریت </button>
+    </form>
+}
+
+

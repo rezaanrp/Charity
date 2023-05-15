@@ -1,0 +1,48 @@
+﻿@model CharityTestCore.Models.EPTQuestion
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminSimple.cshtml";
+
+}
+@section ProfileName
+    {
+    @if (User.Identity.IsAuthenticated)
+        @User.Identity.Name
+}
+@section Body{
+    @using (Html.BeginForm())
+    {
+        <div class="container-fluid">
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">آیکون‌ها</h3>
+                </div> <!-- /.card-body -->
+                <div class="card-body">
+                    <p> آیا از حذف داده های مربوط به </p>
+                    <p> @Model.Name  @Model.Family  </p>
+                    <p> مطمئن هستین؟ </p>
+                    <strong></strong>
+                    <div>
+                        <a class="btn btn-danger mx-2" asp-controller="Dashboard" asp-action="EPTIsDelete" asp-route-id="@Model.x_">
+                            <i class="bi bi-pencil-square"></i>
+                            بله
+                        </a>
+                        <a class="btn  btn-primary mx-2" asp-controller="Dashboard" asp-action="Index" >
+                            <i class="bi bi-pencil-square"></i>
+                            خیر
+                        </a>
+                    </div>
+                </div><!-- /.card-body -->
+            </div>
+        </div>
+    }
+
+}
+@section script{
+
+
+
+
+
+}

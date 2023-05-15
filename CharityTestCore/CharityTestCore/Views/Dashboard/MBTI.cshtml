@@ -1,0 +1,239 @@
+﻿@model CharityTestCore.Models.MBTIQuestionListPersonModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminSimple.cshtml";
+
+}
+@section ProfileName
+    {
+    @if (User.Identity.IsAuthenticated)
+        @User.Identity.Name
+}
+@section Body{
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">لیست افراد</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>نام و نام خانوادگی</th>
+                                <th>شماره تلفن همراه</th>
+                                <th> کد ملی</th>
+                                <th>سن</th>
+                                <th>عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                @foreach (var item in Model.Persons)
+                                {
+                                    <tr>
+
+                                        <td>@item.xName  @item.xFamily </td>
+                                        <td>
+                                            @item.MobileNumber
+                                        </td>
+                                        <td>@item.NationalCode</td>
+                                        <td> @item.Age</td>
+                                        <td>
+                                            <a asp-controller="Dashboard" asp-action="MBTI" asp-route-id="@item.x_" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                                            <a asp-controller="Dashboard" asp-action="MBTIDelete" asp-route-id="@item.x_" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>نام و نام خانوادگی</th>
+                                <th>شماره تلفن همراه</th>
+                                <th> کد ملی</th>
+                                <th>سن</th>
+                                <th>عملیات</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row         -->
+    @if (Model.ResultTestTotal != "$$")
+    {
+        <div class="info-box mb-3 bg-info">
+            <span class="info-box-icon"><i class="fa fa-tag"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> @Model.NameAndFamily</span>
+                <span class="info-box-number"> 
+                    @if (@Model.NameAndFamily != null)
+                    {
+                        <h3 >@Model.ResultTestTotal</h3>
+                    }
+                    </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+
+
+                        <h3 class="card-title">
+                            <i class="fa fa-text-width"></i>
+                            توضیحات  
+                        </h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <dl>
+                            <dt><h3> @Html.Raw(System.Web.HttpUtility.HtmlDecode( Model.ResultTestHtml ))</h3>    </dt>
+                            <dt>    </dt>
+
+
+                        </dl>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- ./col -->
+            <div class="col-md-4">
+                <!-- Bar chart -->
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fa fa-bar-chart-o"></i>
+                            نمودار ستونی
+                        </h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="bar-chart" style="height: 300px;">
+                        </div>
+                    </div>
+                    <!-- /.card-body-->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col -->
+        </div>
+    }
+}
+
+@section script{
+
+
+
+    <!-- FLOT CHARTS -->
+    <script src="../../plugins/flot/jquery.flot.min.js"></script>
+    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+    <script src="../../plugins/flot/jquery.flot.resize.min.js"></script>
+    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+    <script src="../../plugins/flot/jquery.flot.pie.min.js"></script>
+    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+    <script src="../../plugins/flot/jquery.flot.categories.min.js"></script>
+
+    <script>
+        $(function () {
+            /*
+             * BAR CHART
+             * ---------
+             */
+
+            var bar_data = {
+                data: [
+                    ['برون گرایی', @Model.ResultTest1],
+                    ['درون گرایی', @Model.ResultTest2],
+                    ['  حسی ', @Model.ResultTest3],
+                    [' شمی ', @Model.ResultTest4],
+                    ['فکری ', @Model.ResultTest5],
+                    [' احساسی ', @Model.ResultTest6],
+                    [' داوری کننده ', @Model.ResultTest7],
+                    [' ادراکی ', @Model.ResultTest8],
+                ],
+                color: '#3c8dbc'
+            }
+            $.plot('#bar-chart', [bar_data], {
+                grid: {
+                    borderWidth: 1,
+                    borderColor: '#f3f3f3',
+                    tickColor: '#f3f3f3'
+                },
+                series: {
+                    bars: {
+                        show: true,
+                        barWidth: 0.5,
+                        align: 'center'
+                    }
+                },
+                xaxis: {
+                    mode: 'categories',
+                    tickLength: 0
+                }
+            })
+            /* END BAR CHART */
+
+
+        })
+
+        /*
+         * Custom Label formatter
+         * ----------------------
+         */
+        function labelFormatter(label, series) {
+            return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+                + label
+                + '<br>'
+                + Math.round(series.percent) + '%</div>'
+        }
+    </script>
+
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "language": {
+                    "paginate": {
+                        "next": "بعدی",
+                        "previous": "قبلی"
+                    }
+                },
+                "info": false,
+            });
+            $('#example2').DataTable({
+                "language": {
+                    "paginate": {
+                        "next": "بعدی",
+                        "previous": "قبلی"
+                    }
+                },
+                "info": false,
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "autoWidth": false
+            });
+        });
+    </script>
+}

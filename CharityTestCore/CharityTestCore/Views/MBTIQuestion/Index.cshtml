@@ -1,0 +1,863 @@
+﻿@model CharityTestCore.Models.MBTIQuestionListModel
+@{
+    // ViewBag.Title = "RegisterEptQuestion";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+@section Scripts{
+
+}
+@section Head{
+
+}
+@section Body{
+    <div class="container">
+
+        @using (Html.BeginForm())
+        {
+            <div style="margin-top:10px;color:red" class="form-group">
+
+                @Html.ValidationSummary()
+
+                @ViewBag.ErrorMessage
+            </div>
+
+            <ul>
+                <li class="list-group-item">
+
+                    <div class="row  form-group">
+                        <div class="col-sm-4">
+
+                            <label class="control-label">نام</label><div>
+                                @Html.TextBoxFor(m => m.xName, new {maxlength = 20 ,
+                        @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+
+
+                            <label class="control-label">نام خانوادگی</label><div>
+                                @Html.TextBoxFor(x => x.xFamily, new { maxlength = 20 ,
+                        @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+
+
+                            <label class="control-label">شماره تلفن همراه</label><div>
+                                @Html.TextBoxFor(x => x.MobileNumber, new { maxlength = 11,placeholder = "09xxxxxxxxxx",
+                        @class = "form-control"  })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4">
+
+                            <label>کد ملی</label><div>
+                                @Html.TextBoxFor(x => x.NationalCode, new { maxlength = 10 ,
+                        @class = "form-control" })
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4">
+
+                            <label>سن</label><div>
+                                @Html.TextBoxFor(x => x.Age, new { maxlength = 2,
+                        @class = "form-control",
+                        @type = "number",
+                        @min = "10",
+                        @max = "100" })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+
+            <div class="w3-container w3-content " style="max-width:100%;margin-top:10px; margin-bottom:20px; direction:rtl;">
+                <div class="w3-row">
+                    <div class="w3-col m12">
+                        <div class="w3-row-padding">
+                            <div class="w3-col m12">
+                                <div class="shadowbody w3-round w3-white yu">
+                                    <div class="w3-container w3-padding">
+                                        <section class="container">
+                                            <div id="jsQuizEngine">
+                                                <section id="title" data-bind="visible: !quizStarted()" class="w3-center" style="display: none;">
+                                                    <div class="jumbotron">
+                                                        <p><button onclick="startTimer();" class="w3-animate-zoom w3-btn w3-flat-nephritis " data-bind="click: startQuiz">شروع آزمون</button></p>
+                                                    </div>
+                                                </section>
+                                                <br>
+                                                <section class="quiz" data-bind="visible: quizStarted() &amp;&amp; !quizComplete()" style="">
+                                                    <div style="text-align:right;" class="borderme w3-round-xxlarge w3-padding">
+                                                        سوال <span data-bind="text: currentQuestionIndex">5</span> از <span data-bind="text: questionCount">47</span> <span style="float:left;">زمان : <span id="timer">01:25</span></span>
+                                                    </div>
+                                                    <br>
+
+
+
+                                                    <div class="question-pool borderme w3-padding">
+
+
+                                                        <div class="question-pool borderme w3-padding">
+                                                            <section class="quiz">
+
+
+
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	از صحبت کردن با دیگران انرژی میگیرم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer1, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer1, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer1, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	شناختن من نسبتا آسان است و من در نظر دیگران شخصی دوستانه و معاشرتی هستم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer2, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer2, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer2, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من در ملاقات و بودن با اشخاص جدید راحت هستم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer3, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer3, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer3, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم کانون توجه باشم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer4, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer4, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer4, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	اهل صحبت هستم و اغلب ارتباط کلامی را به ارتباط کتبی ترجیح می دهم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer5, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer5, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer5, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	تقریبا با هرکس حرفی برای صحبت پیدا می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer6, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer6, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer6, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من دوستان و آشنایان فراوان دارم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer7, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer7, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer7, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	اگر مدت طولانی تنها بمانم، احساس بیقراری فراوان و تنهایی می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer8, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer8, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer8, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	باید مراقب باشم تا به دیگران هم فرصت حرف زدن بدهم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer9, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer9, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer9, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من با صحبت کردن به نتیجه گیری می رسم. من با صدای بلند فکر می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer10, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer10, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer10, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	در برنامه های اجتماعی و در میهمانیهایی که دیگران را نمی شناسم راحت نیستم. اما ترجیح  می دهم با کسی که او را می شناسم گفتگوی دو نفره داشته باشم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer11, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer11, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer11, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم وقت زیادی را به تنهایی بگذارم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer12, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer12, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer12, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	ترجیح می دهم تعدادمعدودی دوست داشته باشم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer13, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer13, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer13, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	ترجیح می دهم به جای اینکه من به سمت دیگران بروم، دیگران به سمت من بیایند.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer14, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer14, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer14, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	اشخاص اغلب مرا خجالتی ارزیابی می کنند.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer15, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer15, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer15, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	قبل از اینکه حرف بزنم مدتی وقت می گذارم و فکر میکنم که چه باید بگویم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer16, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer16, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer16, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	اگر زمان زیادی با اشخاص صرف کنم حوصله ام سر می رود.  حتی صحبت تلفنی اگر طولانی شود مرا خسته می کند.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer17, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer17, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer17, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	ترجیح می دهم به تنهایی روی پروژه ها کار کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer18, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer18, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer18, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	درباره اینکه با چه کسی طرح دوستی بریزم بسیار انتخابی عمل می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer19, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer19, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer19, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست ندارم کانون توجه باشم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer20, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer20, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer20, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم عملی و واقع بین باشم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer21, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer21, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer21, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من به ارقام و آمار بیش از نظریه توجه می کنم	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer22, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer22, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer22, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من کارهایی را دوست دارم که کاربرد عملی داشته باشد و نتایج ملموس تولید کند.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer23, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer23, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer23, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم حرف بزنم، بشنوم و تفسیر کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer24, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer24, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer24, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من مشاهده گر خوبی هستم. به اطرافم نگاه می کنم و اغلب جزئیات را به خاطر می سپارم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer25, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer25, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer25, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	پروژه های دستی مثل، ساختن مدلهای اتومبیل، سوار کردن چیزها یا  سوزن دوزی را دوست دارم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer26, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer26, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer26, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم از مهارتهایی که دارم استفاده کنم و آنها را بهتر کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer27, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer27, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer27, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من از اینجا و اکنون لذت می برم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer28, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer28, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer28, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من به تجربه شخصی خود از چیزهای واقعی و مشخص، اعتماد می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer29, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer29, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer29, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	به جای توجه به آینده دور به آنچه در دست است توجه دارم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer30, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer30, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer30, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	برای من توجه کردن به حال حاضر دشوار است. چون من اغلب درباره چند موضوع و مورد مختلف در آن واحد فکر می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer31, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer31, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer31, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	به هنگام توضیح دادن یا توصیف کردن چیزی از استعاره و قیاس استفاده  می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer32, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer32, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer32, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من به الهام و برخورد اول و تصور برای کسب اطلاعات متکی هستم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer33, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer33, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer33, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم به امکانات جدید و به آنچه ممکن است وجود داشته باشد فکر کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer34, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer34, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer34, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من به آینده نظردارم و دوست دارم کارهای نو و ابتکاری بکنم و از کارهای تکراری و مشخص بدم می آید.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer35, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer35, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer35, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من به تصویرهای بزرگ و کلی توجه می کنم. دوست ندارم به جزئیات بپردازم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer36, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer36, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer36, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من به کاربردها و استنباطها توجه دارم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer37, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer37, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer37, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من فضای میان سطرها را می خوانم و به مطالبی که مطرح نشده اند فکر می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer38, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer38, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer38, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من به انچه در پیرامونم می گذرد توجه کمی دارم. به اینجا و اکنون توجه نمی کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer39, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer39, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer39, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من از انتزاع و نظریه خوشم می آید و گاهی توجه به جزئیات زندگی روزمره کسل کننده است.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer40, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer40, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer40, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	می توانم به خوبی فکر کنم و تصمیم بگیرم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer41, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer41, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer41, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم درباره نقطه نظرم بحث کنم. گاهی فقط برای رقابت ذهنی، درباره هر دو جنبه یک مسئله بحث می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer42, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer42, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer42, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من متهم شده ام که به نیازها و احساسات دیگران بها نمی دهم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer43, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer43, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer43, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	اشخاص گاهی مرا تحلیل گر می پندارند.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer44, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer44, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer44, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	می توانم رک و بی پرده باشم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer45, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer45, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer45, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من به اندیشه دیگران بیش از احساس آنها بها می دهم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer46, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer46, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer46, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست ندارم احساساتم را به نمایش بگذارم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer47, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer47, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer47, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من اغلب بر اساس عدالت و منطق تصمیم می گیرم، نه بر اساس موضوعات شخصی.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer48, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer48, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer48, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	به نظر من صادق بودن بهتر از رعایت جنبه های ادب است.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer49, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer49, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer49, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من از اصلاح کردن و انتقاد نمودن از دیگران خجالت نمی کشم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer50, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer50, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer50, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من همدل و مهربان هستم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer51, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer51, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer51, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم درباره روابط میان فردی و احساساتم صحبت کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer52, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer52, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer52, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	در فرایند تصمیم گیری، برایم بسیار مهم است که تصمیم من روی دیگران چه تاثیری دارد.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer53, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer53, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer53, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	رعایت ادب به اندازه صداقت اهمیت دارد.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer54, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer54, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer54, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	مورد تعریف و قدرشناسی واقع شدن برای من بسیار مهم است.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer55, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer55, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer55, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	بدنبال پیدا کردن چیزهای خوب در افراد و چیزها هستم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer56, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer56, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer56, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	مردم مرا  به خاطر گرما و صمیمیتم می خواهند.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer57, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer57, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer57, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	صحبت کردن درباره خواسته هایم برای من دشوار است.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer58, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer58, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer58, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	وقتی با اشخاص مخالفت می کنم، برای من دشور است موضوع را با آنها در میان بگذارم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer59, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer59, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer59, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من انتقاد شخص را به دل می گیرم. می گویند که من بیش از اندازه حساس هستم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer60, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer60, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer60, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست ندارم موضوعی را بدون تصمیم گیری رها کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer61, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer61, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer61, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	اگر محیط من سازمان یافته نباشد برایم آرام گرفتن دشوار می شود.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer62, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer62, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer62, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	فهرستی از کارهایی را که باید انجام دهم تهیه می کنم و بعد هر کاری را که انجام دادم با علامت مشخص می نمایم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer63, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer63, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer63, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من کارها را به سبک و روش خودم انجام می دهم. دوست ندارم دیگران بخواهند به خصوص در آخرین لحظه برنامه مرا تغییر دهند.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer64, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer64, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer64, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم برای هر چیزی جایی داشته باشم و همه چیزهایم در جای خودش باشد.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer65, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer65, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer65, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	قبل از آنکه پروژه ای را شروع کنم به این فکر می کنم که چه چیزی را نیاز دارم. دقت می کنم که همه چیز سر جای خودش باشد.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer66, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer66, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer66, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	برایم به موقع و سروقت بودن بسیار مهم است و برایم عجیب است که چرا این برای دیگران در الویت قرار ندارد.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer67, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer67, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer67, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم درباره برنامه ها و چارچوب های زمانی اطلاع پیدا کنم. اگر برنامه ای در کار نباشد ناراحت می شوم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer68, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer68, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer68, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست ندارم کارم را ناتمام رها کنم.  دوست دارم قبل از شروع هر پروژه ، پروژه قبلی را تمام کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer69, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer69, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer69, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	قبل از اینکه بتوانم استراحت کنم باید کارم را تمام کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer70, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer70, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer70, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من به نسبت راحت، تطبیق پذیر و با انعطاف هستم. وقتی در آخرین لحظه تغییری ایجاد می شود، خودم را با آن تطبیق می دهم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer71, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer71, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer71, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	نه اینکه من به چیزی توجه ندارم. من به شیوه خودم عمل می نمایم و از یک پروژه به سراغ پروژه بعدی می روم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer72, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer72, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer72, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	دوست دارم پروژه های جدیدی را شروع کنم. معمولا قبل از تمام کردن پروژه قبلی به سر وقت پروژه بعدی می روم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer73, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer73, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer73, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	طبق برنامه بودن برای من مهمترین چیز زندگی نیست.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer74, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer74, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer74, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من معمولا فهرست  کارهایی را که معمولا باید انجام بدهم تهیه نمی کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer75, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer75, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer75, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	اغلب سعی می کنم تا ضرب الاجل نزدیک شود و بعد پروژه را تمام می کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer76, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer76, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer76, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	طرز سازمان دادن به اتاق یا دفتر کارم در نظر دیگران نمونه آشفتگی است.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer77, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer77, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer77, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	مجبور نیستم که کارم را تمام کنم  تا بتوانم آرام بگیرم و استراحت کنم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer78, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer78, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer78, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من تصمیم گیریها را به تعویق می اندازم، اغلب آنقدر اطلاعات جمع می کنم تا وقت تصمیم گیری الزامی می شود.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer79, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer79, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer79, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+                                                                <section class="question" style="display: none;   ">
+                                                                    <section class="text">	من از چیزهای غیر منتظره لذت می برم.	</section>	<label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer80, 0)<div dir="ltr">ابدا این طور نیستم</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer80, 1)<div dir="ltr">تا اندازه ای این طور هستم.</div>
+                                                                    </label> <label class="answer">
+                                                                        @Html.RadioButtonFor(m => m.Answer80, 2)<div dir="ltr">کاملا این طور هستم</div>
+                                                                    </label>
+                                                                </section>
+
+                                                            </section>
+
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <button class="w3-btn w3-flat-nephritis w3-card-2" data-bind="click: movePreviousQuestion, disable: currentQuestionIsFirst">قبلی</button>
+                                                    <button class="w3-btn w3-flat-nephritis w3-card-2" data-bind="click: showCurrentQuestionHint, visible: currentQuestionHasHint()" style="display: none;">راهنمایی</button>
+                                                    <button class="w3-btn w3-flat-nephritis w3-card-2" data-bind="click: moveNextQuestion, disable: currentQuestionIsLast, visible: !currentQuestionIsLast()" style="">بعدی</button>
+                                                </section>
+                                                <script>ndt = new Date(); g_y = ndt.getFullYear(); g_m = ndt.getMonth() + 1; g_d = ndt.getDate(); shamsi = gregorian_to_jalali(g_y, g_m, g_d); document.getElementById("mydate").innerHTML = shamsi[0] + ' / ' + shamsi[1] + ' / ' + shamsi[2];</script>
+                                                <br><br>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li class="list-group-item">
+                    <input type="submit" class="btn btn-success btn-lg" value="ذخیره" />
+                    <input type="button" class="btn btn-danger btn-lg" value="انصراف" onclick="location.href='@Url.Action("Index", "Home")'" />
+
+                </li>
+            </ul>
+        }
+    </div>
+
+}

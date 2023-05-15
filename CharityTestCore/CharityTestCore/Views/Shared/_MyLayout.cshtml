@@ -1,0 +1,56 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/util.css" rel="stylesheet" />
+
+    <link href="~/css/b4/bootstrap-rtl.css" rel="stylesheet" />
+    <script src="~/js/jquery-3.2.1.slim.min.js"></script>
+    @RenderSection("Head")
+    <link rel="stylesheet" href="~/Quiz/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Quiz/css/jsQuizEngine.css">
+    <script>
+        var quizEngine = null;
+        $(function () {
+            quizEngine = jsQuizEngine($('#jsQuizEngine'), { quizUrl: 'quiz/default.htm' });
+        });
+    </script>
+    <script>
+        function gregorian_to_jalali(gy, gm, gd) {
+            var g_d_m, jy, jm, jd, gy2, days; g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+            if (gy > 1600) { jy = 979; gy -= 1600; }
+            else { jy = 0; gy -= 621; }
+            gy2 = (gm > 2) ? (gy + 1) : gy; days = (365 * gy) + (parseInt((gy2 + 3) / 4)) - (parseInt((gy2 + 99) / 100)) + (parseInt((gy2 + 399) / 400)) - 80 + gd + g_d_m[gm - 1]; jy += 33 * (parseInt(days / 12053)); days %= 12053; jy += 4 * (parseInt(days / 1461)); days %= 1461; if (days > 365) { jy += parseInt((days - 1) / 365); days = (days - 1) % 365; } jm = (days < 186) ? 1 + parseInt(days / 31) : 7 + parseInt((days - 186) / 30); jd = 1 + ((days < 186) ? (days % 31) : ((days - 186) % 30)); return [jy, jm, jd];
+        }
+    </script>
+
+    <script src="~/js/b4/bootstrap.js"></script>
+    <script src="~/Quiz/js/jquery-1.11.2.js"></script>
+    <script src="~/Quiz/js/knockout-2.2.1.js"></script>
+    <script src="~/Quiz/js/jsQuizEngine.js"></script>
+    <script src="~/Quiz/js/timer.js"></script>
+
+
+    <title>@ViewBag.title</title>
+</head>
+
+<body style="padding: 0;">
+
+    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url('/pics/bg01.jpg');">
+        <div class="wsize1 bor1 bg1 p-t-175 p-b-45 p-l-15 p-r-15 respon1">
+            <!-- start logo -->
+            @RenderSection("Body")
+        </div>
+    </div>
+
+
+    @RenderSection("Scripts")
+
+</body>
+</html>
