@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J6m0ZtHCVTKlh9ejIwGW4U/TrGbFZ9GIG+suV8GuFH0XNuthHBJ3s7XIZx8SwFLdpA92QNr8BKsP1y71+t91fA==",
+  "dgSpecHash": "/nXpFt1YgPEhENiVyTA5r/8DNruJJLxM36rRgQm8colyiA+EpsBtUP8Tm5jaD+NILh8fTk0rYcckrSgv+el2rg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\reza\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\reza\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\reza\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

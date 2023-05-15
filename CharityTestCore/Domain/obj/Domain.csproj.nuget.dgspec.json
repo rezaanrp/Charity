@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\reza\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj": {}
+    "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\reza\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj": {
+    "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\reza\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\reza\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\reza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\reza\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharityTestCore", "CharityTestCore\CharityTestCore.csproj", "{2A4A3FE2-00A9-480E-91BA-7E1048B996F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "..\..\CharityTestCore V3\DAL\DAL.csproj", "{868BDDDA-9A1E-476D-A98C-CB0C5AF0265A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{868BDDDA-9A1E-476D-A98C-CB0C5AF0265A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "..\..\CharityTestCore V3\Domain\Domain.csproj", "{A2983298-DEE0-42B3-BC56-ADDDD1623C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{A2983298-DEE0-42B3-BC56-ADDDD1623C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
