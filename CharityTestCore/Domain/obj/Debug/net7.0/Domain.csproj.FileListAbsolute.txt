@@ -10,3 +10,27 @@ D:\MIS\CharityTestCore\CharityTestCore\Domain\obj\Debug\net7.0\Domain.dll
 D:\MIS\CharityTestCore\CharityTestCore\Domain\obj\Debug\net7.0\refint\Domain.dll
 D:\MIS\CharityTestCore\CharityTestCore\Domain\obj\Debug\net7.0\Domain.pdb
 D:\MIS\CharityTestCore\CharityTestCore\Domain\obj\Debug\net7.0\ref\Domain.dll
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\bin\Debug\net7.0\Domain.deps.json
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\bin\Debug\net7.0\Domain.dll
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\bin\Debug\net7.0\Domain.pdb
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\obj\Debug\net7.0\Domain.dll
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\obj\Debug\net7.0\refint\Domain.dll
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\obj\Debug\net7.0\Domain.pdb
+D:\MIS\CharityTestCore\CharityTestCore V3\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Users\reza\Source\Repos\Charityv1\CharityTestCore\Domain\obj\Debug\net7.0\ref\Domain.dll

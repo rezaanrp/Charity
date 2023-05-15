@@ -15,14 +15,18 @@ namespace DAL.DataBase
 
         //}
         public DbSet<User> Users { get; set; }
-        public DbSet<News> AllNews { get; set; }
-        public DbSet<NewsCategory> NewsCategories { get; set; }
         public DbSet<EptQuestionList> EptQuestion { get; set; }
+        public DbSet<mGenGroup> mGenGroup { get; set; }
+        public DbSet<MBTIQuestionList> MBTIQuestionList { get; set; }
+        public DbSet<MBTIAnswerList> MBTIAnswerList { get; set; }
+        public DbSet<EptQuiz> EptQuiz { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //   base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Server=192.168.15.135;TrustServerCertificate=True;Initial Catalog=ParkerCharityDB;User ID=sa;Password=K500at10");
+           optionsBuilder.UseSqlServer(@"Server=127.0.0.1;TrustServerCertificate=True;Initial Catalog=ParkerCharityDB;User ID=sa;Password=K500at10");
+         //  optionsBuilder.UseSqlServer(@"Server=.;TrustServerCertificate=True;Initial Catalog=ParkerCharityDB;User ID=parker;Password=o$$5dE4g984354$$");
+
         }
     }
 }

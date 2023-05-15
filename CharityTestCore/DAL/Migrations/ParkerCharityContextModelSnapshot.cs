@@ -349,76 +349,348 @@ namespace DAL.Migrations
 
                     b.HasKey("x_");
 
-                    b.ToTable("EptQuestion");
+                    b.ToTable("EptQuestion", (string)null);
                 });
 
-            modelBuilder.Entity("DAL.DataBase.News", b =>
+            modelBuilder.Entity("DAL.DataBase.EptQuiz", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("x_")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("x_"));
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<byte[]>("ImageData")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("ImageMimeType")
+                    b.Property<string>("Answer1")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MainContent")
+                    b.Property<string>("Answer2")
                         .IsRequired()
-                        .HasMaxLength(2000)
-                        .HasColumnType("nvarchar(2000)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Show")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Staus")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Summary")
+                    b.Property<string>("Answer3")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
+                    b.Property<string>("Answer4")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("x_");
 
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AllNews");
+                    b.ToTable("EptQuiz", (string)null);
                 });
 
-            modelBuilder.Entity("DAL.DataBase.NewsCategory", b =>
+            modelBuilder.Entity("DAL.DataBase.MBTIAnswerList", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("x_")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("x_"));
 
-                    b.Property<string>("Title")
+                    b.Property<int?>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<byte>("Answer1")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer10")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer11")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer12")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer13")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer14")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer15")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer16")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer17")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer18")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer19")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer2")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer20")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer21")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer22")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer23")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer24")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer25")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer26")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer27")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer28")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer29")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer3")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer30")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer31")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer32")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer33")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer34")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer35")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer36")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer37")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer38")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer39")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer4")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer40")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer41")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer42")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer43")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer44")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer45")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer46")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer47")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer48")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer49")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer5")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer50")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer51")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer52")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer53")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer54")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer55")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer56")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer57")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer58")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer59")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer6")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer60")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer61")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer62")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer63")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer64")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer65")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer66")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer67")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer68")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer69")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer7")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer70")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer71")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer72")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer73")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer74")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer75")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer76")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer77")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer78")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer79")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer8")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer80")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("Answer9")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("MobileNumber")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<string>("NationalCode")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<DateTime>("RegisterDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("xFamily")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
+                    b.Property<string>("xName")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
+                    b.HasKey("x_");
+
+                    b.ToTable("MBTIAnswerList", (string)null);
+                });
+
+            modelBuilder.Entity("DAL.DataBase.MBTIQuestionList", b =>
+                {
+                    b.Property<int>("x_")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("x_"));
+
+                    b.Property<string>("Answer1")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Answer2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("NewsCategories");
+                    b.Property<string>("Answer3")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("x_");
+
+                    b.ToTable("MBTIQuestionList", (string)null);
                 });
 
             modelBuilder.Entity("DAL.DataBase.User", b =>
@@ -460,36 +732,33 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("DAL.DataBase.News", b =>
+            modelBuilder.Entity("DAL.DataBase.mGenGroup", b =>
                 {
-                    b.HasOne("DAL.DataBase.NewsCategory", "Category")
-                        .WithMany("NewsInCategory")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.HasOne("DAL.DataBase.User", "User")
-                        .WithMany("OwnNews")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Navigation("Category");
+                    b.Property<string>("Comment")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Navigation("User");
-                });
+                    b.Property<string>("Group")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-            modelBuilder.Entity("DAL.DataBase.NewsCategory", b =>
-                {
-                    b.Navigation("NewsInCategory");
-                });
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-            modelBuilder.Entity("DAL.DataBase.User", b =>
-                {
-                    b.Navigation("OwnNews");
+                    b.HasKey("ID");
+
+                    b.ToTable("mGenGroup", (string)null);
                 });
 #pragma warning restore 612, 618
         }

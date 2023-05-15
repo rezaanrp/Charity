@@ -26,7 +26,6 @@ namespace DAL.DataBase
 
         [MaxLength(10)]
         public string NationalNumber { get; set; }
-        public virtual ICollection<News> OwnNews { get; set; }
 
         public string FullName
         {

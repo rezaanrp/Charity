@@ -1,0 +1,14 @@
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\bin\Release\net7.0\DAL.deps.json
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\bin\Release\net7.0\DAL.runtimeconfig.json
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\bin\Release\net7.0\DAL.dll
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\bin\Release\net7.0\DAL.pdb
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\DAL.csproj.AssemblyReference.cache
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\DAL.AssemblyInfoInputs.cache
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\DAL.AssemblyInfo.cs
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\DAL.csproj.CoreCompileInputs.cache
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\DAL.dll
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\refint\DAL.dll
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\DAL.pdb
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\DAL.genruntimeconfig.cache
+D:\MIS\CharityTestCore\CharityTestCore V3\DAL\obj\Release\net7.0\ref\DAL.dll

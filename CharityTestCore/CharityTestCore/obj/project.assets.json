@@ -3743,6 +3743,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.3",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
       }
     }
   },
@@ -10772,11 +10786,16 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "C:\\Users\\reza\\Source\\Repos\\CharityTestCore V3\\DAL\\DAL.csproj",
+      "DAL >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 7.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.3",
@@ -10817,8 +10836,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\reza\\Source\\Repos\\CharityTestCore V3\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\reza\\Source\\Repos\\CharityTestCore V3\\DAL\\DAL.csproj"
+            "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj"
             }
           }
         }
@@ -10880,16 +10899,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\reza\\Source\\Repos\\CharityTestCore V3\\DAL\\DAL.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\reza\\Source\\Repos\\CharityTestCore V3\\DAL\\DAL.csproj",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  }
 }

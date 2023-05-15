@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "v+QjQgipbyuGPbMqTD476oe6NQBo6JMBpF1qcf0ED11IjNwDBnJByWEHbBDCr7lNmL5YeV2oqf+Kr5pZCn5dwA==",
-  "success": false,
+  "dgSpecHash": "LKfXXPwYB8uliLfGI4COkCCpIFh2QVDqJ5kn3TGsiUcK7VKxdNCF6l/F7GH2uvmWG87NO82uWYWLVxMfMJTShw==",
+  "success": true,
   "projectFilePath": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\reza\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
@@ -190,15 +190,5 @@
     "C:\\Users\\reza\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\reza\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\reza\\Source\\Repos\\CharityTestCore V3\\DAL\\DAL.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\reza\\Source\\Repos\\CharityTestCore V3\\DAL\\DAL.csproj",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }
