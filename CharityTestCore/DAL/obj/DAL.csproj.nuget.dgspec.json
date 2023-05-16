@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj": {}
+    "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj": {
+    "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\reza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\DAL\\obj\\",
+        "outputPath": "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

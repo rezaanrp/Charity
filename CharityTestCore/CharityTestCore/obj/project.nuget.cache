@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LKfXXPwYB8uliLfGI4COkCCpIFh2QVDqJ5kn3TGsiUcK7VKxdNCF6l/F7GH2uvmWG87NO82uWYWLVxMfMJTShw==",
+  "dgSpecHash": "4wXtaTdvWLDGMRbVmFIudZYYK29yHIGhEhn+2U2NqTstNKssN87M0GR+ccaIbHcOoRumD24q0FlFnXhWF+tLlQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\reza\\Source\\Repos\\Charityv1\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
+  "projectFilePath": "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\reza\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\reza\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
