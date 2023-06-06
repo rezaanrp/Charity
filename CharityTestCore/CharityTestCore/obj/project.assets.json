@@ -10804,24 +10804,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\reza\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\r.tavili\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
+      "projectUniqueName": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
       "projectName": "CharityTestCore",
-      "projectPath": "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
-      "packagesPath": "C:\\Users\\reza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\CharityTestCore\\obj\\",
+      "projectPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
+      "packagesPath": "C:\\Users\\r.tavili\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\reza\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\r.tavili\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10829,15 +10824,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\reza\\source\\repos\\Charityv1\\CharityTestCore\\DAL\\DAL.csproj"
+            "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj"
             }
           }
         }
@@ -10896,7 +10891,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
