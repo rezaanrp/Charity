@@ -29,7 +29,12 @@ namespace CharityTestCore.Service.UserManagment
         public User? Authenticate(string username, string password, IUserRepository userRepository)
         {
             string username_ = username.Trim().ToLower();
-            return userRepository.Users.FirstOrDefault(x => x.UserName == username_ && x.HashPassword == CryptographyHelper.Encrypt(password));
+            if(!userRepository.Users.Any())
+            {
+               new  DAL.DataBase.Seed().SeedData( );
+            }
+            var u = userRepository.Users.FirstOrDefault(x => x.UserName == username_ && x.HashPassword == CryptographyHelper.Encrypt(password));
+            return u;
 
         }
         public Guid? AddUser(string username, string password, string name, string family, string role, string nationalcode, IUserRepository userRepository)
