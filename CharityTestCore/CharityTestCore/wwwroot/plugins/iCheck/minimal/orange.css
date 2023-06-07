@@ -1,6 +1,6 @@
 /* iCheck plugin Minimal skin, orange
 ----------------------------------- */
-.icheckbox_minimal-orange,
+.icheckboIdminimal-orange,
 .iradio_minimal-orange {
     display: inline-block;
     *display: inline;
@@ -14,20 +14,20 @@
     cursor: pointer;
 }
 
-.icheckbox_minimal-orange {
+.icheckboIdminimal-orange {
     background-position: 0 0;
 }
-    .icheckbox_minimal-orange.hover {
+    .icheckboIdminimal-orange.hover {
         background-position: -20px 0;
     }
-    .icheckbox_minimal-orange.checked {
+    .icheckboIdminimal-orange.checked {
         background-position: -40px 0;
     }
-    .icheckbox_minimal-orange.disabled {
+    .icheckboIdminimal-orange.disabled {
         background-position: -60px 0;
         cursor: default;
     }
-    .icheckbox_minimal-orange.checked.disabled {
+    .icheckboIdminimal-orange.checked.disabled {
         background-position: -80px 0;
     }
 
@@ -53,7 +53,7 @@
        only screen and (-moz-min-device-pixel-ratio: 1.5),
        only screen and (-o-min-device-pixel-ratio: 1.5),
        only screen and (min-device-pixel-ratio: 1.5) {
-    .icheckbox_minimal-orange,
+    .icheckboIdminimal-orange,
     .iradio_minimal-orange {
         background-image: url(orange@2x.png);
         -webkit-background-size: 200px 20px;

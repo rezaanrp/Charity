@@ -9,7 +9,7 @@ namespace DAL.DataBase
 {
     public class User
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [MaxLength(60)]
         public string UserName { get; set; }

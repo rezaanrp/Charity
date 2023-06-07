@@ -6,7 +6,7 @@ namespace CharityTestCore.Models
 
     public class EPTQuestion
     {
-        public int x_ { get; set; }
+        public Guid Id { get; set; }
         [Required(ErrorMessage = "لطفا نام  را وارد کنید")]
         [Display(Name = "نام ")]
         public string Name { get; set; }

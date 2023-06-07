@@ -24,11 +24,9 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.DataBase.EptQuestionList", b =>
                 {
-                    b.Property<int>("x_")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("x_"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int?>("Age")
                         .HasColumnType("int");
@@ -39,6 +37,11 @@ namespace DAL.Migrations
                     b.Property<bool?>("DoYouWantHaveJob")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Family")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
                     b.Property<bool?>("HaveSkill")
                         .HasColumnType("bit");
 
@@ -46,6 +49,11 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("NationalCode")
                         .IsRequired()
@@ -337,28 +345,16 @@ namespace DAL.Migrations
                     b.Property<byte>("S95")
                         .HasColumnType("tinyint");
 
-                    b.Property<string>("xFamily")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
+                    b.HasKey("Id");
 
-                    b.Property<string>("xName")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.HasKey("x_");
-
-                    b.ToTable("EptQuestion", (string)null);
+                    b.ToTable("EptQuestion");
                 });
 
             modelBuilder.Entity("DAL.DataBase.EptQuiz", b =>
                 {
-                    b.Property<int>("x_")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("x_"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Answer1")
                         .IsRequired()
@@ -380,18 +376,16 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("x_");
+                    b.HasKey("Id");
 
-                    b.ToTable("EptQuiz", (string)null);
+                    b.ToTable("EptQuiz");
                 });
 
             modelBuilder.Entity("DAL.DataBase.MBTIAnswerList", b =>
                 {
-                    b.Property<int>("x_")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("x_"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int?>("Age")
                         .HasColumnType("int");
@@ -636,10 +630,20 @@ namespace DAL.Migrations
                     b.Property<byte>("Answer9")
                         .HasColumnType("tinyint");
 
+                    b.Property<string>("Family")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
+
                     b.Property<string>("MobileNumber")
                         .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("NationalCode")
                         .IsRequired()
@@ -649,28 +653,18 @@ namespace DAL.Migrations
                     b.Property<DateTime>("RegisterDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("xFamily")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
+                    b.HasKey("Id");
 
-                    b.Property<string>("xName")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.HasKey("x_");
-
-                    b.ToTable("MBTIAnswerList", (string)null);
+                    b.ToTable("MBTIAnswerList");
                 });
 
             modelBuilder.Entity("DAL.DataBase.MBTIQuestionList", b =>
                 {
-                    b.Property<int>("x_")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("x_"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Answer1")
                         .IsRequired()
@@ -688,18 +682,16 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("x_");
+                    b.HasKey("Id");
 
-                    b.ToTable("MBTIQuestionList", (string)null);
+                    b.ToTable("MBTIQuestionList");
                 });
 
             modelBuilder.Entity("DAL.DataBase.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Family")
                         .IsRequired()
@@ -732,7 +724,7 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("DAL.DataBase.mGenGroup", b =>
@@ -758,7 +750,7 @@ namespace DAL.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("mGenGroup", (string)null);
+                    b.ToTable("mGenGroup");
                 });
 #pragma warning restore 612, 618
         }

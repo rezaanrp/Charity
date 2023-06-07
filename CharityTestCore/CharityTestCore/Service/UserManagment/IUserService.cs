@@ -9,6 +9,6 @@ namespace CharityTestCore.Service.UserManagment
     {
         bool ChangePassword(string username, string oldPassword, string newPassword,IUserRepository userRepository );
         User? Authenticate(string username, string password , IUserRepository userRepository);
-        int AddUser(string username, string password, string name, string family, string role, string nationalcode, IUserRepository userRepository);
+        Guid? AddUser(string username, string password, string name, string family, string role, string nationalcode, IUserRepository userRepository);
     }
 }

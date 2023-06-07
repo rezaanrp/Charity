@@ -2,9 +2,9 @@ require([
   'gitbook',
   'jquery'
 ], function (gitbook, $) {
-  var MAX_DESCRIPTION_SIZE = 500
+  var MAIdDESCRIPTION_SIZE = 500
   var state = gitbook.state
-  var INDEX_DATA = {}
+  var INDEIdDATA = {}
   var usePushState = (typeof window.history.pushState !== 'undefined')
 
   // DOM Elements
@@ -69,7 +69,7 @@ require([
       }
 
       var content = item.body.trim()
-      if (content.length > MAX_DESCRIPTION_SIZE) {
+      if (content.length > MAIdDESCRIPTION_SIZE) {
         content = content + '...'
       }
       var $content = $('<p>').html(content)
@@ -92,8 +92,8 @@ require([
     keyword = keyword.toLowerCase()
     var results = []
     var index = -1
-    for (var page in INDEX_DATA) {
-      var store = INDEX_DATA[page]
+    for (var page in INDEIdDATA) {
+      var store = INDEIdDATA[page]
       if (
         ~store.keywords.toLowerCase().indexOf(keyword) ||
         ~(index = store.body.toLowerCase().indexOf(keyword))
@@ -101,7 +101,7 @@ require([
         results.push({
           url: page,
           title: store.title,
-          body: store.body.substr(Math.max(0, index - 50), MAX_DESCRIPTION_SIZE)
+          body: store.body.substr(Math.max(0, index - 50), MAIdDESCRIPTION_SIZE)
                     .replace(/^[^\s,.]+./, '').replace(/(..*)[\s,.].*/, '$1') // prevent break word
                     .replace(new RegExp('(' + escapeRegExp(keyword) + ')', 'gi'), '<span class="search-highlight-keyword">$1</span>')
         })
@@ -175,7 +175,7 @@ require([
   gitbook.events.on('start', function () {
     bindSearch()
     $.getJSON(state.basePath + '/search_plus_index.json').then(function (data) {
-      INDEX_DATA = data
+      INDEIdDATA = data
       showResult()
       closeSearch()
     })

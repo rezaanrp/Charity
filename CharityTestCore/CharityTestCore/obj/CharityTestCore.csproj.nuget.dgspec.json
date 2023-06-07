@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj": {}
+    "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj": {
+    "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
+        "projectUniqueName": "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
         "projectName": "CharityTestCore",
-        "projectPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
+        "projectPath": "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\CharityTestCore\\CharityTestCore.csproj",
         "packagesPath": "C:\\Users\\r.tavili\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\obj\\",
+        "outputPath": "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\CharityTestCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\r.tavili\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj"
+              "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj"
               }
             }
           }
@@ -93,12 +93,12 @@
         }
       }
     },
-    "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj": {
+    "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj",
+        "projectUniqueName": "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj",
+        "projectPath": "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\r.tavili\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\obj\\",
         "projectStyle": "PackageReference",

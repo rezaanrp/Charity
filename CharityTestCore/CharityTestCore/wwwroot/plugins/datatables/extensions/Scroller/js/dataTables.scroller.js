@@ -958,7 +958,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 		{
 			/* Empty record set after filtering */
 			sOut = language.sInfoEmpty +' '+
-				language.sInfoFiltered.replace('_MAX_', sMax)+
+				language.sInfoFiltered.replace('_MAId', sMax)+
 					language.sInfoPostFix;
 		}
 		else if ( dt.fnRecordsDisplay() == dt.fnRecordsTotal() )
@@ -967,7 +967,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 			sOut = language.sInfo.
 					replace('_START_', sStart).
 					replace('_END_',   sEnd).
-					replace('_MAX_',   sMax).
+					replace('_MAId',   sMax).
 					replace('_TOTAL_', sTotal)+
 				language.sInfoPostFix;
 		}
@@ -977,10 +977,10 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 			sOut = language.sInfo.
 					replace('_START_', sStart).
 					replace('_END_',   sEnd).
-					replace('_MAX_',   sMax).
+					replace('_MAId',   sMax).
 					replace('_TOTAL_', sTotal) +' '+
 				language.sInfoFiltered.replace(
-					'_MAX_',
+					'_MAId',
 					dt.fnFormatNumber(dt.fnRecordsTotal())
 				)+
 				language.sInfoPostFix;

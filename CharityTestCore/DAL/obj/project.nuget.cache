@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i7bkJDPsgic0tcxJDGHVop2SQQrVIBjU+pDcZ1DpRMQy3vw9aOvG4bH05rk5pU7MGcGPtNl0KtK1biYfgkx0vQ==",
+  "dgSpecHash": "XQKbn3hzWurbdyVHweMk9WpDMjb1lmA1426V88SHWQbiRbSf57rdqBBOWW76smADNeJ+hPGWh51+fA/lWxQExQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\r.tavili\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\r.tavili\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

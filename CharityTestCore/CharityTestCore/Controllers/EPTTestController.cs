@@ -36,7 +36,7 @@ namespace CharityTestCore.Controllers
             var result = 0;
             if (ModelState.IsValid)
             {
-                result = eptservice.AddEptQuestion(1, ePTQuestion.Name, ePTQuestion.Family, ePTQuestion.NationalCode,
+                result = eptservice.AddEptQuestion(ePTQuestion.Name, ePTQuestion.Family, ePTQuestion.NationalCode,
                 ePTQuestion.MobileNumber, ePTQuestion.Age, ePTQuestion.HaveSkill, ePTQuestion.BeforeYouHaveJob, ePTQuestion.DoYouWantHaveJob,
                 ePTQuestion.S01,
                 ePTQuestion.S02,

@@ -1,6 +1,6 @@
 /* iCheck plugin Line skin, blue
 ----------------------------------- */
-.icheckbox_line-blue,
+.icheckboIdline-blue,
 .iradio_line-blue {
     position: relative;
     display: block;
@@ -16,7 +16,7 @@
     border-radius: 3px;
     cursor: pointer;
 }
-    .icheckbox_line-blue .icheck_line-icon,
+    .icheckboIdline-blue .icheck_line-icon,
     .iradio_line-blue .icheck_line-icon {
         position: absolute;
         top: 50%;
@@ -29,33 +29,33 @@
         background: url(line.png) no-repeat;
         border: none;
     }
-    .icheckbox_line-blue.hover,
-    .icheckbox_line-blue.checked.hover,
+    .icheckboIdline-blue.hover,
+    .icheckboIdline-blue.checked.hover,
     .iradio_line-blue.hover {
         background: #3DA0DB;
     }
-    .icheckbox_line-blue.checked,
+    .icheckboIdline-blue.checked,
     .iradio_line-blue.checked {
         background: #2489c5;
     }
-        .icheckbox_line-blue.checked .icheck_line-icon,
+        .icheckboIdline-blue.checked .icheck_line-icon,
         .iradio_line-blue.checked .icheck_line-icon {
             background-position: -15px 0;
         }
-    .icheckbox_line-blue.disabled,
+    .icheckboIdline-blue.disabled,
     .iradio_line-blue.disabled {
         background: #ADD7F0;
         cursor: default;
     }
-        .icheckbox_line-blue.disabled .icheck_line-icon,
+        .icheckboIdline-blue.disabled .icheck_line-icon,
         .iradio_line-blue.disabled .icheck_line-icon {
             background-position: -30px 0;
         }
-    .icheckbox_line-blue.checked.disabled,
+    .icheckboIdline-blue.checked.disabled,
     .iradio_line-blue.checked.disabled {
         background: #ADD7F0;
     }
-        .icheckbox_line-blue.checked.disabled .icheck_line-icon,
+        .icheckboIdline-blue.checked.disabled .icheck_line-icon,
         .iradio_line-blue.checked.disabled .icheck_line-icon {
             background-position: -45px 0;
         }
@@ -65,7 +65,7 @@
        only screen and (-moz-min-device-pixel-ratio: 1.5),
        only screen and (-o-min-device-pixel-ratio: 3/2),
        only screen and (min-device-pixel-ratio: 1.5) {
-    .icheckbox_line-blue .icheck_line-icon,
+    .icheckboIdline-blue .icheck_line-icon,
     .iradio_line-blue .icheck_line-icon {
         background-image: url(line@2x.png);
         -webkit-background-size: 60px 13px;

@@ -101,9 +101,9 @@ if (!document.createElement('canvas').getContext) {
     addNamespace(doc, 'g_o_', 'urn:schemas-microsoft-com:office:office');
 
     // Setup default CSS.  Only add one style sheet per document
-    if (!doc.styleSheets['ex_canvas_']) {
+    if (!doc.styleSheets['eIdcanvas_']) {
       var ss = doc.createStyleSheet();
-      ss.owningElement.id = 'ex_canvas_';
+      ss.owningElement.id = 'eIdcanvas_';
       ss.cssText = 'canvas{display:inline-block;overflow:hidden;' +
           // default size is 300x150 in Gecko and Opera
           'text-align:left;width:300px;height:150px}';
@@ -251,7 +251,7 @@ if (!document.createElement('canvas').getContext) {
     o2.font          = o1.font;
     o2.textAlign     = o1.textAlign;
     o2.textBaseline  = o1.textBaseline;
-    o2.arcScaleX_    = o1.arcScaleX_;
+    o2.arcScaleId    = o1.arcScaleId;
     o2.arcScaleY_    = o1.arcScaleY_;
     o2.lineScale_    = o1.lineScale_;
   }
@@ -601,7 +601,7 @@ if (!document.createElement('canvas').getContext) {
     canvasElement.appendChild(overlayEl);
 
     this.element_ = el;
-    this.arcScaleX_ = 1;
+    this.arcScaleId = 1;
     this.arcScaleY_ = 1;
     this.lineScale_ = 1;
   }
@@ -624,7 +624,7 @@ if (!document.createElement('canvas').getContext) {
   contextPrototype.moveTo = function(aX, aY) {
     var p = getCoords(this, aX, aY);
     this.currentPath_.push({type: 'moveTo', x: p.x, y: p.y});
-    this.currentX_ = p.x;
+    this.currentId = p.x;
     this.currentY_ = p.y;
   };
 
@@ -632,7 +632,7 @@ if (!document.createElement('canvas').getContext) {
     var p = getCoords(this, aX, aY);
     this.currentPath_.push({type: 'lineTo', x: p.x, y: p.y});
 
-    this.currentX_ = p.x;
+    this.currentId = p.x;
     this.currentY_ = p.y;
   };
 
@@ -656,7 +656,7 @@ if (!document.createElement('canvas').getContext) {
       x: p.x,
       y: p.y
     });
-    self.currentX_ = p.x;
+    self.currentId = p.x;
     self.currentY_ = p.y;
   }
 
@@ -668,11 +668,11 @@ if (!document.createElement('canvas').getContext) {
     var p = getCoords(this, aX, aY);
 
     var cp1 = {
-      x: this.currentX_ + 2.0 / 3.0 * (cp.x - this.currentX_),
+      x: this.currentId + 2.0 / 3.0 * (cp.x - this.currentId),
       y: this.currentY_ + 2.0 / 3.0 * (cp.y - this.currentY_)
     };
     var cp2 = {
-      x: cp1.x + (p.x - this.currentX_) / 3.0,
+      x: cp1.x + (p.x - this.currentId) / 3.0,
       y: cp1.y + (p.y - this.currentY_) / 3.0
     };
 
@@ -931,9 +931,9 @@ if (!document.createElement('canvas').getContext) {
           case 'at':
           case 'wa':
             lineStr.push(' ', p.type, ' ',
-                         mr(p.x - this.arcScaleX_ * p.radius), ',',
+                         mr(p.x - this.arcScaleId * p.radius), ',',
                          mr(p.y - this.arcScaleY_ * p.radius), ' ',
-                         mr(p.x + this.arcScaleX_ * p.radius), ',',
+                         mr(p.x + this.arcScaleId * p.radius), ',',
                          mr(p.y + this.arcScaleY_ * p.radius), ' ',
                          mr(p.xStart), ',', mr(p.yStart), ' ',
                          mr(p.xEnd), ',', mr(p.yEnd));
@@ -1000,7 +1000,7 @@ if (!document.createElement('canvas').getContext) {
 
   function appendFill(ctx, lineStr, min, max) {
     var fillStyle = ctx.fillStyle;
-    var arcScaleX = ctx.arcScaleX_;
+    var arcScaleX = ctx.arcScaleId;
     var arcScaleY = ctx.arcScaleY_;
     var width = max.x - min.x;
     var height = max.y - min.y;
@@ -1177,7 +1177,7 @@ if (!document.createElement('canvas').getContext) {
   };
 
   contextPrototype.scale = function(aX, aY) {
-    this.arcScaleX_ *= aX;
+    this.arcScaleId *= aX;
     this.arcScaleY_ *= aY;
     var m1 = [
       [aX, 0,  0],
@@ -1372,7 +1372,7 @@ if (!document.createElement('canvas').getContext) {
         this.repetition_ = repetition;
         break;
       default:
-        throwException('SYNTAX_ERR');
+        throwException('SYNTAIdERR');
     }
 
     this.src_ = image.src;
@@ -1398,7 +1398,7 @@ if (!document.createElement('canvas').getContext) {
     this.message = s +': DOM Exception ' + this.code;
   }
   var p = DOMException_.prototype = new Error;
-  p.INDEX_SIZE_ERR = 1;
+  p.INDEIdSIZE_ERR = 1;
   p.DOMSTRING_SIZE_ERR = 2;
   p.HIERARCHY_REQUEST_ERR = 3;
   p.WRONG_DOCUMENT_ERR = 4;
@@ -1409,7 +1409,7 @@ if (!document.createElement('canvas').getContext) {
   p.NOT_SUPPORTED_ERR = 9;
   p.INUSE_ATTRIBUTE_ERR = 10;
   p.INVALID_STATE_ERR = 11;
-  p.SYNTAX_ERR = 12;
+  p.SYNTAIdERR = 12;
   p.INVALID_MODIFICATION_ERR = 13;
   p.NAMESPACE_ERR = 14;
   p.INVALID_ACCESS_ERR = 15;

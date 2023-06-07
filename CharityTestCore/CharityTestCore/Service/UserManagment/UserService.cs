@@ -32,7 +32,7 @@ namespace CharityTestCore.Service.UserManagment
             return userRepository.Users.FirstOrDefault(x => x.UserName == username_ && x.HashPassword == CryptographyHelper.Encrypt(password));
 
         }
-        public int AddUser(string username, string password, string name, string family, string role, string nationalcode, IUserRepository userRepository)
+        public Guid? AddUser(string username, string password, string name, string family, string role, string nationalcode, IUserRepository userRepository)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace CharityTestCore.Service.UserManagment
             }
             catch (Exception)
             {
-                return -1;
+                return null;
             }
 
         }

@@ -8,13 +8,13 @@ namespace CharityTestCore.Models
     public class MBTIQuestionListModel
     {
         [Key]
-        public int x_ { get; set; }
+        public Guid Id { get; set; }
         [Required(ErrorMessage = "لطفا نام  را وارد کنید")]
         [Display(Name = "نام ")]
-        public string xName { get; set; }
+        public string Name { get; set; }
         [Required(ErrorMessage = "لطفا نام خانوادگی را وارد کنید")]
         [Display(Name = "نام خانوادگی ")]
-        public string xFamily { get; set; }
+        public string Family { get; set; }
 
         [Required(ErrorMessage = "لطفا کد ملی را وارد کنید")]
         [RegularExpression(@"^([0-9]){10}$", ErrorMessage = "کد ملی صحیح نمی باشد")]

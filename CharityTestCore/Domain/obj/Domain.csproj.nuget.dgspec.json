@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj": {}
+    "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj": {
+    "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\r.tavili\\source\\repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\r.tavili\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\r.tavili\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\obj\\",
         "projectStyle": "PackageReference",

@@ -21,11 +21,11 @@
                 </div> <!-- /.card-body -->
                 <div class="card-body">
                     <p> آیا از حذف داده های مربوط به </p>
-                    <p> @Model.xName  @Model.xFamily  </p>
+                    <p> @Model.Name  @Model.Family  </p>
                     <p> مطمئن هستین؟ </p>
                     <strong></strong>
                     <div>
-                        <a class="btn btn-danger mx-2" asp-controller="Dashboard" asp-action="MBTIIsDelete" asp-route-id="@Model.x_">
+                        <a class="btn btn-danger mx-2" asp-controller="Dashboard" asp-action="MBTIIsDelete" asp-route-id="@Model.Id">
                             <i class="bi bi-pencil-square"></i>
                             بله
                         </a>

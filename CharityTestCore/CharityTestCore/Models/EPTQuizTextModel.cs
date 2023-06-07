@@ -2,7 +2,7 @@
 {
     public class EPTQuizTextModel
     {
-        public int x_ { get; set; }
+        public Guid Id { get; set; }
         public string Question { get; set; }
         public string Answer1 { get; set; }
         public string Answer2 { get; set; }

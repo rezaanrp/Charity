@@ -28,7 +28,7 @@ namespace CharityTestCore.Controllers
 
         }
         [Authorize]
-        public IActionResult Index(int? id)
+        public IActionResult Index(Guid? id)
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
 
@@ -36,7 +36,7 @@ namespace CharityTestCore.Controllers
         }
 
         [Authorize]
-        public IActionResult EPTDelete(int? id)
+        public IActionResult EPTDelete(Guid? id)
         {
 
            var ep = eptservice.EptPersonById(id, eptrepository);
@@ -44,14 +44,14 @@ namespace CharityTestCore.Controllers
             {
 
             };
-            ept.Name = ep.xName;
-            ept.Family = ep.xFamily;
-            ept.x_ = ep.x_;
+            ept.Name = ep.Name;
+            ept.Family = ep.Family;
+            ept.Id = ep.Id;
             return View(ept);
 
         }
         [Authorize]
-        public IActionResult EPTIsDelete(int? id)
+        public IActionResult EPTIsDelete(Guid? id)
         {
             eptservice.EptPersonDeleteById(id, eptrepository);
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
@@ -59,14 +59,14 @@ namespace CharityTestCore.Controllers
             return RedirectToAction("Index", null);
         }
         [Authorize]
-        public IActionResult MBTI(int? id)
+        public IActionResult MBTI(Guid? id)
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
 
             return View(mBTIService.MBTIPersonList(id,mBTIRepository));
         }
         [Authorize]
-        public IActionResult MBTIDelete(int? id)
+        public IActionResult MBTIDelete(Guid? id)
         {
 
             var ep = mBTIService.MBTIPersonById(id,mBTIRepository);
@@ -74,14 +74,14 @@ namespace CharityTestCore.Controllers
             {
 
             };
-            ept.xName = ep.xName;
-            ept.xFamily = ep.xFamily;
-            ept.x_ = ep.x_;
+            ept.Name = ep.Name;
+            ept.Family = ep.Family;
+            ept.Id = ep.Id;
             return View(ept);
 
         }
         [Authorize]
-        public IActionResult MBTIIsDelete(int? id)
+        public IActionResult MBTIIsDelete(Guid? id)
         {
             mBTIService.MBTIPersonDeleteById(id, mBTIRepository);
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";

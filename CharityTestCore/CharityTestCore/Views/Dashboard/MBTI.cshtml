@@ -36,15 +36,15 @@
                                 {
                                     <tr>
 
-                                        <td>@item.xName  @item.xFamily </td>
+                                        <td>@item.Name  @item.Family </td>
                                         <td>
                                             @item.MobileNumber
                                         </td>
                                         <td>@item.NationalCode</td>
                                         <td> @item.Age</td>
                                         <td>
-                                            <a asp-controller="Dashboard" asp-action="MBTI" asp-route-id="@item.x_" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-                                            <a asp-controller="Dashboard" asp-action="MBTIDelete" asp-route-id="@item.x_" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                            <a asp-controller="Dashboard" asp-action="MBTI" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                                            <a asp-controller="Dashboard" asp-action="MBTIDelete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 }

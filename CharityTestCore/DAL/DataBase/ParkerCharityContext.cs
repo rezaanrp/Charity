@@ -24,6 +24,7 @@ namespace DAL.DataBase
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //   base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer(@"Server=.;TrustServerCertificate=True;Initial Catalog=ParkerCharityDB;User ID=sa;Password=K500at10");
 
 
         }

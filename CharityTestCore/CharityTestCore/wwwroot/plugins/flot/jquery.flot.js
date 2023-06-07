@@ -1053,7 +1053,7 @@ Licensed under the MIT license.
         function processData() {
             var topSentry = Number.POSITIVE_INFINITY,
                 bottomSentry = Number.NEGATIVE_INFINITY,
-                fakeInfinity = Number.MAX_VALUE,
+                fakeInfinity = Number.MAIdVALUE,
                 i, j, k, m, length,
                 s, points, ps, x, y, axis, val, f, p,
                 data, format;
@@ -2817,9 +2817,9 @@ Licensed under the MIT license.
                 // with inverse transforms, we can't use the maxx/maxy
                 // optimization, sadly
                 if (axisx.options.inverseTransform)
-                    maxx = Number.MAX_VALUE;
+                    maxx = Number.MAIdVALUE;
                 if (axisy.options.inverseTransform)
-                    maxy = Number.MAX_VALUE;
+                    maxy = Number.MAIdVALUE;
 
                 if (s.lines.show || s.points.show) {
                     for (j = 0; j < points.length; j += ps) {

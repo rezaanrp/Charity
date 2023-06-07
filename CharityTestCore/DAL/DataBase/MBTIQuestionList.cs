@@ -12,7 +12,7 @@ namespace DAL.DataBase
     public class MBTIQuestionList
     {
         [Key]
-        public int x_ { get; set; }
+        public int Id { get; set; }
         [AllowNull]
         public string Question { get; set; }
         [AllowNull]

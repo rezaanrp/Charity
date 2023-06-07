@@ -1,6 +1,6 @@
 /* iCheck plugin Futurico skin
 ----------------------------------- */
-.icheckbox_futurico,
+.icheckboIdfuturico,
 .iradio_futurico {
     display: inline-block;
     *display: inline;
@@ -14,17 +14,17 @@
     cursor: pointer;
 }
 
-.icheckbox_futurico {
+.icheckboIdfuturico {
     background-position: 0 0;
 }
-    .icheckbox_futurico.checked {
+    .icheckboIdfuturico.checked {
         background-position: -18px 0;
     }
-    .icheckbox_futurico.disabled {
+    .icheckboIdfuturico.disabled {
         background-position: -36px 0;
         cursor: default;
     }
-    .icheckbox_futurico.checked.disabled {
+    .icheckboIdfuturico.checked.disabled {
         background-position: -54px 0;
     }
 
@@ -47,7 +47,7 @@
        only screen and (-moz-min-device-pixel-ratio: 1.5),
        only screen and (-o-min-device-pixel-ratio: 3/2),
        only screen and (min-device-pixel-ratio: 1.5) {
-    .icheckbox_futurico,
+    .icheckboIdfuturico,
     .iradio_futurico {
         background-image: url(futurico@2x.png);
         -webkit-background-size: 144px 19px;

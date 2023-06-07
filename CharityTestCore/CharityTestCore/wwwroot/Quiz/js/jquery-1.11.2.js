@@ -634,7 +634,7 @@ var i,
 	},
 
 	// General-purpose constants
-	MAX_NEGATIVE = 1 << 31,
+	MAIdNEGATIVE = 1 << 31,
 
 	// Instance methods
 	hasOwn = ({}).hasOwnProperty,
@@ -961,8 +961,8 @@ function addHandle( attrs, handler ) {
 function siblingCheck( a, b ) {
 	var cur = b && a,
 		diff = cur && a.nodeType === 1 && b.nodeType === 1 &&
-			( ~b.sourceIndex || MAX_NEGATIVE ) -
-			( ~a.sourceIndex || MAX_NEGATIVE );
+			( ~b.sourceIndex || MAIdNEGATIVE ) -
+			( ~a.sourceIndex || MAIdNEGATIVE );
 
 	// Use IE sourceIndex if available on both nodes
 	if ( diff ) {

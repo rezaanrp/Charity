@@ -81,7 +81,7 @@
      * ------------------------------------------------------------------------
      */
     var TRANSITION_END = 'transitionend';
-    var MAX_UID = 1000000;
+    var MAIdUID = 1000000;
     var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 
     function toType(obj) {
@@ -133,7 +133,7 @@
       getUID: function getUID(prefix) {
         do {
           // eslint-disable-next-line no-bitwise
-          prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
+          prefix += ~~(Math.random() * MAIdUID); // "~~" acts like a faster Math.floor() here
         } while (document.getElementById(prefix));
 
         return prefix;
@@ -4986,7 +4986,7 @@
     var EVENT_KEY = "." + DATA_KEY;
     var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
     var CLASS_PREFIX = 'bs-tooltip';
-    var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+    var BSCLS_PREFIIdREGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
     var DefaultType = {
       animation: 'boolean',
       template: 'string',
@@ -5523,7 +5523,7 @@
 
       _proto._cleanTipClass = function _cleanTipClass() {
         var $tip = $$$1(this.getTipElement());
-        var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
+        var tabClass = $tip.attr('class').match(BSCLS_PREFIIdREGEX);
 
         if (tabClass !== null && tabClass.length > 0) {
           $tip.removeClass(tabClass.join(''));
@@ -5653,7 +5653,7 @@
     var EVENT_KEY = "." + DATA_KEY;
     var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
     var CLASS_PREFIX = 'bs-popover';
-    var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+    var BSCLS_PREFIIdREGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
 
     var Default = _objectSpread({}, Tooltip.Default, {
       placement: 'right',
@@ -5740,7 +5740,7 @@
 
       _proto._cleanTipClass = function _cleanTipClass() {
         var $tip = $$$1(this.getTipElement());
-        var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
+        var tabClass = $tip.attr('class').match(BSCLS_PREFIIdREGEX);
 
         if (tabClass !== null && tabClass.length > 0) {
           $tip.removeClass(tabClass.join(''));

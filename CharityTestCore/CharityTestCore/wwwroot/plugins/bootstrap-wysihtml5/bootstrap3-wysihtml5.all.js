@@ -930,7 +930,7 @@ var wysihtml5 = {
         }
 
         DOMException.prototype = {
-            INDEX_SIZE_ERR: 1,
+            INDEIdSIZE_ERR: 1,
             HIERARCHY_REQUEST_ERR: 3,
             WRONG_DOCUMENT_ERR: 4,
             NO_MODIFICATION_ALLOWED_ERR: 7,
@@ -1327,7 +1327,7 @@ var wysihtml5 = {
 
         function assertValidOffset(node, offset) {
             if (offset < 0 || offset > (isCharacterDataNode(node) ? node.length : node.childNodes.length)) {
-                throw new DOMException("INDEX_SIZE_ERR");
+                throw new DOMException("INDEIdSIZE_ERR");
             }
         }
 
@@ -3386,7 +3386,7 @@ var wysihtml5 = {
 
         selProto.getRangeAt = function(index) {
             if (index < 0 || index >= this.rangeCount) {
-                throw new DOMException("INDEX_SIZE_ERR");
+                throw new DOMException("INDEIdSIZE_ERR");
             } else {
                 // Clone the range to preserve selection-range independence. See issue 80.
                 return this._ranges[index].cloneRange();
@@ -4911,7 +4911,7 @@ wysihtml5.browser = (function() {
        */
       URL_REG_EXP           = /((https?:\/\/|www\.)[^\s<]{3,})/gi,
       TRAILING_CHAR_REG_EXP = /([^\w\/\-](,?))$/i,
-      MAX_DISPLAY_LENGTH    = 100,
+      MAIdDISPLAY_LENGTH    = 100,
       BRACKETS              = { ")": "(", "]": "[", "}": "{" };
 
   function autoLink(element, ignoreInClasses) {
@@ -4942,8 +4942,8 @@ wysihtml5.browser = (function() {
       }
       var realUrl    = url,
           displayUrl = url;
-      if (url.length > MAX_DISPLAY_LENGTH) {
-        displayUrl = displayUrl.substr(0, MAX_DISPLAY_LENGTH) + "...";
+      if (url.length > MAIdDISPLAY_LENGTH) {
+        displayUrl = displayUrl.substr(0, MAIdDISPLAY_LENGTH) + "...";
       }
       // Add http prefix if necessary
       if (realUrl.substr(0, 4) === "www.") {
@@ -5251,7 +5251,7 @@ wysihtml5.dom.copyAttributes = function(attributesToCopy) {
    *
    * See https://bugzilla.mozilla.org/show_bug.cgi?id=520992
    */
-  var BOX_SIZING_PROPERTIES = ["-webkit-box-sizing", "-moz-box-sizing", "-ms-box-sizing", "box-sizing"];
+  var BOIdSIZING_PROPERTIES = ["-webkit-box-sizing", "-moz-box-sizing", "-ms-box-sizing", "box-sizing"];
 
   var shouldIgnoreBoxSizingBorderBox = function(element) {
     if (hasBoxSizingBorderBox(element)) {
@@ -5262,10 +5262,10 @@ wysihtml5.dom.copyAttributes = function(attributesToCopy) {
 
   var hasBoxSizingBorderBox = function(element) {
     var i       = 0,
-        length  = BOX_SIZING_PROPERTIES.length;
+        length  = BOIdSIZING_PROPERTIES.length;
     for (; i<length; i++) {
-      if (dom.getStyle(BOX_SIZING_PROPERTIES[i]).from(element) === "border-box") {
-        return BOX_SIZING_PROPERTIES[i];
+      if (dom.getStyle(BOIdSIZING_PROPERTIES[i]).from(element) === "border-box") {
+        return BOIdSIZING_PROPERTIES[i];
       }
     }
   };
@@ -5274,7 +5274,7 @@ wysihtml5.dom.copyAttributes = function(attributesToCopy) {
     return {
       from: function(element) {
         if (shouldIgnoreBoxSizingBorderBox(element)) {
-          stylesToCopy = wysihtml5.lang.array(stylesToCopy).without(BOX_SIZING_PROPERTIES);
+          stylesToCopy = wysihtml5.lang.array(stylesToCopy).without(BOIdSIZING_PROPERTIES);
         }
 
         var cssText = "",
@@ -7504,24 +7504,24 @@ wysihtml5.dom.isLoadedImage = function (node) {
         getMapElsTo: function(to_cell) {
             var els = [];
             this.setTableMap();
-            this.idx_start = this.getMapIndex(this.cell);
-            this.idx_end = this.getMapIndex(to_cell);
+            this.idIdstart = this.getMapIndex(this.cell);
+            this.idIdend = this.getMapIndex(to_cell);
 
             // switch indexes if start is bigger than end
-            if (this.idx_start.row > this.idx_end.row || (this.idx_start.row == this.idx_end.row && this.idx_start.col > this.idx_end.col)) {
-                var temp_idx = this.idx_start;
-                this.idx_start = this.idx_end;
-                this.idx_end = temp_idx;
+            if (this.idIdstart.row > this.idIdend.row || (this.idIdstart.row == this.idIdend.row && this.idIdstart.col > this.idIdend.col)) {
+                var temp_idx = this.idIdstart;
+                this.idIdstart = this.idIdend;
+                this.idIdend = temp_idx;
             }
-            if (this.idx_start.col > this.idx_end.col) {
-                var temp_cidx = this.idx_start.col;
-                this.idx_start.col = this.idx_end.col;
-                this.idx_end.col = temp_cidx;
+            if (this.idIdstart.col > this.idIdend.col) {
+                var temp_cidx = this.idIdstart.col;
+                this.idIdstart.col = this.idIdend.col;
+                this.idIdend.col = temp_cidx;
             }
 
-            if (this.idx_start != null && this.idx_end != null) {
-                for (var row = this.idx_start.row, maxr = this.idx_end.row; row <= maxr; row++) {
-                    for (var col = this.idx_start.col, maxc = this.idx_end.col; col <= maxc; col++) {
+            if (this.idIdstart != null && this.idIdend != null) {
+                for (var row = this.idIdstart.row, maxr = this.idIdend.row; row <= maxr; row++) {
+                    for (var col = this.idIdstart.col, maxc = this.idIdend.col; col <= maxc; col++) {
                         els.push(this.map[row][col].el);
                     }
                 }
@@ -7531,24 +7531,24 @@ wysihtml5.dom.isLoadedImage = function (node) {
 
         orderSelectionEnds: function(secondcell) {
             this.setTableMap();
-            this.idx_start = this.getMapIndex(this.cell);
-            this.idx_end = this.getMapIndex(secondcell);
+            this.idIdstart = this.getMapIndex(this.cell);
+            this.idIdend = this.getMapIndex(secondcell);
 
             // switch indexes if start is bigger than end
-            if (this.idx_start.row > this.idx_end.row || (this.idx_start.row == this.idx_end.row && this.idx_start.col > this.idx_end.col)) {
-                var temp_idx = this.idx_start;
-                this.idx_start = this.idx_end;
-                this.idx_end = temp_idx;
+            if (this.idIdstart.row > this.idIdend.row || (this.idIdstart.row == this.idIdend.row && this.idIdstart.col > this.idIdend.col)) {
+                var temp_idx = this.idIdstart;
+                this.idIdstart = this.idIdend;
+                this.idIdend = temp_idx;
             }
-            if (this.idx_start.col > this.idx_end.col) {
-                var temp_cidx = this.idx_start.col;
-                this.idx_start.col = this.idx_end.col;
-                this.idx_end.col = temp_cidx;
+            if (this.idIdstart.col > this.idIdend.col) {
+                var temp_cidx = this.idIdstart.col;
+                this.idIdstart.col = this.idIdend.col;
+                this.idIdend.col = temp_cidx;
             }
 
             return {
-                "start": this.map[this.idx_start.row][this.idx_start.col].el,
-                "end": this.map[this.idx_end.row][this.idx_end.col].el
+                "start": this.map[this.idIdstart.row][this.idIdstart.col].el,
+                "end": this.map[this.idIdend.row][this.idIdend.col].el
             };
         },
 
@@ -7668,23 +7668,23 @@ wysihtml5.dom.isLoadedImage = function (node) {
         canMerge: function(to) {
             this.to = to;
             this.setTableMap();
-            this.idx_start = this.getMapIndex(this.cell);
-            this.idx_end = this.getMapIndex(this.to);
+            this.idIdstart = this.getMapIndex(this.cell);
+            this.idIdend = this.getMapIndex(this.to);
 
             // switch indexes if start is bigger than end
-            if (this.idx_start.row > this.idx_end.row || (this.idx_start.row == this.idx_end.row && this.idx_start.col > this.idx_end.col)) {
-                var temp_idx = this.idx_start;
-                this.idx_start = this.idx_end;
-                this.idx_end = temp_idx;
+            if (this.idIdstart.row > this.idIdend.row || (this.idIdstart.row == this.idIdend.row && this.idIdstart.col > this.idIdend.col)) {
+                var temp_idx = this.idIdstart;
+                this.idIdstart = this.idIdend;
+                this.idIdend = temp_idx;
             }
-            if (this.idx_start.col > this.idx_end.col) {
-                var temp_cidx = this.idx_start.col;
-                this.idx_start.col = this.idx_end.col;
-                this.idx_end.col = temp_cidx;
+            if (this.idIdstart.col > this.idIdend.col) {
+                var temp_cidx = this.idIdstart.col;
+                this.idIdstart.col = this.idIdend.col;
+                this.idIdend.col = temp_cidx;
             }
 
-            for (var row = this.idx_start.row, maxr = this.idx_end.row; row <= maxr; row++) {
-                for (var col = this.idx_start.col, maxc = this.idx_end.col; col <= maxc; col++) {
+            for (var row = this.idIdstart.row, maxr = this.idIdend.row; row <= maxr; row++) {
+                for (var col = this.idIdstart.col, maxc = this.idIdend.col; col <= maxc; col++) {
                     if (this.map[row][col].isColspan || this.map[row][col].isRowspan) {
                         return false;
                     }
@@ -7821,13 +7821,13 @@ wysihtml5.dom.isLoadedImage = function (node) {
         merge: function(to) {
             if (this.rectify()) {
                 if (this.canMerge(to)) {
-                    var rowspan = this.idx_end.row - this.idx_start.row + 1,
-                        colspan = this.idx_end.col - this.idx_start.col + 1;
+                    var rowspan = this.idIdend.row - this.idIdstart.row + 1,
+                        colspan = this.idIdend.col - this.idIdstart.col + 1;
 
-                    for (var row = this.idx_start.row, maxr = this.idx_end.row; row <= maxr; row++) {
-                        for (var col = this.idx_start.col, maxc = this.idx_end.col; col <= maxc; col++) {
+                    for (var row = this.idIdstart.row, maxr = this.idIdend.row; row <= maxr; row++) {
+                        for (var col = this.idIdstart.col, maxc = this.idIdend.col; col <= maxc; col++) {
 
-                            if (row == this.idx_start.row && col == this.idx_start.col) {
+                            if (row == this.idIdstart.row && col == this.idIdstart.col) {
                                 if (rowspan > 1) {
                                     this.map[row][col].el.setAttribute('rowspan', rowspan);
                                 }
@@ -7837,7 +7837,7 @@ wysihtml5.dom.isLoadedImage = function (node) {
                             } else {
                                 // transfer content
                                 if (!(/^\s*<br\/?>\s*$/.test(this.map[row][col].el.innerHTML.toLowerCase()))) {
-                                    this.map[this.idx_start.row][this.idx_start.col].el.innerHTML += ' ' + this.map[row][col].el.innerHTML;
+                                    this.map[this.idIdstart.row][this.idIdstart.col].el.innerHTML += ' ' + this.map[row][col].el.innerHTML;
                                 }
                                 removeElement(this.map[row][col].el);
                             }
@@ -11761,7 +11761,7 @@ wysihtml5.commands.formatCode = {
       Y_KEY               = 89,
       BACKSPACE_KEY       = 8,
       DELETE_KEY          = 46,
-      MAX_HISTORY_ENTRIES = 25,
+      MAIdHISTORY_ENTRIES = 25,
       DATA_ATTR_NODE      = "data-wysihtml5-selection-node",
       DATA_ATTR_OFFSET    = "data-wysihtml5-selection-offset",
       UNDO_HTML           = '<span id="_wysihtml5-undo" class="_wysihtml5-temp">' + wysihtml5.INVISIBLE_SPACE + '</span>',
@@ -11850,7 +11850,7 @@ wysihtml5.commands.formatCode = {
       }
 
       var length = this.historyStr.length = this.historyDom.length = this.position;
-      if (length > MAX_HISTORY_ENTRIES) {
+      if (length > MAIdHISTORY_ENTRIES) {
         this.historyStr.shift();
         this.historyDom.shift();
         this.position--;
@@ -12499,7 +12499,7 @@ wysihtml5.views.View = Base.extend(
       /**
        * Styles to copy from textarea to the iframe
        */
-      BOX_FORMATTING = [
+      BOIdFORMATTING = [
         "background-color",
         "border-collapse",
         "border-bottom-color", "border-bottom-style", "border-bottom-width",
@@ -12613,7 +12613,7 @@ wysihtml5.views.View = Base.extend(
     }
 
     // --------- iframe styles (has to be set before editor styles, otherwise IE9 sets wrong fontFamily on blurStylesHost) ---------
-    dom.copyStyles(BOX_FORMATTING).from(textareaElement).to(this.editableArea).andTo(this.blurStylesHost);
+    dom.copyStyles(BOIdFORMATTING).from(textareaElement).to(this.editableArea).andTo(this.blurStylesHost);
 
     // --------- editor styles ---------
     dom.copyStyles(TEXT_FORMATTING).from(textareaElement).to(this.element).andTo(this.blurStylesHost);
@@ -12623,7 +12623,7 @@ wysihtml5.views.View = Base.extend(
 
     // --------- :disabled styles ---------
     textareaElement.disabled = true;
-    dom.copyStyles(BOX_FORMATTING).from(textareaElement).to(this.disabledStylesHost);
+    dom.copyStyles(BOIdFORMATTING).from(textareaElement).to(this.disabledStylesHost);
     dom.copyStyles(TEXT_FORMATTING).from(textareaElement).to(this.disabledStylesHost);
     textareaElement.disabled = originalDisabled;
 
@@ -12632,7 +12632,7 @@ wysihtml5.views.View = Base.extend(
     focusWithoutScrolling(textareaElement);
     textareaElement.style.display = displayValueForCopying;
 
-    dom.copyStyles(BOX_FORMATTING).from(textareaElement).to(this.focusStylesHost);
+    dom.copyStyles(BOIdFORMATTING).from(textareaElement).to(this.focusStylesHost);
     dom.copyStyles(TEXT_FORMATTING).from(textareaElement).to(this.focusStylesHost);
 
     // reset textarea
@@ -12643,7 +12643,7 @@ wysihtml5.views.View = Base.extend(
     // Make sure that we don't change the display style of the iframe when copying styles oblur/onfocus
     // this is needed for when the change_view event is fired where the iframe is hidden and then
     // the blur event fires and re-displays it
-    var boxFormattingStyles = wysihtml5.lang.array(BOX_FORMATTING).without(["display"]);
+    var boxFormattingStyles = wysihtml5.lang.array(BOIdFORMATTING).without(["display"]);
 
     // --------- restore focus ---------
     if (originalActiveElement) {

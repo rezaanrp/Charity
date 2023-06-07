@@ -12,11 +12,11 @@ namespace DAL.DataBase
     public class MBTIAnswerList
     {
         [Key]
-        public int x_ { get; set; }
+        public Guid Id { get; set; }
         [MaxLength(60)]
-        public string xName { get; set; }
+        public string Name { get; set; }
         [MaxLength(60)]
-        public string xFamily { get; set; }
+        public string Family { get; set; }
         [MaxLength(10)]
         public string NationalCode { get; set; }
         [MaxLength(11)]

@@ -6058,18 +6058,18 @@ module.exports = function(Chart) {
 
 	function sortByWeight(array, reverse) {
 		array.forEach(function(v, i) {
-			v._tmpIndex_ = i;
+			v._tmpIndeId = i;
 			return v;
 		});
 		array.sort(function(a, b) {
 			var v0 = reverse ? b : a;
 			var v1 = reverse ? a : b;
 			return v0.weight === v1.weight ?
-				v0._tmpIndex_ - v1._tmpIndex_ :
+				v0._tmpIndeId - v1._tmpIndeId :
 				v0.weight - v1.weight;
 		});
 		array.forEach(function(v) {
-			delete v._tmpIndex_;
+			delete v._tmpIndeId;
 		});
 	}
 
@@ -13395,7 +13395,7 @@ var helpers = require(45);
 
 // Integer constants are from the ES6 spec.
 var MIN_INTEGER = Number.MIN_SAFE_INTEGER || -9007199254740991;
-var MAX_INTEGER = Number.MAX_SAFE_INTEGER || 9007199254740991;
+var MAIdINTEGER = Number.MAIdSAFE_INTEGER || 9007199254740991;
 
 var INTERVALS = {
 	millisecond: {
@@ -13648,7 +13648,7 @@ function determineUnitForAutoTicks(minUnit, min, max, capacity) {
 
 	for (i = UNITS.indexOf(minUnit); i < ilen - 1; ++i) {
 		interval = INTERVALS[UNITS[i]];
-		factor = interval.steps ? interval.steps[interval.steps.length - 1] : MAX_INTEGER;
+		factor = interval.steps ? interval.steps[interval.steps.length - 1] : MAIdINTEGER;
 
 		if (interval.common && Math.ceil((max - min) / (factor * interval.size)) <= capacity) {
 			return UNITS[i];
@@ -13890,7 +13890,7 @@ module.exports = function(Chart) {
 			var me = this;
 			var chart = me.chart;
 			var timeOpts = me.options.time;
-			var min = MAX_INTEGER;
+			var min = MAIdINTEGER;
 			var max = MIN_INTEGER;
 			var timestamps = [];
 			var datasets = [];
@@ -13942,7 +13942,7 @@ module.exports = function(Chart) {
 			max = parse(timeOpts.max, me) || max;
 
 			// In case there is no valid min/max, let's use today limits
-			min = min === MAX_INTEGER ? +moment().startOf('day') : min;
+			min = min === MAIdINTEGER ? +moment().startOf('day') : min;
 			max = max === MIN_INTEGER ? +moment().endOf('day') + 1 : max;
 
 			// Make sure that max is strictly higher than min (required by the lookup table)

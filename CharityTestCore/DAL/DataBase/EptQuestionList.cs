@@ -11,11 +11,11 @@ namespace DAL.DataBase
     public class EptQuestionList
     {
         [Key]
-        public int x_ { get; set; }
+        public Guid Id { get; set; }
         [MaxLength(60)]
-        public string xName { get; set; }
+        public string Name { get; set; }
         [MaxLength(60)]
-        public string xFamily { get; set; }
+        public string Family { get; set; }
         [MaxLength(10)]
 
         public string NationalCode { get; set; }
@@ -124,7 +124,7 @@ namespace DAL.DataBase
 
         public string FullName
         {
-            get { return xName + " " + xFamily; }
+            get { return Name + " " + Family; }
         }
       
         public string Result
