@@ -1,6 +1,7 @@
 ﻿using CharityTestCore.Models;
 using CharityTestCore.Repository;
 using CharityTestCore.Repository.MBTI;
+using CharityTestCore.Repository.UserManagment;
 using DAL.DataBase;
 
 namespace CharityTestCore.Service.MBTI
@@ -11,6 +12,10 @@ namespace CharityTestCore.Service.MBTI
         {
             MBTIQuestionListPersonModel MBTIQuestionListPersonModel_ = new MBTIQuestionListPersonModel();
 
+            if (!mBTIRepository.MBTIQuestionList.Any())
+            {
+                new DAL.DataBase.Seed().SeedDataMBTI();
+            }
 
             MBTIQuestionListPersonModel_.Persons = mBTIRepository.MBTIAnswerList.ToList();
 
@@ -52,6 +57,7 @@ namespace CharityTestCore.Service.MBTI
                 MBTIQuestionListPersonModel_.NameAndFamily = ep.Name + " " + ep.Family;
                 if (ep_T != null)
                     MBTIQuestionListPersonModel_.ResultTestHtml = ep_T.Answer2;
+
                 MBTIQuestionListPersonModel_.ResultTestTotal = ReAnswerultTeAnswert9;
             }
             else
