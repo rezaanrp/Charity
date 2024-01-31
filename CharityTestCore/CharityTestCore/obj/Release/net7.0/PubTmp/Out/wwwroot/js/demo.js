@@ -61,7 +61,7 @@
 
   $container.append($navbar_variants)
 
-  var $checkbox_container = $('<div />', {
+  var $checkboIdcontainer = $('<div />', {
     'class': 'mb-4'
   })
   var main_header_border = '';
@@ -80,9 +80,9 @@
     }
     setCookie('main_header_border', main_header_border,100);
   })
-  $checkbox_container.append($navbar_border)
-  $checkbox_container.append('<span>مرز نوار ناوبری</span>')
-  $container.append($checkbox_container)
+  $checkboIdcontainer.append($navbar_border)
+  $checkboIdcontainer.append('<span>مرز نوار ناوبری</span>')
+  $container.append($checkboIdcontainer)
 
 
   var sidebar_colors = [

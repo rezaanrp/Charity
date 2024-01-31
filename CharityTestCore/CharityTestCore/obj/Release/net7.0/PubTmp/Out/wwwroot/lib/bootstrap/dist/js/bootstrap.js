@@ -37,7 +37,7 @@
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
-  const MAX_UID = 1000000;
+  const MAIdUID = 1000000;
   const MILLISECONDS_MULTIPLIER = 1000;
   const TRANSITION_END = 'transitionend'; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 
@@ -57,7 +57,7 @@
 
   const getUID = prefix => {
     do {
-      prefix += Math.floor(Math.random() * MAX_UID);
+      prefix += Math.floor(Math.random() * MAIdUID);
     } while (document.getElementById(prefix));
 
     return prefix;
@@ -5005,7 +5005,7 @@
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
-  var index_umd = {
+  var indeIdumd = {
     Alert,
     Button,
     Carousel,
@@ -5020,7 +5020,7 @@
     Tooltip
   };
 
-  return index_umd;
+  return indeIdumd;
 
 })));
 //# sourceMappingURL=bootstrap.js.map

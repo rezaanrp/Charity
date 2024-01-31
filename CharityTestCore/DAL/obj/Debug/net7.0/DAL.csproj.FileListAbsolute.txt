@@ -82,3 +82,17 @@ C:\Users\reza\Source\Repos\Charity\CharityTestCore\DAL\bin\Debug\net7.0\DAL.dll
 C:\Users\reza\Source\Repos\Charity\CharityTestCore\DAL\bin\Debug\net7.0\DAL.pdb
 C:\Users\reza\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\DAL.genruntimeconfig.cache
 C:\Users\reza\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\ref\DAL.dll
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\bin\Debug\net7.0\DAL.deps.json
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\bin\Debug\net7.0\DAL.runtimeconfig.json
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\bin\Debug\net7.0\DAL.dll
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\bin\Debug\net7.0\DAL.pdb
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\DAL.dll
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\refint\DAL.dll
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\DAL.pdb
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\DAL.genruntimeconfig.cache
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\DAL\obj\Debug\net7.0\ref\DAL.dll

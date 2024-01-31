@@ -4038,7 +4038,7 @@
 	
 			if ( features.bFilter ) {
 				param( 'sSearch_'+i,     columnSearch.sSearch );
-				param( 'bRegex_'+i,      columnSearch.bRegex );
+				param( 'bRegeId'+i,      columnSearch.bRegex );
 				param( 'bSearchable_'+i, column.bSearchable );
 			}
 	
@@ -4662,7 +4662,7 @@
 		return str.
 			replace(/_START_/g, formatter.call( settings, start ) ).
 			replace(/_END_/g,   formatter.call( settings, settings.fnDisplayEnd() ) ).
-			replace(/_MAX_/g,   formatter.call( settings, settings.fnRecordsTotal() ) ).
+			replace(/_MAId/g,   formatter.call( settings, settings.fnRecordsTotal() ) ).
 			replace(/_TOTAL_/g, formatter.call( settings, vis ) ).
 			replace(/_PAGE_/g,  formatter.call( settings, all ? 1 : Math.ceil( start / len ) ) ).
 			replace(/_PAGES_/g, formatter.call( settings, all ? 1 : Math.ceil( vis / len ) ) );
@@ -11442,9 +11442,9 @@
 			/**
 			 * When a user filters the information in a table, this string is appended
 			 * to the information (`info`) to give an idea of how strong the filtering
-			 * is. The variable _MAX_ is dynamically updated.
+			 * is. The variable _MAId is dynamically updated.
 			 *  @type string
-			 *  @default (filtered from _MAX_ total entries)
+			 *  @default (filtered from _MAId total entries)
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.infoFiltered
@@ -11453,12 +11453,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "infoFiltered": " - filtering from _MAX_ records"
+			 *          "infoFiltered": " - filtering from _MAId records"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(filtered from _MAId total entries)",
 	
 	
 			/**

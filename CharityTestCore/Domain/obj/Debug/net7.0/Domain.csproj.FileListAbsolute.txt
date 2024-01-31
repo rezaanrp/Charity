@@ -58,3 +58,14 @@ C:\Users\reza\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\Domai
 C:\Users\reza\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\reza\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\reza\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\bin\Debug\net7.0\Domain.dll
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\Domain.dll
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\Domain\obj\Debug\net7.0\ref\Domain.dll

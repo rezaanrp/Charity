@@ -37,7 +37,7 @@ namespace CharityTestCore.Service.UserManagment
             return u;
 
         }
-        public Guid? AddUser(string username, string password, string name, string family, string role, string nationalcode, IUserRepository userRepository)
+        public Guid? AddUser(string username, string password, string name, string family, string role, string nationalcode,string mobile, IUserRepository userRepository)
         {
             try
             {
@@ -47,8 +47,9 @@ namespace CharityTestCore.Service.UserManagment
                     Name = name,
                     UserName = username,
                     Role = role,
-                    HashPassword = password,
-                    NationalNumber = nationalcode
+                    HashPassword = CryptographyHelper.Encrypt(password),
+                    NationalNumber = nationalcode,
+                    MobileNumber = mobile
                 };
                 userRepository.AddUsersList(user);
                 userRepository.SaveChanges();

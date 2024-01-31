@@ -36,11 +36,11 @@ namespace CharityTestCore.Controllers
         {
 
             _userService.AddUser(userListModel.UserName,
-                userListModel.HashPassword,
+                userListModel.Password,
                 userListModel.Name,
                 userListModel.Family,
-                userListModel.Role,
-                userListModel.NationalNumber, _userRepository
+                "user",
+                userListModel.NationalNumber,userListModel.MobileNumber, _userRepository
                );
             return View();
         }

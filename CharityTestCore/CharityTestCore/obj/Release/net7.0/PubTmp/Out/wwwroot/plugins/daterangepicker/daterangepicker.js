@@ -1155,7 +1155,7 @@
 
                 // Disallow selections before the minDate or after the maxDate
                 var min_hour = 0;
-                var max_hour = 23;
+                var maIdhour = 23;
 
                 if (minDate && (side == 'left' || this.singleDatePicker) && selected.format('YYYY-MM-DD') == minDate.format('YYYY-MM-DD')) {
                     min_hour = minDate.hour();
@@ -1168,11 +1168,11 @@
                 }
 
                 if (maxDate && (side == 'right' || this.singleDatePicker) && selected.format('YYYY-MM-DD') == maxDate.format('YYYY-MM-DD')) {
-                    max_hour = maxDate.hour();
-                    if (selected.hour() > max_hour)
-                        selected.hour(max_hour);
-                    if (this.timePicker12Hour && max_hour >= 12 && selected.hour() >= 12)
-                        max_hour -= 12;
+                    maIdhour = maxDate.hour();
+                    if (selected.hour() > maIdhour)
+                        selected.hour(maIdhour);
+                    if (this.timePicker12Hour && maIdhour >= 12 && selected.hour() >= 12)
+                        maIdhour -= 12;
                 }
 
                 var start = 0;
@@ -1191,7 +1191,7 @@
 
                     if (i == selected_hour) {
                         html += '<option value="' + i + '" selected="selected">' + i + '</option>';
-                    } else if (i < min_hour || i > max_hour) {
+                    } else if (i < min_hour || i > maIdhour) {
                         html += '<option value="' + i + '" disabled="disabled" class="disabled">' + i + '</option>';
                     } else {
                         html += '<option value="' + i + '">' + i + '</option>';
@@ -1204,7 +1204,7 @@
 
                 // Disallow selections before the minDate or after the maxDate
                 var min_minute = 0;
-                var max_minute = 59;
+                var maIdminute = 59;
 
                 if (minDate && (side == 'left' || this.singleDatePicker) && selected.format('YYYY-MM-DD h A') == minDate.format('YYYY-MM-DD h A')) {
                     min_minute = minDate.minute();
@@ -1213,9 +1213,9 @@
                 }
 
                 if (maxDate && (side == 'right' || this.singleDatePicker) && selected.format('YYYY-MM-DD h A') == maxDate.format('YYYY-MM-DD h A')) {
-                    max_minute = maxDate.minute();
-                    if (selected.minute() > max_minute)
-                        selected.minute(max_minute);
+                    maIdminute = maxDate.minute();
+                    if (selected.minute() > maIdminute)
+                        selected.minute(maIdminute);
                 }
 
                 for (i = 0; i < 60; i += this.timePickerIncrement) {
@@ -1224,7 +1224,7 @@
                         num = '0' + num;
                     if (i == selected.minute()) {
                         html += '<option value="' + i + '" selected="selected">' + num + '</option>';
-                    } else if (i < min_minute || i > max_minute) {
+                    } else if (i < min_minute || i > maIdminute) {
                         html += '<option value="' + i + '" disabled="disabled" class="disabled">' + num + '</option>';
                     } else {
                         html += '<option value="' + i + '">' + num + '</option>';

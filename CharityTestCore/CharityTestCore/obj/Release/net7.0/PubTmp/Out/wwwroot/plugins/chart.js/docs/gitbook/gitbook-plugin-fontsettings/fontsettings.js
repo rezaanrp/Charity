@@ -1,6 +1,6 @@
 require(['gitbook', 'jquery'], function(gitbook, $) {
     // Configuration
-    var MAX_SIZE       = 4,
+    var MAIdSIZE       = 4,
         MIN_SIZE       = 0,
         BUTTON_ID;
 
@@ -71,7 +71,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
     // Increase font size
     function enlargeFontSize(e) {
         e.preventDefault();
-        if (fontState.size >= MAX_SIZE) return;
+        if (fontState.size >= MAIdSIZE) return;
 
         fontState.size++;
         saveFontSettings();

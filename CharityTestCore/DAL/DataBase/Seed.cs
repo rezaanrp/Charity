@@ -21,7 +21,7 @@ namespace DAL.DataBase
                          Name = "مدیر",
                          Family = "سیستم",
                          NationalNumber = "1234567980",
-                         HashPassword = "8hNzZZBdE/TtZAu1CInd70k8G6D5YYAivGvh9k5awwc=",
+                         HashPassword = "iuJVMTAyPlSJ6JhIkBdpz7k5L2/Gg8MbOQDfBGQ12WE=",
                          Role = "admin",
                          UserName = "p_admin"
 

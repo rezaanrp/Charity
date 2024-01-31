@@ -16,6 +16,7 @@ namespace DAL.DataBase
 
         [MaxLength(60)]
         public string HashPassword { get; set; }
+        [MaxLength(30)]
         public string Role { get; set; }
 
         [MaxLength(30)]
@@ -24,8 +25,12 @@ namespace DAL.DataBase
         [MaxLength(30)]
         public string Family { get; set; }
 
-        [MaxLength(10)]
+        [StringLength(10)]
         public string NationalNumber { get; set; }
+
+        [StringLength(11)]
+        public string MobileNumber { get; set; }
+
 
         public string FullName
         {

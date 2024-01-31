@@ -1,59 +1,100 @@
-﻿@model DAL.DataBase.User
+﻿@model CharityTestCore.Models.UserListModel
 
 @{
-    ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Title"] = "Create";
+	Layout = "~/Views/Shared/_MyLayout.cshtml";
 }
+@section Head{
 
-<h1>Create</h1>
-
-<h4>User</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HashPassword" class="control-label"></label>
-                <input asp-for="HashPassword" class="form-control" />
-                <span asp-validation-for="HashPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <input asp-for="Role" class="form-control" />
-                <span asp-validation-for="Role" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Family" class="control-label"></label>
-                <input asp-for="Family" class="form-control" />
-                <span asp-validation-for="Family" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NationalNumber" class="control-label"></label>
-                <input asp-for="NationalNumber" class="form-control" />
-                <span asp-validation-for="NationalNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+}
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }
+@section Body{
+
+
+	<h4>فرم ثبت نام  </h4>
+	<hr />
+
+	<form asp-action="Create">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="form-group">
+					<label asp-for="Name" class="control-label">نام </label>
+					<input asp-for="Name" class="form-control" />
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label asp-for="Family" class="control-label">نام خانوادگی</label>
+					<input asp-for="Family" class="form-control" />
+					<span asp-validation-for="Family" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label asp-for="NationalNumber" class="control-label">کد ملی</label>
+					<input asp-for="NationalNumber" class="form-control" />
+					<span asp-validation-for="NationalNumber" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label asp-for="MobileNumber" class="control-label">شماره موبایل</label>
+					<input asp-for="MobileNumber" class="form-control" />
+					<span asp-validation-for="MobileNumber" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="form-group">
+					<label asp-for="UserName" class="control-label">نام کاربری</label>
+					<input asp-for="UserName" class="form-control" />
+					<span asp-validation-for="UserName" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label asp-for="Password" class="control-label">رمز عبور</label>
+					<input asp-for="Password" class="form-control" />
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label asp-for="RepeatPassword" class="control-label">تکرار رمز عبور</label>
+					<input asp-for="RepeatPassword" class="form-control" />
+					<span asp-validation-for="RepeatPassword" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-md-3">
+			</div>
+
+		</div>
+
+
+
+
+
+		<div class="form-group">
+			<input type="submit" value="ذخیره" class="btn btn-primary" />
+			<a class="btn btn-warning" asp-controller="Account" asp-action="Login">بازگشت</a>
+		</div>
+	</form>
+
+
+	<div>
+		@*    <a asp-action="Index">Back to List</a> *@
+	</div>
+
+}
+
+

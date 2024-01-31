@@ -1,6 +1,6 @@
 /* iCheck plugin Minimal skin, black
 ----------------------------------- */
-.icheckbox_minimal,
+.icheckboIdminimal,
 .iradio_minimal {
     display: inline-block;
     *display: inline;
@@ -14,20 +14,20 @@
     cursor: pointer;
 }
 
-.icheckbox_minimal {
+.icheckboIdminimal {
     background-position: 0 0;
 }
-    .icheckbox_minimal.hover {
+    .icheckboIdminimal.hover {
         background-position: -20px 0;
     }
-    .icheckbox_minimal.checked {
+    .icheckboIdminimal.checked {
         background-position: -40px 0;
     }
-    .icheckbox_minimal.disabled {
+    .icheckboIdminimal.disabled {
         background-position: -60px 0;
         cursor: default;
     }
-    .icheckbox_minimal.checked.disabled {
+    .icheckboIdminimal.checked.disabled {
         background-position: -80px 0;
     }
 
@@ -53,7 +53,7 @@
        only screen and (-moz-min-device-pixel-ratio: 1.5),
        only screen and (-o-min-device-pixel-ratio: 3/2),
        only screen and (min-device-pixel-ratio: 1.5) {
-    .icheckbox_minimal,
+    .icheckboIdminimal,
     .iradio_minimal {
         background-image: url(minimal@2x.png);
         -webkit-background-size: 200px 20px;
