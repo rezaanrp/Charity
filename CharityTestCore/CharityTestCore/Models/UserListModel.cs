@@ -22,6 +22,7 @@ namespace CharityTestCore.Models
 		[RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$", ErrorMessage = "رمز باید حداقل 8 رقم، و دارای حداقل یک حرف، یک عدد و یک کاراکتر ویژه باشد")]
 		[DataType(DataType.Password)]
 		[Display(Name = "رمز عبور")]
+		[Compare("Password", ErrorMessage = "رمز  و تکرار آن یکسان نیستند")]
 		public string RepeatPassword { get; set; }
 		[MaxLength(30)]
         public string Role { get; set; }
