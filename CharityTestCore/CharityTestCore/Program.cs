@@ -20,7 +20,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddScoped<IEPTService, EPTService>();
 builder.Services.AddScoped<IEPTRepository, EPTRepository>();
 
@@ -29,6 +29,7 @@ builder.Services.AddScoped<IMBTIRepository, MBTIRepository>();
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 
 builder.Services.AddAuthentication(options =>
 {

@@ -1,12 +1,14 @@
 ﻿using CharityTestCore.Models;
 using DAL.DataBase;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace CharityTestCore.Controllers
 {
-    public class HomeController : Controller
+    [Authorize]
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -19,6 +21,7 @@ namespace CharityTestCore.Controllers
         {
        
             ViewBag.Title = "صفحه اصلی";
+            ViewBag.user_role = OnGetUserRole();
             return View();
         }
 

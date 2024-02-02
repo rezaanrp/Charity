@@ -28,37 +28,14 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int?>("Age")
-                        .HasColumnType("int");
-
                     b.Property<bool?>("BeforeYouHaveJob")
                         .HasColumnType("bit");
 
                     b.Property<bool?>("DoYouWantHaveJob")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Family")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
                     b.Property<bool?>("HaveSkill")
                         .HasColumnType("bit");
-
-                    b.Property<string>("MobileNumber")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("NationalCode")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
 
                     b.Property<byte>("S01")
                         .HasColumnType("tinyint");
@@ -345,6 +322,10 @@ namespace DAL.Migrations
                     b.Property<byte>("S95")
                         .HasColumnType("tinyint");
 
+                    b.Property<string>("UserId_")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("EptQuestion");
@@ -386,9 +367,6 @@ namespace DAL.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int?>("Age")
-                        .HasColumnType("int");
 
                     b.Property<byte>("Answer1")
                         .HasColumnType("tinyint");
@@ -630,28 +608,13 @@ namespace DAL.Migrations
                     b.Property<byte>("Answer9")
                         .HasColumnType("tinyint");
 
-                    b.Property<string>("Family")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("MobileNumber")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("NationalCode")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
                     b.Property<DateTime>("RegisterDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
 
                     b.HasKey("Id");
 
@@ -730,7 +693,26 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("NationalNumber")
+                        .IsUnique();
+
+                    b.HasIndex("UserName")
+                        .IsUnique();
+
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("bd7cb230-6834-4869-8b9a-8662558a7ef2"),
+                            Family = "سیستم",
+                            HashPassword = "1hO2KL3nZdudecMmm3hT5sh7m7Y9P9R030JzQxRlpkg=",
+                            MobileNumber = "09130000000",
+                            Name = "مدیر",
+                            NationalNumber = "1234567980",
+                            Role = "admin",
+                            UserName = "p_admin"
+                        });
                 });
 
             modelBuilder.Entity("DAL.DataBase.mGenGroup", b =>

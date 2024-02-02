@@ -14,13 +14,14 @@ namespace CharityTestCore.Controllers
     public class AccountController : Controller
     {
         private readonly IUserService userService;
-        private readonly IUserRepository userRepository;
-        public AccountController(IUserService _userService,IUserRepository _userRepository) 
+        public AccountController(IUserService _userService) 
         {
             userService = _userService;
-            userRepository = _userRepository;
         }
-
+      public IActionResult AccessDenied()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             return View();
@@ -41,23 +42,31 @@ namespace CharityTestCore.Controllers
             {
                 return View(loginModel);
             }
-            var user = userService.Authenticate(loginModel.UserName, loginModel.Password, userRepository);
+            var user = userService.Authenticate(loginModel.UserName, loginModel.Password);
             if (user != null)
             {
                 var claim = new List<Claim>()
                 {
-                    new Claim(ClaimTypes.Name,user.UserName ),
-                    new Claim(ClaimTypes.SerialNumber,user.Id.ToString())
+                    new Claim(ClaimTypes.Name,user.UserName.ToString() ),
+                    new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+                    new Claim(ClaimTypes.SerialNumber,user.Id.ToString()),
+                    new Claim(ClaimTypes.Role,user.Role)
                 };
                 var identity = new ClaimsIdentity(claim, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 var properties = new AuthenticationProperties
                 {
-                   // IsPersistent = login.RememberMe
+                    IsPersistent = true
                 };
 
                 HttpContext.SignInAsync(principal, properties);
+                if(user.Role == "admin")
                 return RedirectToAction("Index","Dashboard");
+                else
+                {
+                    return RedirectToAction("UserProfile", "Dashboard");
+
+                }
             }
             else
             {
@@ -87,7 +96,7 @@ namespace CharityTestCore.Controllers
 
             if (!ModelState.IsValid)
                 return View(model);
-            bool result = userService.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword, userRepository);
+            bool result = userService.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
             if (result == true)
             {
                 ViewBag.SuccessfulMessage = "رمز با موفقیت تغییر کرد";

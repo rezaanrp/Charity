@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X0jQUncVeaySx2tfLYX/1NCf7G12CjoSc89g387BP36UiYVWbUb7mvtxa5BkF+1Lt9uc4BsflO5rsXSQsq4ONw==",
+  "dgSpecHash": "ftwJUViTYYBLh4Jk46zUEhDJOyWRXmHajOy8McVeFCXhxBBkZXuF5v5E4O90XnK0xXhe2NE3I26jlksYP65WKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\reza\\Source\\Repos\\Charity\\CharityTestCore\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

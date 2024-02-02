@@ -9,105 +9,123 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CharityTestCore
 build_property.RootNamespace = CharityTestCore
-build_property.ProjectDir = C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\CharityTestCore\
+build_property.ProjectDir = C:\Users\reza\Source\Repos\Charity\CharityTestCore\CharityTestCore\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\CharityTestCore
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\reza\Source\Repos\Charity\CharityTestCore\CharityTestCore
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Account/ChangePassword.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Account/Login.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/EPTDelete.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/EPTDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEVQVERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/Index.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/MBTI.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/MBTI.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXE1CVEkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/MBTIDelete.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/MBTIDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXE1CVElEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/EPTTest/AnswerEptQuestion.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVzZXJQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/EPTTest/AnswerEptQuestion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVBUVGVzdFxBbnN3ZXJFcHRRdWVzdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/EPTTest/RegisterEptQuestion.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/EPTTest/RegisterEptQuestion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVBUVGVzdFxSZWdpc3RlckVwdFF1ZXN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Home/Index.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Home/Privacy.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/MBTIQuestion/AnswerMBTIQuestion.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/MBTIQuestion/AnswerMBTIQuestion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUJUSVF1ZXN0aW9uXEFuc3dlck1CVElRdWVzdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/MBTIQuestion/Index.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/MBTIQuestion/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUJUSVF1ZXN0aW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/Error.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LayoutAdminSimple.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LayoutAdminSimple.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pblNpbXBsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LayoutTest.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LayoutTest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRUZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_MainLayout.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LayoutUserSimple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRVc2VyU2ltcGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_MainLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_MyLayout.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_MyLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NeUxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/User/Create.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/User/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/User/Index.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/_ViewImports.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/_ViewStart.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_Layout.cshtml]
+[C:/Users/reza/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-w1kc3zp7cw

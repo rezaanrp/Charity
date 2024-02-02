@@ -15,8 +15,15 @@
 
     </div>
     <form class="flex-w flex-c-m contact100-form validate-form p-t-55">
-        <button class="flex-c-m s1-txt3 size3 how-btn trans-04 where1" onclick="location.href='@Url.Action("RegisterEptQuestion", "EPTTest")';return false;">   شروع ثبت تست </button>
-        <button class="flex-c-m s1-txt3 size3 how-btn trans-04 where1" onclick="location.href='@Url.Action("Index", "Dashboard")';return false;">ورود به پنل مدیریت </button>
+       @if(ViewBag.user_role == "admin")
+       {
+            <button class="flex-c-m s1-txt3 size3 how-btn trans-04 where1" onclick="location.href='@Url.Action("Index", "Dashboard")';return false;">ورود به پنل مدیریت </button>
+        }
+        else
+        {
+            <button class="flex-c-m s1-txt3 size3 how-btn trans-04 where1" onclick="location.href='@Url.Action("UserProfile", "Dashboard")';return false;">ورود به پنل کاربری </button>
+
+        }
     </form>
 }
 

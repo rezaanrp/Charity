@@ -21,60 +21,7 @@
                 @ViewBag.ErrorMessage
             </div>
 
-            <ul>
-                <li class="list-group-item">
 
-                    <div class="row  form-group">
-                        <div class="col-sm-4">
-
-                            <label class="control-label">نام</label><div>
-                                @Html.TextBoxFor(m => m.Name, new {maxlength = 20 ,
-                        @class = "form-control" })
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-
-
-                            <label class="control-label">نام خانوادگی</label><div>
-                                @Html.TextBoxFor(x => x.Family, new { maxlength = 20 ,
-                        @class = "form-control" })
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-
-
-                            <label class="control-label">شماره تلفن همراه</label><div>
-                                @Html.TextBoxFor(x => x.MobileNumber, new { maxlength = 11,placeholder = "09xxxxxxxxxx",
-                        @class = "form-control"  })
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-
-                            <label>کد ملی</label><div>
-                                @Html.TextBoxFor(x => x.NationalCode, new { maxlength = 10 ,
-                        @class = "form-control" })
-                            </div>
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <label>سن</label><div>
-                                @Html.TextBoxFor(x => x.Age, new { maxlength = 2,
-                        @class = "form-control",
-                        @type = "number",
-                        @min = "10",
-                        @max = "100" })
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                        </div>
-                    </div>
-
-                </li>
-            </ul>
 
             <div class="w3-container w3-content " style="max-width:100%;margin-top:10px; margin-bottom:20px; direction:rtl;">
                 <div class="w3-row">
@@ -828,6 +775,10 @@
                                                                     </label>
                                                                 </section>
 
+                                                                <section class="question" style="display: none;   ">
+                                                                 <input type="submit" class="btn btn-success btn-lg" value="ثبت نهایی " />
+                                                       
+                                                                </section>
                                                             </section>
 
                                                         </div>
@@ -850,13 +801,7 @@
                     </div>
                 </div>
             </div>
-            <ul>
-                <li class="list-group-item">
-                    <input type="submit" class="btn btn-success btn-lg" value="ذخیره" />
-                    <input type="button" class="btn btn-danger btn-lg" value="انصراف" onclick="location.href='@Url.Action("Index", "Home")'" />
 
-                </li>
-            </ul>
         }
     </div>
 

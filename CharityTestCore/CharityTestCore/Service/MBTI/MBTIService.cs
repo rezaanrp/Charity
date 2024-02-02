@@ -8,14 +8,22 @@ namespace CharityTestCore.Service.MBTI
 {
     public class MBTIService : IMBTIService
     {
-        public MBTIQuestionListPersonModel MBTIPersonList(Guid? id, IMBTIRepository mBTIRepository)
+          private readonly IMBTIRepository mBTIRepository;
+
+        public MBTIService( IMBTIRepository mBTIRepository)
+        {
+
+            this.mBTIRepository = mBTIRepository;
+
+        }
+        public MBTIQuestionListPersonModel MBTIPersonList(Guid? id)
         {
             MBTIQuestionListPersonModel MBTIQuestionListPersonModel_ = new MBTIQuestionListPersonModel();
 
-            if (!mBTIRepository.MBTIQuestionList.Any())
-            {
-                new DAL.DataBase.Seed().SeedDataMBTI();
-            }
+            //if (!mBTIRepository.MBTIQuestionList.Any())
+            //{
+            //    new DAL.DataBase.Seed().SeedDataMBTI();
+            //}
 
             MBTIQuestionListPersonModel_.Persons = mBTIRepository.MBTIAnswerList.ToList();
 
@@ -54,7 +62,7 @@ namespace CharityTestCore.Service.MBTI
                 MBTIQuestionListPersonModel_.ResultTest6 = ReAnswerultTeAnswert6;
                 MBTIQuestionListPersonModel_.ResultTest7 = ReAnswerultTeAnswert7;
                 MBTIQuestionListPersonModel_.ResultTest8 = ReAnswerultTeAnswert8;
-                MBTIQuestionListPersonModel_.NameAndFamily = ep.Name + " " + ep.Family;
+                MBTIQuestionListPersonModel_.NameAndFamily = "";//ep.Name + " " + ep.Family;
                 if (ep_T != null)
                     MBTIQuestionListPersonModel_.ResultTestHtml = ep_T.Answer2;
 
@@ -67,12 +75,12 @@ namespace CharityTestCore.Service.MBTI
             return MBTIQuestionListPersonModel_;
 
         }
-        public MBTIAnswerList? MBTIPersonById(Guid? id, IMBTIRepository mBTIRepository)
+        public MBTIAnswerList? MBTIPersonById(Guid? id)
         {
             return mBTIRepository.MBTIAnswerList.FirstOrDefault(x => x.Id == id);
 
         }
-        public bool MBTIPersonDeleteById(Guid? ept, IMBTIRepository mBTIRepository)
+        public bool MBTIPersonDeleteById(Guid? ept)
         {
             try
             {
@@ -96,17 +104,13 @@ namespace CharityTestCore.Service.MBTI
             }
 
         }
-        public int AddMBTIQuestionList(string Name, string Family, string NationalCode, string MobileNumber, int? Age, byte Answer1, byte Answer2, byte Answer3, byte Answer4, byte Answer5, byte Answer6, byte Answer7, byte Answer8, byte Answer9, byte Answer10, byte Answer11, byte Answer12, byte Answer13, byte Answer14, byte Answer15, byte Answer16, byte Answer17, byte Answer18, byte Answer19, byte Answer20, byte Answer21, byte Answer22, byte Answer23, byte Answer24, byte Answer25, byte Answer26, byte Answer27, byte Answer28, byte Answer29, byte Answer30, byte Answer31, byte Answer32, byte Answer33, byte Answer34, byte Answer35, byte Answer36, byte Answer37, byte Answer38, byte Answer39, byte Answer40, byte Answer41, byte Answer42, byte Answer43, byte Answer44, byte Answer45, byte Answer46, byte Answer47, byte Answer48, byte Answer49, byte Answer50, byte Answer51, byte Answer52, byte Answer53, byte Answer54, byte Answer55, byte Answer56, byte Answer57, byte Answer58, byte Answer59, byte Answer60, byte Answer61, byte Answer62, byte Answer63, byte Answer64, byte Answer65, byte Answer66, byte Answer67, byte Answer68, byte Answer69, byte Answer70, byte Answer71, byte Answer72, byte Answer73, byte Answer74, byte Answer75, byte Answer76, byte Answer77, byte Answer78, byte Answer79, byte Answer80, IMBTIRepository mBTIRepository)
+        public int AddMBTIQuestionList(string UserId, byte Answer1, byte Answer2, byte Answer3, byte Answer4, byte Answer5, byte Answer6, byte Answer7, byte Answer8, byte Answer9, byte Answer10, byte Answer11, byte Answer12, byte Answer13, byte Answer14, byte Answer15, byte Answer16, byte Answer17, byte Answer18, byte Answer19, byte Answer20, byte Answer21, byte Answer22, byte Answer23, byte Answer24, byte Answer25, byte Answer26, byte Answer27, byte Answer28, byte Answer29, byte Answer30, byte Answer31, byte Answer32, byte Answer33, byte Answer34, byte Answer35, byte Answer36, byte Answer37, byte Answer38, byte Answer39, byte Answer40, byte Answer41, byte Answer42, byte Answer43, byte Answer44, byte Answer45, byte Answer46, byte Answer47, byte Answer48, byte Answer49, byte Answer50, byte Answer51, byte Answer52, byte Answer53, byte Answer54, byte Answer55, byte Answer56, byte Answer57, byte Answer58, byte Answer59, byte Answer60, byte Answer61, byte Answer62, byte Answer63, byte Answer64, byte Answer65, byte Answer66, byte Answer67, byte Answer68, byte Answer69, byte Answer70, byte Answer71, byte Answer72, byte Answer73, byte Answer74, byte Answer75, byte Answer76, byte Answer77, byte Answer78, byte Answer79, byte Answer80)
         {
             try
             {
                 var MBTIAnswerList_ = new MBTIAnswerList
                 {
-                    Name = Name,
-                    Family = Family,
-                    Age = Age,
-                    NationalCode = NationalCode,
-                    MobileNumber = MobileNumber,
+            UserId = UserId,
                     RegisterDate = DateTime.Now,
                     Answer1 = Answer1,
                     Answer2 = Answer2,

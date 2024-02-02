@@ -9,12 +9,10 @@ namespace CharityTestCore.Controllers
 {
     public class UserController : Controller
     {
-        IUserRepository _userRepository;
         IUserService _userService;
-        public UserController(IUserService userService, IUserRepository userRepository)
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _userRepository = userRepository;
         }
         public IActionResult Index()
         {
@@ -40,9 +38,9 @@ namespace CharityTestCore.Controllers
                 userListModel.Name,
                 userListModel.Family,
                 "user",
-                userListModel.NationalNumber,userListModel.MobileNumber, _userRepository
+                userListModel.NationalNumber,userListModel.MobileNumber
                );
-            return View();
+            return RedirectToAction("Index","Home");
         }
     }
 }

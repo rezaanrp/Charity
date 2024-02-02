@@ -14,15 +14,7 @@ namespace DAL.DataBase
         [Key]
         public Guid Id { get; set; }
         [MaxLength(60)]
-        public string Name { get; set; }
-        [MaxLength(60)]
-        public string Family { get; set; }
-        [MaxLength(10)]
-        public string NationalCode { get; set; }
-        [MaxLength(11)]
-        public string MobileNumber { get; set; }
-        [AllowNull]
-        public int? Age { get; set; }
+        public string UserId { get; set; }
         [AllowNull]
         public byte Answer1 { get; set; }
         [AllowNull]

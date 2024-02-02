@@ -1,79 +1,70 @@
 ﻿@model LoginModel
 @{
-    Layout = null;
+	Layout = "~/Views/Shared/_LoginLayout.cshtml";
+
 }
+<div class="limiter">
+	<div class="container-login100">
+		<div class="wrap-login100">
 
-<!DOCTYPE html>
+			<!-- input form -->
+			<form id="account" method="post" class="login100-form validate-form">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<html lang="en">
-<head>
-	<title>صفحه ورود</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="css/Login/style.css">
-<style>
-		body {
-			font-family: Tahoma, serif;
-		}
-</style>
-</head>
-<body>
-	<section class="ftco-section">
-		<div class="container">
+				<span class="login100-form-title">ورود به ناحیه کاربری</span>
 
-			<div class="row justify-content-center">
-				<div class="col-md-7 col-lg-5">
-					<div class="wrap">
-						<div class="img" style="background-image: url(img/bg-1.jpg);"></div>
-						<div class="login-wrap p-4 p-md-5">
-							<div class="d-flex">
-								<div class="w-100">
-									<h3 style="font-family:Tahoma"  class="mb-4">
-										فرم زیر را تکمیل کنید 
+				<!-- enter email-->
+				<div class="wrap-input100 validate-input" data-validate=" نام کاربری  خود را وارد کنید!">
+					<input asp-for="UserName" class="input100" autocomplete="username" aria-required="true" placeholder="نام کاربری ">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+					</span>
+					<span asp-for="UserName" class="text-danger"></span>
+				</div>
+				<!-- / enter email -->
+				<!-- enter password-->
+				<div class="wrap-input100 validate-input" data-validate=" رمز عبور را وارد کنید!">
+					<input asp-for="Password" class="input100" autocomplete="current-password" aria-required="true" placeholder="رمز عبور">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-lock" aria-hidden="true"></i>
+					</span>
+					<span asp-for="Password" class="text-danger"></span>
+				</div>
+				<!-- / enter password-->
+				<!-- login button-->
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn">ورود</button>
 
-									</h3>
-								</div>
-
-							</div>
-							@using (Html.BeginForm("Login", "Account", FormMethod.Post, null))
-							{
-								<div class="form-group mt-3">
-									<input asp-for="UserName" type="text" class="form-control" required>
-									<label class="form-control-placeholder" for="username">نام کاربری</label>
-								</div>
-								<div class="form-group">
-									<input asp-for="Password" id="password-field" type="password" class="form-control" required>
-									<label class="form-control-placeholder" for="password">پسورد</label>
-									<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-								</div>
-								<div class="form-group">
-									<button type="submit" class="form-control btn btn-primary rounded submit px-3">ورود</button>
-								</div>
-								<div class="form-group d-md-flex">
-									<div class="w-50 text-left">
-										<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-										<label for="vehicle1"> من را به خاطر بسپار</label><br>
-									</div>
-								</div>
-								<a asp-controller="User" asp-action="Create">ثبت نام</a>
-								<div style="margin-top:10px;color:red" class="form-group">
-									@Html.ValidationSummary()
-									@ViewBag.ErrorMessage
-								</div>
-							}
-		
-						</div>
+				</div>
+				<!-- / login button -->
+				<!-- restore password -->
+				<!-- / restore password-->
+				<!-- register-->
+				<div class="text-center p-t-50">
+					<div class="checkbox">
+						<a class="btn btn-outline-info btn-sm btn-block" asp-controller="User" asp-action="Create">ثبت نام</a>
 					</div>
 				</div>
+				<!-- / register-->
+				<div style="margin-top:10px;color:red" class="form-group">
+					@Html.ValidationSummary()
+					@ViewBag.ErrorMessage
+				</div>
+			</form>
+			<!-- / input form -->
+			<!-- form image -->
+			<div class="login100-pic js-tilt" data-tilt>
+				<img src="~/loginv4/pics/logo.png" alt="IMG">
 			</div>
+			<!-- / form image -->
+
 		</div>
-	</section>
+	</div>
+</div>
 
-	<script src="js/Login/jquery.min.js"></script>
-	<script src="js/Login/popper.js"></script>
-	<script src="js/Login/bootstrap.min.js"></script>
-	<script src="js/Login/main.js"></script>
+			
+		
 
-</body>
-</html>
 

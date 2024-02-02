@@ -24,98 +24,7 @@
                 @ViewBag.ErrorMessage
             </div>
 
-            <ul>
-                <li class="list-group-item">
 
-                    <div class="row  form-group">
-                        <div class="col-sm-4">
-
-                            <label class="control-label">نام</label><div>
-                                @Html.TextBoxFor(x => x.Name, new {maxlength = 20 ,
-                        @class = "form-control" })
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-
-
-                            <label class="control-label">نام خانوادگی</label><div>
-                                @Html.TextBoxFor(x => x.Family, new { maxlength = 20 ,
-                        @class = "form-control" })
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-
-
-                            <label class="control-label">شماره تلفن همراه</label><div>
-                                @Html.TextBoxFor(x => x.MobileNumber, new { maxlength = 11,placeholder = "09xxxxxxxxxx",
-                        @class = "form-control"  })
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-sm-4">
-
-                            <label>کد ملی</label><div>
-                                @Html.TextBoxFor(x => x.NationalCode, new { maxlength = 10 ,
-                        @class = "form-control" })
-                            </div>
-
-                        </div>
-                        <div class="col-sm-4">
-
-                            <label>سن</label><div>
-                                @Html.TextBoxFor(x => x.Age, new { maxlength = 2,
-                        @class = "form-control",
-                        @type = "number",
-                        @min = "10",
-                        @max = "100" })
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                        </div>
-                    </div>
-
-                </li>
-                <li class="list-group-item">
-
-                    <label> آیا دارای مهارت ویا تخصص معین هستین؟ </label>
-                    <p>
-
-                        @Html.DropDownListFor(x => x.HaveSkill, new[] {
-                new  SelectListItem() { Text ="بله" ,Value = bool.TrueString},
-                new  SelectListItem() { Text ="خیر" ,Value = bool.TrueString}
-                }, "یک گزینه را انتخاب کنید", new {
-                @class = "form-control " })
-                    </p>
-                </li>
-                <li class="list-group-item">
-
-                    <label> آیا قبلا اقدام به راه اندازی کسب و کاری کرده اید یا در راه اندازی کسب و کاری همکاری داشته اید؟</label>
-                    <p>
-
-                        @Html.DropDownListFor(x => x.BeforeYouHaveJob, new[] {
-                new  SelectListItem() { Text ="بله" ,Value = bool.TrueString},
-                new  SelectListItem() { Text ="خیر" ,Value = bool.TrueString}
-                }, "یک گزینه را انتخاب کنید", new {
-                @class = "form-control" })
-                    </p>
-                </li>
-                <li class="list-group-item">
-
-                    <label>  آیا در حال حاضر تمایلی به راه اندازی کسب و کار دارید؟</label>
-                    <p>
-
-                        @Html.DropDownListFor(x => x.DoYouWantHaveJob, new[] {
-                new  SelectListItem() { Text ="بله" ,Value = bool.TrueString},
-                new  SelectListItem() { Text ="خیر" ,Value = bool.TrueString}
-                }, "یک گزینه را انتخاب کنید", new {
-                @class = "form-control" })
-
-                    </p>
-                </li>
-
-            </ul>
 
 
             <div class="w3-container w3-content " style="max-width:100%;margin-top:10px; margin-bottom:20px; direction:rtl;">
@@ -142,6 +51,63 @@
 
                                                     <div class="question-pool borderme w3-padding">
                                                         <section class="quiz">
+
+                                                            <section class="question" style="display: none;   ">
+                                                                 <div class="row">
+                                                                     <div class="col-12">
+                                                                        <label> آیا دارای مهارت ویا تخصص معین هستین؟ </label>
+                                                                     </div>
+                                                                 </div>
+                                                                <div class="row">
+                                                                     <div class="col-5">
+                                                                             @Html.DropDownListFor(x => x.HaveSkill, new[] {
+                                                                            new  SelectListItem() { Text ="بله" ,Value = bool.TrueString},
+                                                                            new  SelectListItem() { Text ="خیر" ,Value = bool.TrueString}
+                                                                            }, "یک گزینه را انتخاب کنید", new {
+                                                                            @class = "form-control " })
+                                                                     </div>
+                                                                 </div>
+                                                          
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <label> آیا قبلا اقدام به راه اندازی کسب و کاری کرده اید یا در راه اندازی کسب و کاری همکاری داشته اید؟</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                       @Html.DropDownListFor(x => x.BeforeYouHaveJob, new[] {
+                                                                        new  SelectListItem() { Text ="بله" ,Value = bool.TrueString},
+                                                                        new  SelectListItem() { Text ="خیر" ,Value = bool.TrueString}
+                                                                        }, "یک گزینه را انتخاب کنید", new {
+                                                                        @class = "form-control" })
+                                                                    </div>
+                                                                </div>
+
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <label>  آیا در حال حاضر تمایلی به راه اندازی کسب و کار دارید؟</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        @Html.DropDownListFor(x => x.DoYouWantHaveJob, new[] {
+                                                                new  SelectListItem() { Text ="بله" ,Value = bool.TrueString},
+                                                                new  SelectListItem() { Text ="خیر" ,Value = bool.TrueString}
+                                                                }, "یک گزینه را انتخاب کنید", new
+                                                                                                                        {
+                                                                                                                            @class = "form-control"
+                                                                                                                        })
+                                                                    </div>
+                                                                </div>
+
+                                                            </section>
 
                                                             <section class="question" style="display: none;   ">
                                                                 <section class="text">
@@ -1754,6 +1720,9 @@
                                                                 </label>
                                                             </section>
 
+                                                            <section class="question" style="display: none;   ">
+                                                                        <input type="submit" class="btn btn-success btn-lg" value="ذخیره نتیجه آزمون" />
+                                                            </section>
 
                                                         </section>
                                                     </div>
@@ -1775,13 +1744,7 @@
                     </div>
                 </div>
             </div>
-            <ul>
-                <li class="list-group-item">
-                    <input type="submit" class="btn btn-success btn-lg" value="ذخیره" />
-                    <input type="submit" class="btn btn-danger btn-lg" value="انصراف" onclick="location.href='@Url.Action("Index", "Home")'" />
 
-                </li>
-            </ul>
         }
     </div>
 

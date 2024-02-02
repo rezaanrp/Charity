@@ -12,20 +12,10 @@ namespace DAL.DataBase
     {
         [Key]
         public Guid Id { get; set; }
-        [MaxLength(60)]
-        public string Name { get; set; }
-        [MaxLength(60)]
-        public string Family { get; set; }
-        [MaxLength(10)]
-
-        public string NationalCode { get; set; }
-        [MaxLength(11)]
-        public string MobileNumber { get; set; }
-        public int? Age { get; set; }
+        public string UserId_ {  get; set; }
         public bool? HaveSkill { get; set; }
         public bool? BeforeYouHaveJob { get; set; }
         public bool? DoYouWantHaveJob { get; set; }
-
         public byte S01 { get; set; }
         public byte S02 { get; set; }
         public byte S03 { get; set; }
@@ -122,10 +112,7 @@ namespace DAL.DataBase
         public byte S94 { get; set; }
         public byte S95 { get; set; }
 
-        public string FullName
-        {
-            get { return Name + " " + Family; }
-        }
+
       
         public string Result
         {

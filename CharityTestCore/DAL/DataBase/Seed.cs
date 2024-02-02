@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +11,19 @@ namespace DAL.DataBase
 {
     public class Seed
     {
+        private readonly ModelBuilder _modelBuilder;
+
+        public Seed(ModelBuilder modelBuilder)
+        {
+            _modelBuilder = modelBuilder;
+        }
+        public void seeduser()
+        {
+            _modelBuilder.Entity<User>().HasData(
+                                   new User{Id = new Guid("bd7cb230-6834-4869-8b9a-8662558a7ef2") , Name = "مدیر",Family = "سیستم",NationalNumber = "1234567980",MobileNumber="09130000000",HashPassword = "1hO2KL3nZdudecMmm3hT5sh7m7Y9P9R030JzQxRlpkg=", Role = "admin",UserName = "p_admin" }
+                );
+
+        }
         public void SeedData()
         {
             ParkerCharityContext context = new ParkerCharityContext();

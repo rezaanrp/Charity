@@ -7,14 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CharityTestCore.Controllers
 {
-    public class EPTTestController : Controller
+    public class EPTTestController : BaseController
     {
         protected IEPTService eptservice;
-        protected IEPTRepository eptrepository;
-        public EPTTestController(IEPTService _eptservice, IEPTRepository _eptrepository)
+        public EPTTestController(IEPTService _eptservice)
         {
             eptservice = _eptservice;
-            eptrepository = _eptrepository;
         }
         // GET: EPTTest
         public IActionResult Index()
@@ -26,18 +24,20 @@ namespace CharityTestCore.Controllers
         public IActionResult RegisterEptQuestion()
         {
             ViewBag.Title = "آزمون  ";
-
+           
             //ViewBag.EPTQuiz = new CharityTestCoreService().EptQuizTextList();
             return View(new EPTQuestion());
         }
         [HttpPost]
         public IActionResult RegisterEptQuestion(EPTQuestion ePTQuestion)
         {
-            var result = 0;
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                result = eptservice.AddEptQuestion(ePTQuestion.Name, ePTQuestion.Family, ePTQuestion.NationalCode,
-                ePTQuestion.MobileNumber, ePTQuestion.Age, ePTQuestion.HaveSkill, ePTQuestion.BeforeYouHaveJob, ePTQuestion.DoYouWantHaveJob,
+                return View();
+            }
+            var result = 0;
+      
+            result = eptservice.AddEptQuestion(OnGetUserId(), ePTQuestion.HaveSkill, ePTQuestion.BeforeYouHaveJob, ePTQuestion.DoYouWantHaveJob,
                 ePTQuestion.S01,
                 ePTQuestion.S02,
                 ePTQuestion.S03,
@@ -133,7 +133,7 @@ namespace CharityTestCore.Controllers
                 ePTQuestion.S93,
                 ePTQuestion.S94,
                 ePTQuestion.S95
-               , eptrepository);
+               );
 
                 if (result == -1)
                 {
@@ -143,9 +143,7 @@ namespace CharityTestCore.Controllers
                 else
                     ///ePTQuestion.NationalCode;
                     return View("AnswerEptQuestion");
-            }
-            else
-                return View();
+    
 
         }
         public IActionResult AnswerEptQuestion()

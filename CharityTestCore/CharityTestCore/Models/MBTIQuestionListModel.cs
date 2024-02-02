@@ -9,24 +9,6 @@ namespace CharityTestCore.Models
     {
         [Key]
         public Guid Id { get; set; }
-        [Required(ErrorMessage = "لطفا نام  را وارد کنید")]
-        [Display(Name = "نام ")]
-        public string Name { get; set; }
-        [Required(ErrorMessage = "لطفا نام خانوادگی را وارد کنید")]
-        [Display(Name = "نام خانوادگی ")]
-        public string Family { get; set; }
-
-        [Required(ErrorMessage = "لطفا کد ملی را وارد کنید")]
-        [RegularExpression(@"^([0-9]){10}$", ErrorMessage = "کد ملی صحیح نمی باشد")]
-        [Display(Name = "کد ملی  ")]
-        public string NationalCode { get; set; }
-        [Required(ErrorMessage = "لطفا شماره موبایل را وارد کنید")]
-        [RegularExpression(@"09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}", ErrorMessage = "شماره موبایل صحیح نمی باشد")]
-        [Display(Name = "شماره موبایل ")]
-        public string MobileNumber { get; set; }
-        [Required(ErrorMessage = "لطفا سن را وارد کنید")]
-        [Display(Name = "سن")]
-        public int Age { get; set; }
         [AllowNull]
         public byte Answer1 { get; set; }
         [AllowNull]
