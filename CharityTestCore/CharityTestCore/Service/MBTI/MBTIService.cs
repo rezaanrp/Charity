@@ -27,7 +27,7 @@ namespace CharityTestCore.Service.MBTI
 
             MBTIQuestionListPersonModel_.Persons = mBTIRepository.MBTIAnswerList.ToList();
 
-            MBTIAnswerList? ep = mBTIRepository.MBTIAnswerList.FirstOrDefault(x => x.Id == id);
+            MBTIAnswerList? ep = mBTIRepository.MBTIAnswerList.FirstOrDefault(x => x.UserId == id.ToString());
             if (ep != null)
             {
                 int ReAnswerultTeAnswert1 = ep.Answer1 + ep.Answer2 + ep.Answer3 + ep.Answer4 + ep.Answer5 + ep.Answer6 + ep.Answer7 + ep.Answer8 + ep.Answer9 + ep.Answer10;

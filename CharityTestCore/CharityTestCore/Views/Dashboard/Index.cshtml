@@ -1,4 +1,220 @@
-﻿@model CharityTestCore.Models.EPTListPersonModel
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminSimple.cshtml";
+
+}
+@section ProfileName
+{
+
+}
+@section Body {
+
+    <div class="row">
+
+
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">لیست فایل </h3>
+                </div>
+                <div class="card-body">
+                    <table id="users_table122" class="table table-bordered table-striped dataTable" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th> کد </th>
+                                <th>نام</th>
+                                <th>نام خانوادگی</th>
+                                <th> کد ملی </th>
+                                <th>شماره تماس </th>
+                                <th width="180px">عملیات</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+}
+@section script{
+    <script>
+        var table;
+        var table2;
+
+        $(document).ready(function () {
+            load_data2();
+        });
+        $('body').on('click', '._quiez1', function () {
+            var data = table2.row($(this).parents('tr')).data();
+            window.location.href = "/Dashboard/Mbti?id=" + data.id;
+        });
+        $('body').on('click', '._quiez2', function () {
+            var data = table2.row($(this).parents('tr')).data();
+            window.location.href = "/Dashboard/Ept?id=" + data.id;
+        });
+        $('body').on('click', '._service', function () {
+            var data = table2.row($(this).parents('tr')).data();
+            window.location.href = "/FilingUserDetail/VisitService?id=" + data.id;
+        });
+        $('body').on('click', '._filing', function () {
+            var data = table2.row($(this).parents('tr')).data();
+            window.location.href = "/FilingUserDetail/FilingOperation?id=" + data.id;
+        });
+        $('body').on('click', '._edit2', function () {
+            var data = table2.row($(this).parents('tr')).data();
+            window.location.href = "/FilingUserDetail/Edit?id=" + data.id;
+        });
+        $('body').on('click', '._Add', function () {
+            var data = table.row($(this).parents('tr')).data();
+            window.location.href = "/FilingUserDetail/Insert?id=" + data.id;
+        });
+        $('body').on('click', '._details', function () {
+            var data = table.row($(this).parents('tr')).data();
+            // window.location.href = "/FilingUser/Insert?id=" + data.id;
+            load_data2(data.id);
+        });
+        $('body #users_table1').on('click', '._delete', function () {
+            var data = table.row($(this).parents('tr')).data();
+
+            Swal.fire({
+                title: 'تایید عملیات',
+                text: 'آیا از حذف آیتم انتخاب شده اطمینان دارید ؟',
+                icon: "warning",
+                showCancelButton: !0,
+                confirmButtonText: "تایید",
+                cancelButtonText: 'انصراف',
+                customClass: {
+                    confirmButton: "btn btn-danger",
+                    cancelButton: "btn btn-outline-danger ms-1"
+                },
+                buttonsStyling: !1
+            }).then((function (t) {
+                if (t.isConfirmed) {
+                    _delete(data.id);
+
+                } else {
+
+                }
+            }))
+        });
+        function _delete(id) {
+
+            $.ajax({
+                url: '/FilingUser/ArchiveForm?id=' + id,
+                datatype: 'json',
+                data: JSON.stringify(id),
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                success: function (response) {
+                    if (response.result) {
+                        toastr.success(response.msg, "تایید", {
+                            closeButton: !0,
+                            tapToDismiss: !1,
+                            showMethod: "slideDown",
+                            hideMethod: "slideUp",
+                            progressBar: !0,
+                            timeOut: 50e3,
+                            rtl: "rtl"
+                        })
+
+                    }
+                    else if (!response.result) {
+                        toastr.error(response.msg, "خطا", {
+                            closeButton: !0,
+                            tapToDismiss: !1,
+                            showMethod: "slideDown",
+                            hideMethod: "slideUp",
+                            progressBar: !0,
+                            timeOut: 50e3,
+                            rtl: "rtl"
+                        })
+                    }
+                    table.ajax.reload();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('jqXHR:');
+                    console.log(jqXHR);
+                    console.log('textStatus:');
+                    console.log(textStatus);
+                    console.log('errorThrown:');
+                    console.log(errorThrown);
+                }
+
+            });
+            Reload_data();
+        }
+        function Reload_data() {
+            location.reload();
+
+        }
+
+        function load_data2(id) {
+
+            table2 = $('#users_table122').DataTable({
+                //scrollY: '400px',
+                "scrollX": true,
+                destroy: true,
+                paging: false,
+                ajax: {
+                    url: "/Dashboard/load_data_users2?id=" + id,
+                    datatype: 'json',
+                    type: 'POST',
+                },
+                "language": {
+                    "paginate": {
+                        "previous": "قبلی",
+                        "first": "صفحه اول",
+                        "next": "بعدی",
+                        "last": "آخرین صفحه"
+                    },
+                    "decimal": "",
+                    "emptyTable": "داده ای درجدول موجود نمی باشد",
+                    "info": "نمایش _START_ تا _END_ از _TOTAL_ رکورد",
+                    "infoEmpty": "نمایش 0 تا 0 از 0 رکوردها",
+                    "infoFiltered": "(filtered from _MAX_ total entries)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "نمایش _MENU_ رکورد",
+                    "loadingRecords": "...درحال بارگذاری",
+                    "processing": "درحال پردازش...",
+                    "search": "جستجو:",
+                    "zeroRecords": "هیچ رکوردی یافت نشد",
+                    "sLengthMenu": "نمایش _MENU_ رکورد",
+                },
+                columns: [
+                    { data: "id", name: "id", "visible": false },
+                    { data: "name", name: "Name" },
+                    { data: "family", name: "Family" },
+                    { data: "nationalNumber", name: "NationalNumber" },
+                    { data: "mobileNumber", name: "MobileNumber" },
+                    { data: null, "searchable": false, orderable: false },
+                ],
+              
+                columnDefs: [
+
+                    {
+                        data: null,
+                        defaultContent:
+                            '<button type="button" class="btn btn-icon btn-outline-primary _edit" style="margin-left: 2px;" title="ویرایش"><i class="fa fa-pencil"></i></button>'
+                            + '<button type="button" class="btn btn-icon btn-outline-primary _delete" title="حذف کاربر"><i class="fa fa-trash"></i></button>'
+                            + '<button type="button" class="btn btn-icon btn-outline-primary _quiez1" title="آزمون شخصیت "><i class="fa fa-list"></i></button>'
+                            + '<button type="button" class="btn btn-icon btn-outline-primary _quiez2" title="آزمون استعداد یابی"><i class="fa fa-list"></i></button>',
+                        targets: -1
+                    }
+                ],
+                processing: true,
+                serverSide: true,
+                paging: true,
+                filter: true,
+                ordering: false,
+
+            });
+        }
+
+    </script>
+}
+@* @model CharityTestCore.Models.EPTListPersonModel
 
 @{
     ViewBag.Title = "Index";
@@ -259,4 +475,4 @@
             });
         });
     </script>
-}
+} *@

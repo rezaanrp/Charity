@@ -24,13 +24,58 @@ namespace CharityTestCore.Controllers
             _userService = userService;
         }
         [Authorize(Roles ="admin")]
-        public IActionResult Index(Guid? id)
+        public IActionResult Index()
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
 
-            return View(eptservice.EptPersonList(id));
+            return View();
         }
-        public IActionResult UserProfile(Guid? id)
+		[HttpPost]
+		public JsonResult load_data_users2(int id)
+		{
+			int totalRecord = 0;
+			int filterRecord = 0;
+
+			var draw = Request.Form["draw"].FirstOrDefault();
+
+
+			var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+
+
+			var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+
+
+			var searchValue = Request.Form["search[value]"].FirstOrDefault();
+
+
+			int pageSize = Convert.ToInt32(Request.Form["length"].FirstOrDefault() ?? "0");
+
+
+			int skip = Convert.ToInt32(Request.Form["start"].FirstOrDefault() ?? "0");
+
+
+
+			var data = _userService.GetAllUser();
+
+
+			totalRecord = data.Count();
+
+			if (!string.IsNullOrEmpty(searchValue))
+			{
+				data = data.Where(y => y.NationalNumber.Contains(searchValue)).ToList();
+
+			}
+
+			filterRecord = data.Count();
+
+			var empList = data.Skip(skip).Take(pageSize).ToList();
+
+			var returnObj = new { draw = draw, recordsTotal = totalRecord, recordsFiltered = filterRecord, data = empList };
+			return Json(returnObj);
+
+		}
+
+		public IActionResult UserProfile(Guid? id)
         {
 
             string idd = OnGetUserId();
@@ -71,7 +116,13 @@ namespace CharityTestCore.Controllers
 
             return View(mBTIService.MBTIPersonList(id   ));
         }
-       
+
+        public IActionResult Ept(Guid? id)
+        {
+            ViewBag.UsserNameAndFamily = "مدیر سیستم ";
+
+            return View(eptservice.EptPersonList(id));
+        }
         public IActionResult MBTIDelete(Guid? id)
         {
 

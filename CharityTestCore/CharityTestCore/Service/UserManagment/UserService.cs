@@ -68,6 +68,24 @@ namespace CharityTestCore.Service.UserManagment
             }
 
         }
+        public List<UserProfileModel>  GetAllUser()
+        {
+             var m = userRepository.usersList().ToList();
+            List<UserProfileModel> mm = new List<UserProfileModel>();
+            for (int i = 0; i < m.Count; i++)
+            {
+                UserProfileModel um = new UserProfileModel();
+                um.Id = m[i].Id;
+                um.Name = m[i].Name;
+                um.Family = m[i].Family;
+                um.Role = m[i].Role;
+                um.MobileNumber = m[i].MobileNumber;
+                um.NationalNumber = m[i].NationalNumber;    
+                um.UserName = m[i].UserName;
+                mm.Add(um);
+			}
+            return mm;
+		}
 
        public  UserProfileModel? GetProfile(string userid)
         {

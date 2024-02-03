@@ -146,7 +146,7 @@ namespace CharityTestCore.Service.EPT
 
             EPTListPersonModel_.Persons = repository.EptQuestion.OrderByDescending(x => x.Score).ToList();
 
-            EptQuestionList? ep = repository.EptQuestion.FirstOrDefault(x => x.Id == id);
+            EptQuestionList? ep = repository.EptQuestion.FirstOrDefault(x => x.UserId_ == id.ToString());
             if (ep != null)
             {
                 float ResultTest1 = ep.S01 + ep.S02 + ep.S03 + ep.S04 + ep.S05 + ep.S06 + ep.S07 + ep.S08 + ep.S09 + ep.S10 + ep.S11 + ep.S12 + ep.S13 + ep.S14 + ep.S15 + ep.S16 + ep.S17 + ep.S18;

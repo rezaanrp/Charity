@@ -6,9 +6,9 @@ namespace CharityTestCore.Repository.UserManagment
     {
         private ParkerCharityContext context = new ParkerCharityContext();
 
-        public List<User> usersList()
+        public IQueryable<User> usersList()
         {
-            return context.Users.ToList();
+            return context.Users.AsQueryable().Where(x =>x.Role == "user");
         }
         public void AddUsersList(User item)
         {

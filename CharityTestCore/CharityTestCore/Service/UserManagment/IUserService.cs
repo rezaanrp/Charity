@@ -11,6 +11,6 @@ namespace CharityTestCore.Service.UserManagment
         User? Authenticate(string username, string password );
         Guid? AddUser(string username, string password, string name, string family, string role, string nationalcode,string mobile);
         UserProfileModel? GetProfile(string username);
-
-    }
+		 List<UserProfileModel> GetAllUser();
+	}
 }
