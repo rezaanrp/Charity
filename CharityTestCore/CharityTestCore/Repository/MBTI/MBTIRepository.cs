@@ -22,7 +22,13 @@ namespace CharityTestCore.Repository.MBTI
         }
         public void DelMBTIQuestion(MBTIAnswerList item)
         {
-            context.MBTIAnswerList.Remove(item);
+            var t = context.MBTIAnswerList.Find(item.Id);
+            if (t != null)
+            {
+              t.IsDelete = true;
+            }
+            context.SaveChanges();
+
         }
         public void SaveChanges()
         {

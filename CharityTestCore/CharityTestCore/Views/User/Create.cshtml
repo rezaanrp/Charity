@@ -14,8 +14,12 @@
 }
 @section Body{
 
-
+	<div style="margin-top:10px;color:red" class="form-group">
+		@Html.ValidationSummary()
+		@ViewBag.ErrorMessage
+	</div>
 	<h4>فرم ثبت نام  </h4>
+	<h4>  </h4>
 	<hr />
 
 	<form asp-action="Create">

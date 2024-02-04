@@ -11,23 +11,69 @@
         @User.Identity.Name
 }
 @section Body{
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+                <span class="info-box-icon bg-info elevation-1"><i class="fa fa-user"></i></span>
 
+                <div class="info-box-content">
+                    <span class="info-box-text"> نام شخص</span>
+                    <span class="info-box-text"> @Model.NameAndFamily</span>
+            
+                    </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+                <span class="info-box-icon bg-danger elevation-1"></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">تیپ شخصیت</span>
+                    <span class="info-box-number">
+                        @if (@Model.NameAndFamily != null)
+                        {
+                           @Model.ResultTestTotal
+                        }
+                    </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <!-- fix for small devices only -->
+        <div class="clearfix hidden-md-up"></div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+
+                <div class="info-box-content">
+                    <span class="info-box-text">  </span>
+                   
+
+                 
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+          
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+    </div>
     @if (Model.ResultTestTotal != "$$")
     {
-        <div class="info-box mb-3 bg-info">
-            <span class="info-box-icon"><i class="fa fa-tag"></i></span>
 
-            <div class="info-box-content">
-                <span class="info-box-text"> @Model.NameAndFamily</span>
-                <span class="info-box-number"> 
-                    @if (@Model.NameAndFamily != null)
-                    {
-                        <h3 >@Model.ResultTestTotal</h3>
-                    }
-                    </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
         <div class="row">
             <div class="col-md-8">
                 <div class="card">

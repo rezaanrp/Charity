@@ -13,20 +13,63 @@
 
 }
 @section Body{
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+                <span class="info-box-icon bg-info elevation-1"><i class="fa fa-gear"></i></span>
 
+                <div class="info-box-content">
+                    <span class="info-box-text"> نام شخص</span>
+                    <span class="info-box-text"> @ViewBag.FullName</span>
+
+                    </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+                <span class="info-box-icon bg-danger elevation-1"></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text"> </span>
+                    <span class="info-box-number">
+                        @if (@Model.ResultTestText != null)
+                        {
+                            @Model.ResultTestText
+                        }
+                    </span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <!-- fix for small devices only -->
+        <div class="clearfix hidden-md-up"></div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+    </div>
     @if (Model.ResultTestText != "$$")
     {
-        <div class="info-box mb-3 bg-info">
-            <span class="info-box-icon"><i class="fa fa-tag"></i></span>
 
-            <div class="info-box-content">
-                <span class="info-box-text"> </span>
-                <span class="info-box-number">
-                    <h3>@Model.ResultTestText</h3>
-                </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
+
+
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
@@ -106,12 +149,6 @@
     <script src="../../plugins/flot/jquery.flot.categories.min.js"></script>
     <!-- Page script -->
     <!---------------------------------------------------------------->
-
-
-
-
-
-
     <script>
         $(function () {
             /*

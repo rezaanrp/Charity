@@ -15,7 +15,7 @@
         <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">لیست فایل </h3>
+                    <h3 class="card-title">لیست متقاضی </h3>
                 </div>
                 <div class="card-body">
                     <table id="users_table122" class="table table-bordered table-striped dataTable" style="width:100%;">
@@ -26,7 +26,7 @@
                                 <th>نام خانوادگی</th>
                                 <th> کد ملی </th>
                                 <th>شماره تماس </th>
-                                <th width="180px">عملیات</th>
+                                <th width="220px">عملیات</th>
                             </tr>
                         </thead>
                     </table>
@@ -38,10 +38,11 @@
     </div>
 }
 @section script{
+    <link href="~/apl/swat/sweetalert2.min.css" rel="stylesheet" />
+	<script src="~/apl/swat/sweetalert2.all.min.js"></script>
+	
     <script>
-        var table;
         var table2;
-
         $(document).ready(function () {
             load_data2();
         });
@@ -49,33 +50,23 @@
             var data = table2.row($(this).parents('tr')).data();
             window.location.href = "/Dashboard/Mbti?id=" + data.id;
         });
+        $('body').on('click', '._edit', function () {
+            var data = table2.row($(this).parents('tr')).data();
+            window.location.href = "/user/edit?id=" + data.id;
+        });
         $('body').on('click', '._quiez2', function () {
             var data = table2.row($(this).parents('tr')).data();
             window.location.href = "/Dashboard/Ept?id=" + data.id;
         });
-        $('body').on('click', '._service', function () {
+        $('body').on('click', '._delete', function () {
+        
             var data = table2.row($(this).parents('tr')).data();
-            window.location.href = "/FilingUserDetail/VisitService?id=" + data.id;
-        });
-        $('body').on('click', '._filing', function () {
-            var data = table2.row($(this).parents('tr')).data();
-            window.location.href = "/FilingUserDetail/FilingOperation?id=" + data.id;
-        });
-        $('body').on('click', '._edit2', function () {
-            var data = table2.row($(this).parents('tr')).data();
-            window.location.href = "/FilingUserDetail/Edit?id=" + data.id;
-        });
-        $('body').on('click', '._Add', function () {
-            var data = table.row($(this).parents('tr')).data();
-            window.location.href = "/FilingUserDetail/Insert?id=" + data.id;
-        });
-        $('body').on('click', '._details', function () {
-            var data = table.row($(this).parents('tr')).data();
             // window.location.href = "/FilingUser/Insert?id=" + data.id;
             load_data2(data.id);
         });
-        $('body #users_table1').on('click', '._delete', function () {
-            var data = table.row($(this).parents('tr')).data();
+        $('body #users_table122').on('click', '._deletembti', function () {
+            var data = table2.row($(this).parents('tr')).data();
+           
 
             Swal.fire({
                 title: 'تایید عملیات',
@@ -91,17 +82,88 @@
                 buttonsStyling: !1
             }).then((function (t) {
                 if (t.isConfirmed) {
-                    _delete(data.id);
+                    _deleteMbti(data.id);
 
                 } else {
 
                 }
             }))
         });
-        function _delete(id) {
+        $('body #users_table122').on('click', '._deleteept', function () {
+            var data = table2.row($(this).parents('tr')).data();
+
+
+            Swal.fire({
+                title: 'تایید عملیات',
+                text: 'آیا از حذف آیتم انتخاب شده اطمینان دارید ؟',
+                icon: "warning",
+                showCancelButton: !0,
+                confirmButtonText: "تایید",
+                cancelButtonText: 'انصراف',
+                customClass: {
+                    confirmButton: "btn btn-danger",
+                    cancelButton: "btn btn-outline-danger ms-1"
+                },
+                buttonsStyling: !1
+            }).then((function (t) {
+                if (t.isConfirmed) {
+                    _deleteept(data.id);
+
+                } else {
+
+                }
+            }))
+        });
+        function _deleteMbti(id) {
 
             $.ajax({
-                url: '/FilingUser/ArchiveForm?id=' + id,
+                url: '/Dashboard/MBTIIsDelete?id=' + id,
+                datatype: 'json',
+                data: JSON.stringify(id),
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                success: function (response) {
+                    if (response.result) {
+                        toastr.success(response.msg, "تایید", {
+                            closeButton: !0,
+                            tapToDismiss: !1,
+                            showMethod: "slideDown",
+                            hideMethod: "slideUp",
+                            progressBar: !0,
+                            timeOut: 50e3,
+                            rtl: "rtl"
+                        })
+
+                    }
+                    else if (!response.result) {
+                        toastr.error(response.msg, "خطا", {
+                            closeButton: !0,
+                            tapToDismiss: !1,
+                            showMethod: "slideDown",
+                            hideMethod: "slideUp",
+                            progressBar: !0,
+                            timeOut: 50e3,
+                            rtl: "rtl"
+                        })
+                    }
+                    table.ajax.reload();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('jqXHR:');
+                    console.log(jqXHR);
+                    console.log('textStatus:');
+                    console.log(textStatus);
+                    console.log('errorThrown:');
+                    console.log(errorThrown);
+                }
+
+            });
+            Reload_data();
+        }
+        function _deleteept(id) {
+
+            $.ajax({
+                url: '/Dashboard/EPTIsDelete?id=' + id,
                 datatype: 'json',
                 data: JSON.stringify(id),
                 type: 'POST',
@@ -148,7 +210,6 @@
             location.reload();
 
         }
-
         function load_data2(id) {
 
             table2 = $('#users_table122').DataTable({
@@ -197,7 +258,8 @@
                         data: null,
                         defaultContent:
                             '<button type="button" class="btn btn-icon btn-outline-primary _edit" style="margin-left: 2px;" title="ویرایش"><i class="fa fa-pencil"></i></button>'
-                            + '<button type="button" class="btn btn-icon btn-outline-primary _delete" title="حذف کاربر"><i class="fa fa-trash"></i></button>'
+                            + '<button type="button" class="btn btn-icon btn-outline-primary _deletembti" title="حذف آزمون شخصیت"><i class="fa fa-trash"></i></button>'
+                            + '<button type="button" class="btn btn-icon btn-outline-primary _deleteept" title="حذف آزمون استعداد یابی"><i class="fa fa-trash"></i></button>'
                             + '<button type="button" class="btn btn-icon btn-outline-primary _quiez1" title="آزمون شخصیت "><i class="fa fa-list"></i></button>'
                             + '<button type="button" class="btn btn-icon btn-outline-primary _quiez2" title="آزمون استعداد یابی"><i class="fa fa-list"></i></button>',
                         targets: -1
@@ -211,7 +273,6 @@
 
             });
         }
-
     </script>
 }
 @* @model CharityTestCore.Models.EPTListPersonModel

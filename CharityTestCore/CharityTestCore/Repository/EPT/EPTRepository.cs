@@ -16,7 +16,9 @@ namespace CharityTestCore.Repository.EPT
         }
         public void DelEptQuestion(EptQuestionList item)
         {
-            context.EptQuestion.Remove(item);
+            item.IsDelete = true;
+            context.SaveChanges();
+
         }
         public IEnumerable<EptQuestionList> EptQuestion
         {

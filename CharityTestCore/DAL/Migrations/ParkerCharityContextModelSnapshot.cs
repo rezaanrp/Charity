@@ -37,6 +37,9 @@ namespace DAL.Migrations
                     b.Property<bool?>("HaveSkill")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
                     b.Property<byte>("S01")
                         .HasColumnType("tinyint");
 
@@ -608,6 +611,9 @@ namespace DAL.Migrations
                     b.Property<byte>("Answer9")
                         .HasColumnType("tinyint");
 
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("RegisterDate")
                         .HasColumnType("datetime2");
 
@@ -666,6 +672,9 @@ namespace DAL.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
                     b.Property<string>("MobileNumber")
                         .IsRequired()
                         .HasMaxLength(11)
@@ -707,6 +716,7 @@ namespace DAL.Migrations
                             Id = new Guid("bd7cb230-6834-4869-8b9a-8662558a7ef2"),
                             Family = "سیستم",
                             HashPassword = "1hO2KL3nZdudecMmm3hT5sh7m7Y9P9R030JzQxRlpkg=",
+                            IsDelete = false,
                             MobileNumber = "09130000000",
                             Name = "مدیر",
                             NationalNumber = "1234567980",

@@ -159,6 +159,7 @@ namespace CharityTestCore.Service.EPT
                 float ResultTest8 = ep.S90 + ep.S91 + ep.S92 + ep.S93 + ep.S94 + ep.S95;
                 float ResultTest9 = ep.S01 + ep.S02 + ep.S03 + ep.S04 + ep.S05 + ep.S06 + ep.S07 + ep.S08 + ep.S09 + ep.S10 + ep.S11 + ep.S12 + ep.S13 + ep.S14 + ep.S15 + ep.S16 + ep.S17 + ep.S18 + ep.S19 + ep.S20 + ep.S21 + ep.S22 + ep.S23 + ep.S24 + ep.S25 + ep.S26 + ep.S27 + ep.S28 + ep.S29 + ep.S30 + ep.S31 + ep.S32 + ep.S33 + ep.S34 + ep.S35 + ep.S36 + ep.S37 + ep.S38 + ep.S39 + ep.S40 + ep.S41 + ep.S42 + ep.S43 + ep.S44 + ep.S45 + ep.S46 + ep.S47 + ep.S48 + ep.S49 + ep.S50 + ep.S51 + ep.S52 + ep.S53 + ep.S54 + ep.S55 + ep.S56 + ep.S57 + ep.S58 + ep.S59 + ep.S60 + ep.S61 + ep.S62 + ep.S63 + ep.S64 + ep.S65 + ep.S66 + ep.S67 + ep.S68 + ep.S69 + ep.S70 + ep.S71 + ep.S72 + ep.S73 + ep.S74 + ep.S75 + ep.S76 + ep.S77 + ep.S78 + ep.S79 + ep.S80 + ep.S81 + ep.S82 + ep.S83 + ep.S84 + ep.S85 + ep.S86 + ep.S87 + ep.S88 + ep.S89 + ep.S90 + ep.S91 + ep.S92 + ep.S93 + ep.S94 + ep.S95;
 
+                
 
                 if ((int)ResultTest9 <= 236)
                     EPTListPersonModel_.ResultTestText = "نتیجه تست :بسیار ضعیف ";
@@ -304,10 +305,9 @@ namespace CharityTestCore.Service.EPT
         {
             try
             {
-                var per = repository.EptQuestion.FirstOrDefault(x => x.Id == ept);
-
-                repository.DelEptQuestion(per);
-                repository.SaveChanges();
+                var per = repository.EptQuestion.FirstOrDefault(x => x.UserId_ == ept.ToString());
+                if(per != null) 
+                 repository.DelEptQuestion(per);
                 return true;
 
             }

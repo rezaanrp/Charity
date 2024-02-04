@@ -31,6 +31,7 @@ namespace DAL.DataBase
         [StringLength(11)]
         public string MobileNumber { get; set; }
 
+        public bool IsDelete { get; set; } = false;
 
         public string FullName
         {

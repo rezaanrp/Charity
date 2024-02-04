@@ -12,8 +12,9 @@ namespace CharityTestCore.Repository.UserManagment
 
         public IEnumerable<mGenGroup> mGenGroup { get; }
         public void SaveChanges();
- 
+
+        public User? GetUserById(string id);
 
 
-	}
+    }
 }

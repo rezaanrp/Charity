@@ -25,7 +25,7 @@ namespace CharityTestCore.Models
 		[Compare("Password", ErrorMessage = "رمز  و تکرار آن یکسان نیستند")]
 		public string RepeatPassword { get; set; }
 		[MaxLength(30)]
-        public string Role { get; set; }
+        public string? Role { get; set; }
 
         [MaxLength(30)]
 		[Required(ErrorMessage = " وارد کردن نام اجباری می باشد")]

@@ -18,7 +18,10 @@ namespace CharityTestCore.Repository.UserManagment
         {
             get { return context.Users; }
         }
-
+        public User? GetUserById(string id)
+        {
+            return context.Users.FirstOrDefault(x => x.Id.ToString() ==  id);
+        }
         public IEnumerable<mGenGroup> mGenGroup
         {
             get { return context.mGenGroup; }

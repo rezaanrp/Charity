@@ -165,6 +165,14 @@
       "PackagePath": "staticwebassets\\Quiz\\user.png"
     },
     {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\apl\\Swat\\sweetalert2.all.min.js",
+      "PackagePath": "staticwebassets\\apl\\Swat\\sweetalert2.all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\apl\\Swat\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\apl\\Swat\\sweetalert2.min.css"
+    },
+    {
       "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\build\\js\\.jscsrc",
       "PackagePath": "staticwebassets\\build\\js\\.jscsrc"
     },

@@ -4,7 +4,8 @@ namespace CharityTestCore.Models
 {
     public class MBTIQuestionListPersonModel
     {
-        public IEnumerable<MBTIAnswerList> Persons { get; set; }
+       
+
         public int? ResultTest1 { get; set; }
         public int? ResultTest2 { get; set; }
         public int? ResultTest3 { get; set; }

@@ -9,12 +9,13 @@ namespace CharityTestCore.Service.MBTI
     public class MBTIService : IMBTIService
     {
           private readonly IMBTIRepository mBTIRepository;
+          private readonly IUserRepository  _userRepository;
 
-        public MBTIService( IMBTIRepository mBTIRepository)
+        public MBTIService( IMBTIRepository mBTIRepository, IUserRepository userRepository)
         {
 
             this.mBTIRepository = mBTIRepository;
-
+            _userRepository = userRepository;
         }
         public MBTIQuestionListPersonModel MBTIPersonList(Guid? id)
         {
@@ -25,7 +26,7 @@ namespace CharityTestCore.Service.MBTI
             //    new DAL.DataBase.Seed().SeedDataMBTI();
             //}
 
-            MBTIQuestionListPersonModel_.Persons = mBTIRepository.MBTIAnswerList.ToList();
+        
 
             MBTIAnswerList? ep = mBTIRepository.MBTIAnswerList.FirstOrDefault(x => x.UserId == id.ToString());
             if (ep != null)
@@ -62,7 +63,7 @@ namespace CharityTestCore.Service.MBTI
                 MBTIQuestionListPersonModel_.ResultTest6 = ReAnswerultTeAnswert6;
                 MBTIQuestionListPersonModel_.ResultTest7 = ReAnswerultTeAnswert7;
                 MBTIQuestionListPersonModel_.ResultTest8 = ReAnswerultTeAnswert8;
-                MBTIQuestionListPersonModel_.NameAndFamily = "";//ep.Name + " " + ep.Family;
+                MBTIQuestionListPersonModel_.NameAndFamily = "";
                 if (ep_T != null)
                     MBTIQuestionListPersonModel_.ResultTestHtml = ep_T.Answer2;
 
@@ -84,7 +85,7 @@ namespace CharityTestCore.Service.MBTI
         {
             try
             {
-                var per = mBTIRepository.MBTIAnswerList.FirstOrDefault(x => x.Id == ept);
+                var per = mBTIRepository.MBTIAnswerList.FirstOrDefault(x => x.UserId == ept.ToString());
                 if (per != null)
                 {
                     mBTIRepository.DelMBTIQuestion(per);

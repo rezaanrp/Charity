@@ -31,7 +31,9 @@ namespace CharityTestCore.Controllers
             return View();
         }
 		[HttpPost]
-		public JsonResult load_data_users2(int id)
+        [Authorize(Roles = "admin")]
+
+        public JsonResult load_data_users2(int id)
 		{
 			int totalRecord = 0;
 			int filterRecord = 0;
@@ -84,24 +86,25 @@ namespace CharityTestCore.Controllers
         }
 
 
-        public IActionResult EPTDelete(Guid? id)
-        {
+        //public IActionResult EPTDelete(Guid? id)
+        //{
 
-           var ep = eptservice.EptPersonById(id);
-            EPTQuestion ept = new EPTQuestion()
-            {
+        //   var ep = eptservice.EptPersonById(id);
+        //    EPTQuestion ept = new EPTQuestion()
+        //    {
 
-            };
+        //    };
 
-            //ept.Name = ep.Name;
-            //ept.Family = ep.Family;
-            //ept.Name = "";
-            //ept.Family = "";
-            ept.Id = ep.Id;
-            return View(ept);
+        //    //ept.Name = ep.Name;
+        //    //ept.Family = ep.Family;
+        //    //ept.Name = "";
+        //    //ept.Family = "";
+        //    ept.Id = ep.Id;
+        //    return View(ept);
 
-        }
-     
+        //}
+        [Authorize(Roles ="admin")]
+
         public IActionResult EPTIsDelete(Guid? id)
         {
             eptservice.EptPersonDeleteById(id);
@@ -109,20 +112,36 @@ namespace CharityTestCore.Controllers
 
             return RedirectToAction("Index", null);
         }
-      
+        [Authorize(Roles ="admin")]
+
         public IActionResult MBTI(Guid? id)
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
+  
+            var mm = mBTIService.MBTIPersonList(id);
+            if(mm != null && id != null)
+            {
+                var us = _userService.GetById(id.ToString());
 
-            return View(mBTIService.MBTIPersonList(id   ));
+                if (us != null)
+                {
+                   mm.NameAndFamily = us.FullName;
+                }
+            }
+            return View(mm);
         }
+        [Authorize(Roles = "admin")]
 
         public IActionResult Ept(Guid? id)
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
+            if(id != null)
+                ViewBag.FullName = _userService.GetById(id.ToString()).FullName;
 
             return View(eptservice.EptPersonList(id));
         }
+        [Authorize(Roles = "admin")]
+
         public IActionResult MBTIDelete(Guid? id)
         {
 
@@ -136,7 +155,8 @@ namespace CharityTestCore.Controllers
             return View(ept);
 
         }
-      
+        [Authorize(Roles ="admin")]
+
         public IActionResult MBTIIsDelete(Guid? id)
         {
             mBTIService.MBTIPersonDeleteById(id);

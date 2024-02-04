@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xeFY9Lr17p4GHC+Y+TzqDogmppzp7HDPAKFN96Ar4Ls=",
+  "Hash": "rVQ9LGqowMcmlsrWhOtdJnC3XEWcZ4LBduZ2sIkcv9I=",
   "Source": "CharityTestCore",
   "BasePath": "_content/CharityTestCore",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\CharityTestCore.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\apl\\Swat\\sweetalert2.all.min.js",
+      "SourceId": "CharityTestCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\",
+      "BasePath": "_content/CharityTestCore",
+      "RelativePath": "apl/Swat/sweetalert2.all.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\apl\\Swat\\sweetalert2.all.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\apl\\Swat\\sweetalert2.min.css",
+      "SourceId": "CharityTestCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\",
+      "BasePath": "_content/CharityTestCore",
+      "RelativePath": "apl/Swat/sweetalert2.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\apl\\Swat\\sweetalert2.min.css"
     },
     {
       "Identity": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\build\\js\\.jscsrc",

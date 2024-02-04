@@ -175,7 +175,8 @@ namespace DAL.DataBase
         public byte Answer79 { get; set; }
         [AllowNull]
         public byte Answer80 { get; set; }
-            
+        public bool IsDelete { get; set; }  = false;
+
         public DateTime RegisterDate { get; set; }
     }
 }

@@ -112,8 +112,8 @@ namespace DAL.DataBase
         public byte S94 { get; set; }
         public byte S95 { get; set; }
 
+        public bool IsDelete { get; set; } = false;
 
-      
         public string Result
         {
             get {

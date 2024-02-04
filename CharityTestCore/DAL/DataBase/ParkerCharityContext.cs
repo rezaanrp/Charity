@@ -21,6 +21,7 @@ namespace DAL.DataBase
         public DbSet<MBTIAnswerList> MBTIAnswerList { get; set; }
         public DbSet<EptQuiz> EptQuiz { get; set; }
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //   base.OnConfiguring(optionsBuilder);
@@ -34,6 +35,10 @@ namespace DAL.DataBase
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<User>().HasQueryFilter(a => !a.IsDelete);
+            modelBuilder.Entity<EptQuestionList>().HasQueryFilter(a => !a.IsDelete);
+            modelBuilder.Entity<MBTIAnswerList>().HasQueryFilter(a => !a.IsDelete);
+
             new Seed(modelBuilder).seeduser();
             modelBuilder.Entity<User>().HasIndex(u => u.NationalNumber).IsUnique();
             modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique();

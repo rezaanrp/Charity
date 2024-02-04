@@ -111,6 +111,61 @@ namespace CharityTestCore.Service.UserManagment
             else return null;
 
         }
+        public bool IsExistNationalNumber(string code)
+        {
+
+            var u = userRepository.Users.FirstOrDefault(x => x.NationalNumber.ToString() == code);
+           if(u == null)
+            {
+                return false;
+            }
+           else
+                return true;
+
+        }
+        public bool IsExistMobile(string code)
+        {
+
+            var u = userRepository.Users.FirstOrDefault(x => x.MobileNumber.ToString() == code);
+            if (u == null)
+            {
+                return false;
+            }
+            else
+                return true;
+
+        }
+        public bool IsExistUserName(string code)
+        {
+
+            var u = userRepository.Users.FirstOrDefault(x => x.UserName.ToString() == code);
+            if (u == null)
+            {
+                return false;
+            }
+            else
+                return true;
+
+        }
+        public UserProfileModel? GetById(string Id)
+        {
+            UserProfileModel model = new UserProfileModel();
+
+            var us = userRepository.GetUserById(Id);
+            if(us != null)
+            {
+                model.MobileNumber = us.MobileNumber;
+                model.Family = us.Family;
+                model.Name = us.Name;
+                model.NationalNumber = us.NationalNumber;   
+                model.UserName = us.UserName;
+                model.Id = us.Id;
+                model.Role = us.Role;
+                return model;
+            }
+            else { return new UserProfileModel(); }
+
+        }
 
     }
 }
