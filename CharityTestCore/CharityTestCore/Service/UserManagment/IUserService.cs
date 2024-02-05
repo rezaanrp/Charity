@@ -13,9 +13,12 @@ namespace CharityTestCore.Service.UserManagment
         UserProfileModel? GetProfile(string username);
 		 List<UserProfileModel> GetAllUser();
 		 UserProfileModel GetById(string Id);
-        bool IsExistNationalNumber(string code);
-        bool IsExistMobile(string code);
-        bool IsExistUserName(string code);
+        int CountNationalNumber(string code);
+		int CountMobile(string code);
+		int CountUserName(string code);
+        bool EditUser(Models.UserListModel userListModel);
 
-    }
+        UserListModel? GetByIdUserListModel(string Id);
+
+	}
 }

@@ -27,12 +27,26 @@ namespace CharityTestCore.Controllers
             return View(userlist);
         }
         [Authorize(Roles = "admin")]
-        public IActionResult Edit()
+        public IActionResult Edit(string id)
         {
-
-            return View();
+            var m = _userService.GetByIdUserListModel(id);
+            return View(m);
         }
-        public IActionResult Create()
+		[HttpPost]
+
+		public IActionResult Edit(Models.UserListModel userListModel)
+		{
+            if( _userService.EditUser(userListModel))
+            {
+				return RedirectToAction("Index", "Dashboard");
+			}
+			else 
+            {
+				ViewBag.ErrorMessage = "خطا در ثبت";
+				return View(userListModel); 
+            }
+		}
+		public IActionResult Create()
         {
 
             return View();
@@ -40,24 +54,21 @@ namespace CharityTestCore.Controllers
         [HttpPost]
         public IActionResult Create(Models.UserListModel userListModel )
         {
-            if (_userService.IsExistUserName(userListModel.UserName))
+            if (_userService.CountUserName(userListModel.UserName) > 0)
             {
                 ViewBag.ErrorMessage = "نام کاربری قبلا در سیستم ثبت شده است";
                 return View();
             }
-            if (_userService.IsExistNationalNumber(userListModel.NationalNumber))
+            if (_userService.CountNationalNumber(userListModel.NationalNumber) > 0)
             {
                 ViewBag.ErrorMessage = "کد ملی قبلا در سیستم ثبت شده  ";
-
                 return View();
 
             }
-            if (_userService.IsExistMobile(userListModel.MobileNumber))
+            if (_userService.CountMobile(userListModel.MobileNumber) > 0)
             {
                 ViewBag.ErrorMessage = "تلفن همراه  قبلا در سیستم ثبت شده است";
-
                 return View();
-
             }
 
             _userService.AddUser(userListModel.UserName.ToLower(),

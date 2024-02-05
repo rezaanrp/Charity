@@ -15,6 +15,10 @@ namespace CharityTestCore.Repository.UserManagment
 
         public User? GetUserById(string id);
 
+        public bool EditUsersList(Models.UserListModel item, string newpassword);
 
-    }
+
+
+
+	}
 }

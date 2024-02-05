@@ -14,7 +14,35 @@ namespace CharityTestCore.Repository.UserManagment
         {
             context.Users.Add(item);
         }
-        public IEnumerable<User> Users
+		public bool EditUsersList(Models.UserListModel item,string newpassword)
+		{
+            try
+            {
+				var mm = context.Users.FirstOrDefault(x => x.Id == item.Id);
+                if (mm != null)
+                {
+					mm.MobileNumber = item.MobileNumber;
+					mm.NationalNumber = item.NationalNumber;
+					mm.Name = item.Name;
+					mm.Family = item.Family;
+					mm.HashPassword = newpassword;
+					context.SaveChanges();
+					return true;
+
+				}
+				return false;
+
+			}
+			catch (Exception)
+            {
+
+                return false;
+            }
+
+
+
+		}
+		public IEnumerable<User> Users
         {
             get { return context.Users; }
         }

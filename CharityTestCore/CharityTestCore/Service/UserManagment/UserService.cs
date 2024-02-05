@@ -68,7 +68,20 @@ namespace CharityTestCore.Service.UserManagment
             }
 
         }
-        public List<UserProfileModel>  GetAllUser()
+		public bool EditUser(Models.UserListModel userListModel)
+		{
+			try
+			{
+					
+			 return	userRepository.EditUsersList(userListModel, CryptographyHelper.Encrypt(userListModel.Password));
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+
+		}
+		public List<UserProfileModel>  GetAllUser()
         {
              var m = userRepository.usersList().ToList();
             List<UserProfileModel> mm = new List<UserProfileModel>();
@@ -111,43 +124,30 @@ namespace CharityTestCore.Service.UserManagment
             else return null;
 
         }
-        public bool IsExistNationalNumber(string code)
+        public int CountNationalNumber(string code)
         {
 
-            var u = userRepository.Users.FirstOrDefault(x => x.NationalNumber.ToString() == code);
-           if(u == null)
-            {
-                return false;
-            }
-           else
-                return true;
+            var u = userRepository.Users.Where(x => x.NationalNumber.ToString() == code).Count();
+            return u;
 
         }
-        public bool IsExistMobile(string code)
+        public int CountMobile(string code)
         {
 
-            var u = userRepository.Users.FirstOrDefault(x => x.MobileNumber.ToString() == code);
-            if (u == null)
-            {
-                return false;
-            }
-            else
-                return true;
+            var u = userRepository.Users.Where(x => x.MobileNumber.ToString() == code).Count();
+			return u;
 
-        }
-        public bool IsExistUserName(string code)
+
+		}
+		public int CountUserName(string code)
         {
 
-            var u = userRepository.Users.FirstOrDefault(x => x.UserName.ToString() == code);
-            if (u == null)
-            {
-                return false;
-            }
-            else
-                return true;
+            var u = userRepository.Users.Where(x => x.UserName.ToString() == code).Count();
+			return u;
 
-        }
-        public UserProfileModel? GetById(string Id)
+
+		}
+		public UserProfileModel? GetById(string Id)
         {
             UserProfileModel model = new UserProfileModel();
 
@@ -166,6 +166,24 @@ namespace CharityTestCore.Service.UserManagment
             else { return new UserProfileModel(); }
 
         }
+		public UserListModel? GetByIdUserListModel(string Id)
+		{
+			UserListModel model = new UserListModel();
 
-    }
+			var us = userRepository.GetUserById(Id);
+			if (us != null)
+			{
+				model.MobileNumber = us.MobileNumber;
+				model.Family = us.Family;
+				model.Name = us.Name;
+				model.NationalNumber = us.NationalNumber;
+				model.UserName = us.UserName;
+				model.Id = us.Id;
+				model.Role = us.Role;
+				return model;
+			}
+			else { return new UserListModel(); }
+
+		}
+	}
 }
