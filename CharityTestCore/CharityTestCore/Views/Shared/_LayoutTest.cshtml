@@ -1,16 +1,20 @@
-﻿<!DOCTYPE html>
-<!-- saved from url=(0047)https://files.free-learn.ir/Quiz/html/home.html -->
-<html lang="fa-IR">
+﻿
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>آزمون آنلاین زبان HTML - سایت آموزشی فری لرن</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    @RenderSection("Scripts")
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Bentil - Online Quiz</title>
+    @RenderSection("Head")
 </head>
-<body class="ty12">
+<body>
     @RenderSection("Body")
 
+        @RenderSection("Scripts")
+
+	<script src="~/qu/js/jquery-3.5.1.min.js"></script>
+	<script src="~/qu/js/quiz.js"></script>
+	<script src="~/qu/js/script.js"></script>
+	<script src="~/qu/js/tilt.min.js"></script>
 </body>
+
 </html>

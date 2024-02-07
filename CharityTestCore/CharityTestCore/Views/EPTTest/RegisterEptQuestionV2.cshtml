@@ -1,0 +1,94 @@
+﻿@model CharityTestCore.Models.EPTQuestion
+@{
+    // ViewBag.Title = "RegisterEptQuestion";
+    Layout = "~/Views/Shared/_LayoutTest.cshtml";
+}
+@section Head{
+	<link href="~/qu/css/style.css" rel="stylesheet" />
+}
+
+@section Body{
+    
+
+
+            <div class="box" id="questionScreen">
+                <div class="title">
+                    Bentilzone Online Quiz
+                </div>
+                <div class="header">
+                    <div class="scoreBox">Score: <span>0</span></div>
+                    <div class="timerBox">Time left: <span></span></div>
+            <button type="button" class="btn btn-primary" onclick="submitStudent()">Submit</button>
+
+                </div>
+                <div class="questionBox">
+                    <!-- <span>Q</span>  -->
+                </div>
+                <div class="optionBox">
+                    <span onclick="checkAnswer(this)" data-opt="1"></span>
+                    <span onclick="checkAnswer(this)" data-opt="2"></span>
+                    <span onclick="checkAnswer(this)" data-opt="3"></span>
+                    <span onclick="checkAnswer(this)" data-opt="4"></span>
+                </div>
+                <div class="footer">
+                    <button onclick="showResult(1)">Show Results</button>
+                    <div class="con">
+                        <!-- <button onclick="showPrev(this)" class="disabled"><span>&#8592;</span>prev</button> -->
+                        <button onclick="showNext()">Next &#8594;</button>
+                    </div>
+                </div>
+                <div class="count">
+                    Question <span>1</span> / 10
+                </div>
+            </div>
+
+            <div class="box hidden" id="resultScreen">
+                <div class="title">
+                    Bentilzone Online Quiz Result
+                </div>
+                <div class="scoreBoard">
+                    Total Score : <span> 60</span>
+                </div>
+                <div class="resultBox">
+                    <label>Questions : </label>
+                    <span id="totalQuestion"></span>
+                    <label>Attempt : </label>
+                    <span id="attemptQuestion"></span>
+                    <label>Correct : </label>
+                    <span id="correctQuestion"></span>
+                    <label>Wrong : </label>
+                    <span id="wrongAnswers"></span>
+                </div>
+                <div class="buttonBox">
+                    <a href="index.html">Start Again</a>
+                </div>
+            </div>
+
+
+}
+@section Scripts{
+
+    <script type="text/javascript">
+        function submitStudent() {
+            alert("")
+            var data = formData
+            $.ajax({
+                type: 'POST',
+                url: '/ePTTest/RegisterEptQuestionV2',
+                data:data,
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+               
+                success: function (result) {
+                    alert('Successfully received Data ');
+                    console.log(result);
+                },
+                error: function () {
+                    alert('Failed to receive the Data');
+                    console.log('Failed ');
+                }
+            })
+        }
+
+    </script>
+
+}

@@ -3,6 +3,7 @@ using CharityTestCore.Repository;
 using CharityTestCore.Repository.EPT;
 using CharityTestCore.Service;
 using CharityTestCore.Service.EPT;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CharityTestCore.Controllers
@@ -15,12 +16,14 @@ namespace CharityTestCore.Controllers
             eptservice = _eptservice;
         }
         // GET: EPTTest
+        [Authorize]
         public IActionResult Index()
         {
             return View();
         }
-
         [HttpGet]
+        [Authorize]
+
         public IActionResult RegisterEptQuestion()
         {
             ViewBag.Title = "آزمون  ";
@@ -29,6 +32,8 @@ namespace CharityTestCore.Controllers
             return View(new EPTQuestion());
         }
         [HttpPost]
+        [Authorize]
+
         public IActionResult RegisterEptQuestion(EPTQuestion ePTQuestion)
         {
             if (!ModelState.IsValid)
@@ -144,6 +149,23 @@ namespace CharityTestCore.Controllers
                     ///ePTQuestion.NationalCode;
                     return View("AnswerEptQuestion");
     
+
+        }
+
+        [HttpGet]
+        public IActionResult RegisterEptQuestionV2()
+        {
+            ViewBag.Title = "آزمون  ";
+
+            //ViewBag.EPTQuiz = new CharityTestCoreService().EptQuizTextList();
+            return View(new EPTQuestion());
+        }
+        [HttpPost]
+        public IActionResult RegisterEptQuestionV2(IFormCollection ePTQuestion)
+        {
+           
+                return View("AnswerEptQuestion");
+
 
         }
         public IActionResult AnswerEptQuestion()
