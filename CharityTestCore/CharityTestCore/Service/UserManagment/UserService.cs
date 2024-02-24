@@ -185,5 +185,21 @@ namespace CharityTestCore.Service.UserManagment
 			else { return new UserListModel(); }
 
 		}
-	}
+
+        public bool DeleteUser(string Id)
+        {
+            var us = userRepository.GetUserById(Id);
+            if(us != null )
+            {
+                
+                return userRepository.Delete(us);
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+    }
 }

@@ -19,6 +19,11 @@
        {
             <button class="flex-c-m s1-txt3 size3 how-btn trans-04 where1" onclick="location.href='@Url.Action("Index", "Dashboard")';return false;">ورود به پنل مدیریت </button>
         }
+        else if (ViewBag.user_role == "superadmin")
+        {
+            <button class="flex-c-m s1-txt3 size3 how-btn trans-04 where1" onclick="location.href='@Url.Action("Admin", "Dashboard")';return false;">ورود به پنل مدیریت </button>
+
+        }
         else
         {
             <button class="flex-c-m s1-txt3 size3 how-btn trans-04 where1" onclick="location.href='@Url.Action("UserProfile", "Dashboard")';return false;">ورود به پنل کاربری </button>

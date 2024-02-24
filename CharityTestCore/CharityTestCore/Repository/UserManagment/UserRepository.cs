@@ -54,6 +54,20 @@ namespace CharityTestCore.Repository.UserManagment
         {
             get { return context.mGenGroup; }
         }
+        public bool Delete(User item)
+        {
+            try {
+                context.Users.Remove(item);
+                context.SaveChanges();
+                return true;
+            
+            }
+
+            catch
+            {
+                return false;
+            }
+        }
         public void SaveChanges()
         {
             context.SaveChanges();

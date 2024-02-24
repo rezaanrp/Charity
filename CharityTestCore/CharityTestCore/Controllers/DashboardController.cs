@@ -30,7 +30,6 @@ namespace CharityTestCore.Controllers
 
             return View();
         }
-
         [Authorize(Roles = "superadmin")]
         public IActionResult Admin()
         {
@@ -40,7 +39,6 @@ namespace CharityTestCore.Controllers
         }
         [HttpPost]
         [Authorize(Roles = "superadmin")]
-
         public JsonResult load_data_superadmin(int id)
         {
             int totalRecord = 0;
@@ -84,10 +82,8 @@ namespace CharityTestCore.Controllers
             return Json(returnObj);
 
         }
-
         [HttpPost]
         [Authorize(Roles = "admin")]
-
         public JsonResult load_data_users2(int id)
 		{
 			int totalRecord = 0;
@@ -131,7 +127,6 @@ namespace CharityTestCore.Controllers
 			return Json(returnObj);
 
 		}
-
 		public IActionResult UserProfile(Guid? id)
         {
 
@@ -139,8 +134,6 @@ namespace CharityTestCore.Controllers
             ViewBag.UserNameAndFamily = _userService.GetProfile(idd).FullName;
             return View();
         }
-
-
         //public IActionResult EPTDelete(Guid? id)
         //{
 
@@ -159,7 +152,6 @@ namespace CharityTestCore.Controllers
 
         //}
         [Authorize(Roles ="admin")]
-
         public IActionResult EPTIsDelete(Guid? id)
         {
             eptservice.EptPersonDeleteById(id);
@@ -168,7 +160,6 @@ namespace CharityTestCore.Controllers
             return RedirectToAction("Index", null);
         }
         [Authorize(Roles ="admin")]
-
         public IActionResult MBTI(Guid? id)
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
@@ -186,7 +177,6 @@ namespace CharityTestCore.Controllers
             return View(mm);
         }
         [Authorize(Roles = "admin")]
-
         public IActionResult Ept(Guid? id)
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
@@ -196,7 +186,6 @@ namespace CharityTestCore.Controllers
             return View(eptservice.EptPersonList(id));
         }
         [Authorize(Roles = "admin")]
-
         public IActionResult MBTIDelete(Guid? id)
         {
 
@@ -210,8 +199,17 @@ namespace CharityTestCore.Controllers
             return View(ept);
 
         }
-        [Authorize(Roles ="admin")]
 
+        [Authorize(Roles = "superadmin")]
+        public JsonResult userdelete(Guid id)
+        {
+                var ep = _userService.DeleteUser(id.ToString());
+            return Json(ep);
+        }
+
+
+
+        [Authorize(Roles ="admin")]
         public IActionResult MBTIIsDelete(Guid? id)
         {
             mBTIService.MBTIPersonDeleteById(id);

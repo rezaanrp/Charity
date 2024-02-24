@@ -62,6 +62,11 @@ namespace CharityTestCore.Controllers
                 HttpContext.SignInAsync(principal, properties);
                 if(user.Role == "admin")
                 return RedirectToAction("Index","Dashboard");
+                else if(user.Role == "superadmin")
+                {
+                    return RedirectToAction("Admin", "Dashboard");
+
+                }
                 else
                 {
                     return RedirectToAction("UserProfile", "Dashboard");
