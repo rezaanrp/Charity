@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CharityTestCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40bd4797978fd4ead0d408b87f7e4209e2e08242")]
 [assembly: System.Reflection.AssemblyProductAttribute("CharityTestCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CharityTestCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

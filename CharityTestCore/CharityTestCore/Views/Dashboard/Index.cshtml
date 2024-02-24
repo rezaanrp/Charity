@@ -13,12 +13,12 @@
 
 
         <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card card-info">
                 <div class="card-header">
                     <h3 class="card-title">لیست متقاضی </h3>
                 </div>
                 <div class="card-body">
-                    <table id="users_table122" class="table table-bordered table-striped dataTable" style="width:100%;">
+                    <table id="userstable" class="table table-bordered table-striped dataTable" style="width:100%;">
                         <thead>
                             <tr>
                                 <th> کد </th>
@@ -64,7 +64,7 @@
             // window.location.href = "/FilingUser/Insert?id=" + data.id;
             load_data2(data.id);
         });
-        $('body #users_table122').on('click', '._deletembti', function () {
+        $('body #userstable').on('click', '._deletembti', function () {
             var data = table2.row($(this).parents('tr')).data();
            
 
@@ -89,7 +89,7 @@
                 }
             }))
         });
-        $('body #users_table122').on('click', '._deleteept', function () {
+        $('body #userstable').on('click', '._deleteept', function () {
             var data = table2.row($(this).parents('tr')).data();
 
 
@@ -212,7 +212,7 @@
         }
         function load_data2(id) {
 
-            table2 = $('#users_table122').DataTable({
+            table2 = $('#userstable').DataTable({
                 //scrollY: '400px',
                 "scrollX": true,
                 destroy: true,
