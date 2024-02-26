@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CharityTestCore.Models
 {
-
     public class EPTQuestion
     {
         public Guid Id { get; set; }

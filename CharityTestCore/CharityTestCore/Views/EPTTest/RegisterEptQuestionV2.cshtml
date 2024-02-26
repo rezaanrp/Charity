@@ -1,24 +1,24 @@
-﻿@model CharityTestCore.Models.EPTQuestion
+﻿
 @{
     // ViewBag.Title = "RegisterEptQuestion";
     Layout = "~/Views/Shared/_LayoutTest.cshtml";
 }
 @section Head{
 	<link href="~/qu/css/style.css" rel="stylesheet" />
+	<link href="~/css/util.css" rel="stylesheet" />
 }
 
 @section Body{
-    
 
-
+    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url('/pics/bg01.jpg');">
+        <div class="wsize1 bor1 bg1 p-t-20 p-b-45 p-l-15 p-r-15 respon1">
             <div class="box" id="questionScreen">
                 <div class="title">
-                    Bentilzone Online Quiz
+                    آزمون استعداد یابی
                 </div>
                 <div class="header">
-                    <div class="scoreBox">Score: <span>0</span></div>
-                    <div class="timerBox">Time left: <span></span></div>
-            <button type="button" class="btn btn-primary" onclick="submitStudent()">Submit</button>
+                    @*  <div class="scoreBox">Score: <span>0</span></div> *@
+                    <div class="timerBox">Time: <span></span></div>
 
                 </div>
                 <div class="questionBox">
@@ -31,60 +31,61 @@
                     <span onclick="checkAnswer(this)" data-opt="4"></span>
                 </div>
                 <div class="footer">
-                    <button onclick="showResult(1)">Show Results</button>
+                    <button hidden onclick="showResult(1)">Show Results</button>
                     <div class="con">
                         <!-- <button onclick="showPrev(this)" class="disabled"><span>&#8592;</span>prev</button> -->
-                        <button onclick="showNext()">Next &#8594;</button>
+                        <button hidden onclick="showNext()">Next &#8594;</button>
                     </div>
                 </div>
                 <div class="count">
-                    Question <span>1</span> / 10
+                    سوال <span>1</span> / 95
                 </div>
             </div>
 
             <div class="box hidden" id="resultScreen">
                 <div class="title">
-                    Bentilzone Online Quiz Result
+                    آزمون استعداد یابی
                 </div>
-                <div class="scoreBoard">
-                    Total Score : <span> 60</span>
-                </div>
-                <div class="resultBox">
-                    <label>Questions : </label>
-                    <span id="totalQuestion"></span>
-                    <label>Attempt : </label>
-                    <span id="attemptQuestion"></span>
-                    <label>Correct : </label>
-                    <span id="correctQuestion"></span>
-                    <label>Wrong : </label>
-                    <span id="wrongAnswers"></span>
-                </div>
-                <div class="buttonBox">
-                    <a href="index.html">Start Again</a>
+
+                <div>
+
+                    <a class="buttonBox" onclick="submitStudent()">ثبت نهایی</a>
+
                 </div>
             </div>
 
 
+        </div>
+    </div>
+          
 }
 @section Scripts{
 
     <script type="text/javascript">
         function submitStudent() {
-            alert("")
-            var data = formData
+            var group = { 'listofusers': formData };
+            console.log(group);
             $.ajax({
-                type: 'POST',
+                type: "POST",
+                data: group,
                 url: '/ePTTest/RegisterEptQuestionV2',
-                data:data,
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                dataType: 'json',
                
                 success: function (result) {
-                    alert('Successfully received Data ');
-                    console.log(result);
+         
+                    if (result) {
+                        console.log(result);
+                        window.location.href = "/Dashboard/UserProfile";
+                    }
+                    else { 
+                        alert("آزمون شما قبلا در سیستم ثبت شده است");
+                    }
                 },
                 error: function () {
-                    alert('Failed to receive the Data');
+
                     console.log('Failed ');
+                    window.location.href = "/Dashboard/UserProfile";
+
                 }
             })
         }

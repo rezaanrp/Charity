@@ -9,6 +9,7 @@ namespace CharityTestCore.Repository.EPT
         void DelEptQuestion(EptQuestionList item);
         IEnumerable<EptQuestionList> EptQuestion { get; }
         void SaveChanges();
+        public EptQuestionList? GetEptByUserId(string UserId);
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using DAL.DataBase;
+﻿using CharityTestCore.Models;
+using DAL.DataBase;
 
 namespace CharityTestCore.Repository.EPT
 {
@@ -18,6 +19,11 @@ namespace CharityTestCore.Repository.EPT
         {
             item.IsDelete = true;
             context.SaveChanges();
+
+        }
+        public EptQuestionList? GetEptByUserId(string UserId)
+        {
+            return  context.EptQuestion.FirstOrDefault(x => x.UserId_ ==  UserId);
 
         }
         public IEnumerable<EptQuestionList> EptQuestion

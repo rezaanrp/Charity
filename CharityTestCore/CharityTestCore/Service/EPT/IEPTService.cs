@@ -16,6 +16,7 @@ namespace CharityTestCore.Service.EPT
         bool EptPersonDeleteById(Guid? ept);
 
         List<EPTQuizTextModel> EptQuizTextList();
+        EptQuestionList? GetEptByUserId(string UserId);
 
     }
 }

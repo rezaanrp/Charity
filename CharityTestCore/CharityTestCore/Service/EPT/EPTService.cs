@@ -337,5 +337,12 @@ namespace CharityTestCore.Service.EPT
             }
             return EPT;
         }
+
+        public EptQuestionList? GetEptByUserId(string UserId)
+        {
+           return repository.GetEptByUserId(UserId);
+        }
+
+
     }
 }

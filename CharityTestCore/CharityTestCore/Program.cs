@@ -4,7 +4,9 @@ using CharityTestCore.Repository.UserManagment;
 using CharityTestCore.Service.EPT;
 using CharityTestCore.Service.MBTI;
 using CharityTestCore.Service.UserManagment;
+using DAL.DataBase;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,13 +48,13 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-app.UseStatusCodePagesWithRedirects("/Error/{0}");
+//if (!app.Environment.IsDevelopment())
+//{
+//    app.UseExceptionHandler("/Home/Error");
+//    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+//    app.UseHsts();
+//}
+//app.UseStatusCodePagesWithRedirects("/Error/{0}");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
