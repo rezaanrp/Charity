@@ -113,6 +113,7 @@ namespace DAL.DataBase
         public byte S95 { get; set; }
 
         public bool IsDelete { get; set; } = false;
+        public DateTime CreatedDate { get; set; }
 
         public string Result
         {

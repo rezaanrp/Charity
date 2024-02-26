@@ -4,6 +4,7 @@ using CharityTestCore.Service;
 using CharityTestCore.Service.MBTI;
 using DAL.DataBase;
 using Microsoft.AspNetCore.Mvc;
+using static CharityTestCore.Controllers.EPTTestController;
 
 namespace CharityTestCore.Controllers
 {
@@ -52,6 +53,27 @@ namespace CharityTestCore.Controllers
             ViewBag.Title = "آزمون شخصیت";
 
             return View();
+        }
+
+
+        [HttpGet]
+        public IActionResult Quiz()
+        {
+            ViewBag.Title = "آزمون شخصیت";
+            return View();
+
+        }
+        public class UserModel
+        {
+            public int Id { get; set; }
+            public byte Name { get; set; }
+        }
+        [HttpPost]
+        public IActionResult Quiz(List<UserModel> listofusers)
+        {
+
+                return View();
+
         }
 
     }

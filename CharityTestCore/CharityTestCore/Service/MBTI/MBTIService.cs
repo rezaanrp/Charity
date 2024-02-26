@@ -112,7 +112,6 @@ namespace CharityTestCore.Service.MBTI
                 var MBTIAnswerList_ = new MBTIAnswerList
                 {
             UserId = UserId,
-                    RegisterDate = DateTime.Now,
                     Answer1 = Answer1,
                     Answer2 = Answer2,
                     Answer3 = Answer3,

@@ -31,6 +31,11 @@ namespace DAL.Migrations
                     b.Property<bool?>("BeforeYouHaveJob")
                         .HasColumnType("bit");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
                     b.Property<bool?>("DoYouWantHaveJob")
                         .HasColumnType("bit");
 
@@ -611,11 +616,13 @@ namespace DAL.Migrations
                     b.Property<byte>("Answer9")
                         .HasColumnType("tinyint");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
+
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
-
-                    b.Property<DateTime>("RegisterDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
                         .IsRequired()

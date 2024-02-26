@@ -42,6 +42,8 @@ namespace DAL.DataBase
             modelBuilder.Entity<User>().HasQueryFilter(a => !a.IsDelete);
             modelBuilder.Entity<EptQuestionList>().HasQueryFilter(a => !a.IsDelete);
             modelBuilder.Entity<MBTIAnswerList>().HasQueryFilter(a => !a.IsDelete);
+            modelBuilder.Entity<EptQuestionList>().Property(b => b.CreatedDate).HasDefaultValueSql("getdate()");
+            modelBuilder.Entity<MBTIAnswerList>().Property(b => b.CreatedDate).HasDefaultValueSql("getdate()");
 
             new Seed(modelBuilder).seeduser();
             new Seed(modelBuilder).SeedMbtiAnswer();

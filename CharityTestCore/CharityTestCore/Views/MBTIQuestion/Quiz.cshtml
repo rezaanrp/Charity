@@ -1,0 +1,94 @@
+﻿@{
+    // ViewBag.Title = "RegisterEptQuestion";
+    Layout = "~/Views/Shared/_LayoutTest.cshtml";
+}
+@section Head{
+    <link href="~/qu/css/style.css" rel="stylesheet" />
+    <link href="~/css/util.css" rel="stylesheet" />
+}
+
+@section Body{
+
+    <div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url('/pics/bg01.jpg');">
+        <div class="wsize1 bor1 bg1 p-t-20 p-b-45 p-l-15 p-r-15 respon1">
+            <div class="box" id="questionScreen">
+                <div class="title">
+                    آزمون شخصیت
+                </div>
+                <div class="header">
+                    @*  <div class="scoreBox">Score: <span>0</span></div> *@
+                    <div class="timerBox">زمان: <span></span></div>
+
+                </div>
+                <div class="questionBox">
+                    <!-- <span>Q</span>  -->
+                </div>
+                <div class="optionBox">
+                    <span onclick="checkAnswer(this)" data-opt="4"></span>
+                    <span onclick="checkAnswer(this)" data-opt="3"></span>
+                    <span onclick="checkAnswer(this)" data-opt="2"></span>
+                    <span onclick="checkAnswer(this)" data-opt="1"></span>
+                </div>
+                <div class="footer">
+                    <button hidden onclick="showResult(1)">Show Results</button>
+                    <div class="con">
+                        <!-- <button onclick="showPrev(this)" class="disabled"><span>&#8592;</span>prev</button> -->
+                        <button hidden onclick="showNext()">Next &#8594;</button>
+                    </div>
+                </div>
+                <div class="count">
+                    سوال <span>1</span> / 95
+                </div>
+            </div>
+
+            <div class="box hidden" id="resultScreen">
+                <div class="title">
+                    آزمون استعداد یابی
+                </div>
+
+                <div>
+
+                    <a class="buttonBox" onclick="submitStudent()">ثبت نهایی</a>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+}
+@section Scripts{
+
+    <script type="text/javascript">
+        function submitStudent() {
+            var group = { 'listofusers': formData };
+            console.log(group);
+            $.ajax({
+                type: "POST",
+                data: group,
+                url: '/MBTIQuestionController/Quiz',
+                dataType: 'json',
+
+                success: function (result) {
+
+                    if (result) {
+                        console.log(result);
+                        window.location.href = "/Dashboard/UserProfile";
+                    }
+                    else {
+                        alert("آزمون شما قبلا در سیستم ثبت شده است");
+                    }
+                },
+                error: function () {
+
+                    console.log('Failed ');
+                    window.location.href = "/Dashboard/UserProfile";
+
+                }
+            })
+        }
+
+    </script>
+
+}
