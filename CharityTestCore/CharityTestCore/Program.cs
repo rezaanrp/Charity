@@ -17,7 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<ParkerCharityContext>(options =>
 //    options.UseSqlServer(connectionString));
 //builder.Services.AddDatabaseDeveloperPageExceptionFilter();1111111111
-
+builder.Services.AddDbContext<ParkerCharityContext>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -44,7 +44,11 @@ builder.Services.AddAuthentication(options =>
     options.ExpireTimeSpan = TimeSpan.FromMinutes(120); // 1month
 });
 var app = builder.Build();
-
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ParkerCharityContext>();
+    db.Database.Migrate();
+}
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

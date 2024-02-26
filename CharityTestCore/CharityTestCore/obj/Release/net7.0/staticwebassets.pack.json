@@ -5,6 +5,122 @@
       "PackagePath": "staticwebassets\\CharityTestCore.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\css\\animate.css",
+      "PackagePath": "staticwebassets\\LoginV4\\css\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\css\\bootstrap-rtl.min.css",
+      "PackagePath": "staticwebassets\\LoginV4\\css\\bootstrap-rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\LoginV4\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\css\\hamburgers.min.css",
+      "PackagePath": "staticwebassets\\LoginV4\\css\\hamburgers.min.css"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\LoginV4\\css\\select2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\css\\style.css",
+      "PackagePath": "staticwebassets\\LoginV4\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\css\\util.css",
+      "PackagePath": "staticwebassets\\LoginV4\\css\\util.css"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\Vazir.eot",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\Vazir.eot"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\Vazir.ttf",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\Vazir.ttf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\Vazir.woff",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\Vazir.woff"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\Vazir.woff2",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\Vazir.woff2"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\LoginV4\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\index.html",
+      "PackagePath": "staticwebassets\\LoginV4\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\LoginV4\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\js\\jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets\\LoginV4\\js\\jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\LoginV4\\js\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\LoginV4\\js\\scripts.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\LoginV4\\js\\select2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\js\\tilt.jquery.min.js",
+      "PackagePath": "staticwebassets\\LoginV4\\js\\tilt.jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\pics\\icons\\favicon.ico",
+      "PackagePath": "staticwebassets\\LoginV4\\pics\\icons\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\pics\\img-01.jfif",
+      "PackagePath": "staticwebassets\\LoginV4\\pics\\img-01.jfif"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\pics\\img-01.png",
+      "PackagePath": "staticwebassets\\LoginV4\\pics\\img-01.png"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\pics\\img-012.png",
+      "PackagePath": "staticwebassets\\LoginV4\\pics\\img-012.png"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\LoginV4\\pics\\logo.png",
+      "PackagePath": "staticwebassets\\LoginV4\\pics\\logo.png"
+    },
+    {
       "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\Pics\\bg01.jpg",
       "PackagePath": "staticwebassets\\Pics\\bg01.jpg"
     },
@@ -47,6 +163,14 @@
     {
       "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\Quiz\\user.png",
       "PackagePath": "staticwebassets\\Quiz\\user.png"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\apl\\Swat\\sweetalert2.all.min.js",
+      "PackagePath": "staticwebassets\\apl\\Swat\\sweetalert2.all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\apl\\Swat\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\apl\\Swat\\sweetalert2.min.css"
     },
     {
       "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\build\\js\\.jscsrc",
@@ -5283,6 +5407,158 @@
     {
       "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\plugins\\timepicker\\bootstrap-timepicker.min.js",
       "PackagePath": "staticwebassets\\plugins\\timepicker\\bootstrap-timepicker.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\css\\style.css",
+      "PackagePath": "staticwebassets\\qu\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Black.eot",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Black.eot"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Black.ttf",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Black.woff",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Black.woff"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Black.woff2",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Black.woff2"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Bold.eot",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Bold.ttf",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Bold.woff",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Bold.woff2",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Light.eot",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Light.ttf",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Light.woff",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Light.woff2",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Medium.eot",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Medium.ttf",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Medium.woff",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Medium.woff2",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Thin.eot",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Thin.eot"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Thin.ttf",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Thin.ttf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Thin.woff",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Thin.woff"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir-Thin.woff2",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir-Thin.woff2"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir.eot",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir.eot"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir.ttf",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir.ttf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir.woff",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir.woff"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\Vazir.woff2",
+      "PackagePath": "staticwebassets\\qu\\fonts\\Vazir.woff2"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\qu\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\qu\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\qu\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\qu\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\fonts\\glyphicons-halflings-regular.woff2",
+      "PackagePath": "staticwebassets\\qu\\fonts\\glyphicons-halflings-regular.woff2"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\img\\bg.png",
+      "PackagePath": "staticwebassets\\qu\\img\\bg.png"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\img\\logo.png",
+      "PackagePath": "staticwebassets\\qu\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\index.html",
+      "PackagePath": "staticwebassets\\qu\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\jquery-3.5.1.min.js",
+      "PackagePath": "staticwebassets\\qu\\js\\jquery-3.5.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\quiz.js",
+      "PackagePath": "staticwebassets\\qu\\js\\quiz.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\script.js",
+      "PackagePath": "staticwebassets\\qu\\js\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\tilt.min.js",
+      "PackagePath": "staticwebassets\\qu\\js\\tilt.min.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\questions.html",
+      "PackagePath": "staticwebassets\\qu\\questions.html"
     },
     {
       "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.CharityTestCore.Microsoft.AspNetCore.StaticWebAssets.props",

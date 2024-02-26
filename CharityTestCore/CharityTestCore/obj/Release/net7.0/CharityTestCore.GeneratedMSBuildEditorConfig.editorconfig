@@ -12,9 +12,13 @@ build_property.RootNamespace = CharityTestCore
 build_property.ProjectDir = C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\CharityTestCore\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\co.tavili\Source\Repos\Charity\CharityTestCore\CharityTestCore
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
@@ -22,6 +26,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/Ept.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEVwdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/EPTDelete.cshtml]
@@ -40,12 +48,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXE1CVElEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Dashboard/UserProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFVzZXJQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/EPTTest/AnswerEptQuestion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVBUVGVzdFxBbnN3ZXJFcHRRdWVzdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/EPTTest/RegisterEptQuestion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVBUVGVzdFxSZWdpc3RlckVwdFF1ZXN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/EPTTest/RegisterEptQuestionV2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVBUVGVzdFxSZWdpc3RlckVwdFF1ZXN0aW9uVjIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Home/Index.cshtml]
@@ -80,6 +96,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRUZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LayoutUserSimple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRVc2VyU2ltcGxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/Shared/_MainLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -94,6 +118,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/User/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/User/edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxlZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/co.tavili/Source/Repos/Charity/CharityTestCore/CharityTestCore/Views/User/Index.cshtml]
