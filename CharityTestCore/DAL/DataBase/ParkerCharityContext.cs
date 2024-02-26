@@ -26,13 +26,14 @@ namespace DAL.DataBase
  
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+
             //   base.OnConfiguring(optionsBuilder);
            // optionsBuilder.UseSqlServer(@"Server=.;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=mehr;Password=bxvN~21112222");
             optionsBuilder.UseSqlServer(@"Data Source=.;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=mehr;Password=bxvN~21112222");
             // optionsBuilder.UseSqlServer(@"Data Source=.;TrustServerCertificate=True;Initial Catalog=ca7_db;User ID=sa;Password=K500at10");
 
             //     "DefaultConnection": "Data Source=.;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=sa;Password=kjhkj@56654ggfd"
-           
+
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,6 +44,7 @@ namespace DAL.DataBase
             modelBuilder.Entity<MBTIAnswerList>().HasQueryFilter(a => !a.IsDelete);
 
             new Seed(modelBuilder).seeduser();
+            new Seed(modelBuilder).SeedMbtiAnswer();
             modelBuilder.Entity<User>().HasIndex(u => u.NationalNumber).IsUnique();
             modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique();
             ParkerCharityContext s = new ParkerCharityContext();

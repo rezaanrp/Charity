@@ -1,0 +1,612 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminSimple.cshtml";
+
+}
+@section ProfileName
+{
+
+}
+@section Body {
+
+        <div class="row">
+
+
+            <div class="col-md-12">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">لیست متقاضی </h3>
+                    </div>
+                    <div class="card-body">
+                        <table id="userstable" class="table table-bordered table-striped dataTable" style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th> کد </th>
+                                    <th>نام</th>
+                                    <th>نام خانوادگی</th>
+                                    <th> کد ملی </th>
+                                    <th>شماره تماس </th>
+                                    <th width="220px">عملیات</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+}
+@section script {
+        <link href="~/apl/swat/sweetalert2.min.css" rel="stylesheet" />
+        <script src="~/apl/swat/sweetalert2.all.min.js"></script>
+
+        <script>
+            var table2;
+            $(document).ready(function () {
+                load_data2();
+            });
+            $('body').on('click', '._quiez1', function () {
+                var data = table2.row($(this).parents('tr')).data();
+                window.location.href = "/Dashboard/Mbti?id=" + data.id;
+            });
+            $('body').on('click', '._edit', function () {
+                var data = table2.row($(this).parents('tr')).data();
+                window.location.href = "/user/edit?id=" + data.id;
+            });
+            $('body').on('click', '._quiez2', function () {
+                var data = table2.row($(this).parents('tr')).data();
+                window.location.href = "/Dashboard/Ept?id=" + data.id;
+            });
+            $('body').on('click', '._delete', function () {
+
+                var data = table2.row($(this).parents('tr')).data();
+                // window.location.href = "/FilingUser/Insert?id=" + data.id;
+                load_data2(data.id);
+            });
+            $('body #userstable').on('click', '._deletembti', function () {
+                var data = table2.row($(this).parents('tr')).data();
+
+
+                Swal.fire({
+                    title: 'تایید عملیات',
+                    text: 'آیا از حذف آیتم انتخاب شده اطمینان دارید ؟',
+                    icon: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "تایید",
+                    cancelButtonText: 'انصراف',
+                    customClass: {
+                        confirmButton: "btn btn-danger",
+                        cancelButton: "btn btn-outline-danger ms-1"
+                    },
+                    buttonsStyling: !1
+                }).then((function (t) {
+                    if (t.isConfirmed) {
+                        _deleteMbti(data.id);
+
+                    } else {
+
+                    }
+                }))
+            });
+            $('body #userstable').on('click', '._deleteept', function () {
+                var data = table2.row($(this).parents('tr')).data();
+
+
+                Swal.fire({
+                    title: 'تایید عملیات',
+                    text: 'آیا از حذف آیتم انتخاب شده اطمینان دارید ؟',
+                    icon: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "تایید",
+                    cancelButtonText: 'انصراف',
+                    customClass: {
+                        confirmButton: "btn btn-danger",
+                        cancelButton: "btn btn-outline-danger ms-1"
+                    },
+                    buttonsStyling: !1
+                }).then((function (t) {
+                    if (t.isConfirmed) {
+                        _deleteept(data.id);
+
+                    } else {
+
+                    }
+                }))
+            });
+              $('body #userstable').on('click', '._deleteuser', function () {
+            var data = table2.row($(this).parents('tr')).data();
+
+
+            Swal.fire({
+                title: 'تایید عملیات',
+                text: 'آیا از حذف آیتم انتخاب شده اطمینان دارید ؟',
+                icon: "warning",
+                showCancelButton: !0,
+                confirmButtonText: "تایید",
+                cancelButtonText: 'انصراف',
+                customClass: {
+                    confirmButton: "btn btn-danger",
+                    cancelButton: "btn btn-outline-danger ms-1"
+                },
+                buttonsStyling: !1
+            }).then((function (t) {
+                if (t.isConfirmed) {
+                    _deleteuser(data.id);
+
+                } else {
+
+                }
+            }))
+        });
+            function _deleteMbti(id) {
+
+                $.ajax({
+                    url: '/Dashboard/MBTIIsDelete?id=' + id,
+                    datatype: 'json',
+                    data: JSON.stringify(id),
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (response) {
+                        if (response.result) {
+                            toastr.success(response.msg, "تایید", {
+                                closeButton: !0,
+                                tapToDismiss: !1,
+                                showMethod: "slideDown",
+                                hideMethod: "slideUp",
+                                progressBar: !0,
+                                timeOut: 50e3,
+                                rtl: "rtl"
+                            })
+
+                        }
+                        else if (!response.result) {
+                            toastr.error(response.msg, "خطا", {
+                                closeButton: !0,
+                                tapToDismiss: !1,
+                                showMethod: "slideDown",
+                                hideMethod: "slideUp",
+                                progressBar: !0,
+                                timeOut: 50e3,
+                                rtl: "rtl"
+                            })
+                        }
+                        table.ajax.reload();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log('jqXHR:');
+                        console.log(jqXHR);
+                        console.log('textStatus:');
+                        console.log(textStatus);
+                        console.log('errorThrown:');
+                        console.log(errorThrown);
+                    }
+
+                });
+                Reload_data();
+            }
+            function _deleteept(id) {
+
+                $.ajax({
+                    url: '/Dashboard/EPTIsDelete?id=' + id,
+                    datatype: 'json',
+                    data: JSON.stringify(id),
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (response) {
+                        if (response.result) {
+                            toastr.success(response.msg, "تایید", {
+                                closeButton: !0,
+                                tapToDismiss: !1,
+                                showMethod: "slideDown",
+                                hideMethod: "slideUp",
+                                progressBar: !0,
+                                timeOut: 50e3,
+                                rtl: "rtl"
+                            })
+
+                        }
+                        else if (!response.result) {
+                            toastr.error(response.msg, "خطا", {
+                                closeButton: !0,
+                                tapToDismiss: !1,
+                                showMethod: "slideDown",
+                                hideMethod: "slideUp",
+                                progressBar: !0,
+                                timeOut: 50e3,
+                                rtl: "rtl"
+                            })
+                        }
+                        table.ajax.reload();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log('jqXHR:');
+                        console.log(jqXHR);
+                        console.log('textStatus:');
+                        console.log(textStatus);
+                        console.log('errorThrown:');
+                        console.log(errorThrown);
+                    }
+
+                });
+                Reload_data();
+            }
+        function _deleteuser(id) {
+
+            $.ajax({
+                url: '/Dashboard/userdelete?id=' + id,
+                datatype: 'json',
+                data: JSON.stringify(id),
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                success: function (response) {
+                    if (response.result) {
+                        toastr.success(response.msg, "تایید", {
+                            closeButton: !0,
+                            tapToDismiss: !1,
+                            showMethod: "slideDown",
+                            hideMethod: "slideUp",
+                            progressBar: !0,
+                            timeOut: 50e3,
+                            rtl: "rtl"
+                        })
+
+                    }
+                    else if (!response.result) {
+                        toastr.error(response.msg, "خطا", {
+                            closeButton: !0,
+                            tapToDismiss: !1,
+                            showMethod: "slideDown",
+                            hideMethod: "slideUp",
+                            progressBar: !0,
+                            timeOut: 50e3,
+                            rtl: "rtl"
+                        })
+                    }
+                    table2.ajax.reload();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('jqXHR:');
+                    console.log(jqXHR);
+                    console.log('textStatus:');
+                    console.log(textStatus);
+                    console.log('errorThrown:');
+                    console.log(errorThrown);
+                }
+
+            });
+            Reload_data();
+        }
+            function Reload_data() {
+                location.reload();
+
+            }
+            function load_data2(id) {
+
+                table2 = $('#userstable').DataTable({
+                    //scrollY: '400px',
+                    "scrollX": true,
+                    destroy: true,
+                    paging: false,
+                    ajax: {
+                        url: "/Dashboard/load_data_superadmin?id=" + id,
+                        datatype: 'json',
+                        type: 'POST',
+                    },
+                    "language": {
+                        "paginate": {
+                            "previous": "قبلی",
+                            "first": "صفحه اول",
+                            "next": "بعدی",
+                            "last": "آخرین صفحه"
+                        },
+                        "decimal": "",
+                        "emptyTable": "داده ای درجدول موجود نمی باشد",
+                        "info": "نمایش _START_ تا _END_ از _TOTAL_ رکورد",
+                        "infoEmpty": "نمایش 0 تا 0 از 0 رکوردها",
+                        "infoFiltered": "(filtered from _MAX_ total entries)",
+                        "infoPostFix": "",
+                        "thousands": ",",
+                        "lengthMenu": "نمایش _MENU_ رکورد",
+                        "loadingRecords": "...درحال بارگذاری",
+                        "processing": "درحال پردازش...",
+                        "search": "جستجو:",
+                        "zeroRecords": "هیچ رکوردی یافت نشد",
+                        "sLengthMenu": "نمایش _MENU_ رکورد",
+                    },
+                    columns: [
+                        { data: "id", name: "id", "visible": false },
+                        { data: "name", name: "Name" },
+                        { data: "family", name: "Family" },
+                        { data: "nationalNumber", name: "NationalNumber" },
+                        { data: "mobileNumber", name: "MobileNumber" },
+                        { data: null, "searchable": false, orderable: false },
+                    ],
+
+                    columnDefs: [
+
+                        {
+                            data: null,
+                            defaultContent:
+                                '<button type="button" class="btn btn-icon btn-outline-success _edit" style="margin-left: 2px;" title="ویرایش"><i class="fa fa-pencil"></i></button>'
+                                + '<button type="button" class="btn btn-icon btn-outline-primary _deletembti" title="حذف آزمون شخصیت"><i class="fa fa-trash"></i></button>'
+                                + '<button type="button" class="btn btn-icon btn-outline-primary _quiez1" title="آزمون شخصیت "><i class="fa fa-list"></i></button>'
+                                + '<button type="button" class="btn btn-icon btn-outline-secondary _deleteept" title="حذف آزمون استعداد یابی"><i class="fa fa-trash"></i></button>'
+                                + '<button type="button" class="btn btn-icon btn-outline-secondary _quiez2" title="آزمون استعداد یابی"><i class="fa fa-list"></i></button>'
+                                        + '<button type="button" class="btn btn-icon btn-outline-danger _deleteuser" title="حذف"><i class="fa fa-trash"></i></button>',
+
+                            targets: -1
+                        }
+                    ],
+                    processing: true,
+                    serverSide: true,
+                    paging: true,
+                    filter: true,
+                    ordering: false,
+
+                });
+            }
+        </script>
+}
+@* @model CharityTestCore.Models.EPTListPersonModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdminSimple.cshtml";
+
+}
+@section ProfileName
+    {
+    @if (User.Identity.IsAuthenticated)
+        @User.Identity.Name
+
+
+}
+@section Body{
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">لیست افراد</h3>
+                </div>
+                <div class="table-responsive-md">
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>نام و نام خانوادگی</th>
+                                    <th>شماره تلفن همراه</th>
+                                    <th> کد ملی</th>
+                                    <th>سن</th>
+                                    <th>نتیجه</th>
+                                    <th>عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    @foreach (var item in Model.Persons)
+                                    {
+                                        <tr>
+
+                                            <td> </td>
+                                            <td>
+
+                                            </td>
+                                            <td></td>
+                                            <td> </td>
+                                            <td> @item.Result</td>
+                                            <td>
+                                            <a  asp-controller="Dashboard" asp-action="Index" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                                            <a  asp-controller="Dashboard" asp-action="EPTDelete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>نام و نام خانوادگی</th>
+                                    <th>شماره تلفن همراه</th>
+                                    <th> کد ملی</th>
+                                    <th>سن</th>
+                                    <th>نتیجه</th>
+                                    <th>عملیات</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row         -->
+    @if (Model.ResultTestText != "$$")
+    {
+        <div class="info-box mb-3 bg-info">
+            <span class="info-box-icon"><i class="fa fa-tag"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text"> </span>
+                <span class="info-box-number">
+                    <h3>@Model.ResultTestText</h3>
+                </span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+
+                        <h3 class="card-title">
+                            <i class="fa fa-text-width"></i>
+                            توضیحات
+                        </h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <dl>
+                            <dt>
+                                <h3>@Model.ResultTestText</h3>
+                            </dt>
+                            <dt>
+
+                            </dt>
+
+                            <dd> @Model.ResultTest1Text</dd>
+                            <dd> @Model.ResultTest2Text</dd>
+                            <dd> @Model.ResultTest3Text</dd>
+                            <dd> @Model.ResultTest4Text</dd>
+                            <dd> @Model.ResultTest5Text</dd>
+                            <dd> @Model.ResultTest6Text</dd>
+                            <dd> @Model.ResultTest7Text</dd>
+                            <dd> @Model.ResultTest8Text</dd>
+                        </dl>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- ./col -->
+            <div class="col-md-6">
+                <!-- Bar chart -->
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fa fa-bar-chart-o"></i>
+                            نمودار ستونی
+                        </h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-widget="remove">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="bar-chart" style="height: 300px;">
+                        </div>
+                    </div>
+                    <!-- /.card-body-->
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col -->
+        </div>
+    }
+}
+@section script{
+
+
+    <!-- FLOT CHARTS -->
+    <script src="../../plugins/flot/jquery.flot.min.js"></script>
+    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+    <script src="../../plugins/flot/jquery.flot.resize.min.js"></script>
+    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+    <script src="../../plugins/flot/jquery.flot.pie.min.js"></script>
+    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+    <script src="../../plugins/flot/jquery.flot.categories.min.js"></script>
+    <!-- Page script -->
+
+    <!---------------------------------------------------------------->
+
+
+
+
+
+
+    <script>
+        $(function () {
+            /*
+             * BAR CHART
+             * ---------
+             */
+
+            var bar_data = {
+                data: [
+                    ['ریسک پذیری متعادل', @Model.ResultTest1],
+                    [' کانون کنترل', @Model.ResultTest2],
+                    [' نیاز به موفقیت', @Model.ResultTest3],
+                    [' سلامت فکری', @Model.ResultTest4],
+                    [' عملگرایی', @Model.ResultTest5],
+                    [' تحمل ابهام', @Model.ResultTest6],
+                    [' رویا پردازی', @Model.ResultTest7],
+                    [' چالش طلبی', @Model.ResultTest8],
+                    [' کارآفرینی', @Model.ResultTest9],
+                ],
+                color: '#3c8dbc'
+            }
+            $.plot('#bar-chart', [bar_data], {
+                grid: {
+                    borderWidth: 1,
+                    borderColor: '#f3f3f3',
+                    tickColor: '#f3f3f3'
+                },
+                series: {
+                    bars: {
+                        show: true,
+                        barWidth: 0.5,
+                        align: 'center'
+                    }
+                },
+                xaxis: {
+                    mode: 'categories',
+                    tickLength: 0
+                }
+            })
+            /* END BAR CHART */
+
+
+        })
+
+        /*
+         * Custom Label formatter
+         * ----------------------
+         */
+        function labelFormatter(label, series) {
+            return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+                + label
+                + '<br>'
+                + Math.round(series.percent) + '%</div>'
+        }
+    </script>
+
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "language": {
+                    "paginate": {
+                        "next": "بعدی",
+                        "previous": "قبلی"
+                    }
+                },
+                "info": false,
+            });
+            $('#example2').DataTable({
+                "language": {
+                    "paginate": {
+                        "next": "بعدی",
+                        "previous": "قبلی"
+                    }
+                },
+                "info": false,
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "autoWidth": false
+            });
+        });
+    </script>
+} *@

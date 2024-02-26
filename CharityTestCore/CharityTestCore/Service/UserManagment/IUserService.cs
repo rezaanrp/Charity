@@ -13,6 +13,7 @@ namespace CharityTestCore.Service.UserManagment
         UserProfileModel? GetProfile(string username);
 		 List<UserProfileModel> GetAllUser();
 		 UserProfileModel GetById(string Id);
+		 bool DeleteUser(string Id);
         int CountNationalNumber(string code);
 		int CountMobile(string code);
 		int CountUserName(string code);

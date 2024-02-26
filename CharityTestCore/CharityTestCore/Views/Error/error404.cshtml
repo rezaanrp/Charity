@@ -1,0 +1,24 @@
+﻿@model CharityTestCore.Models.EPTQuestion
+
+@{
+    ViewBag.Title = "AnswerEptQuestion";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>AnswerEptQuestion</h2>
+@section Scripts {
+
+}
+@section Head {
+
+}
+@section Body {
+    <div class="card">
+        <div class="card-body">
+            <h2>صفحه مورد نظر شما پیدا نشد</h2>
+            <br />
+            <input type="submit" class="btn btn-primary btn-lg" value="بازگشت" onclick="location.href='@Url.Action("Index", "Home")'" />
+
+        </div>
+    </div>
+}
