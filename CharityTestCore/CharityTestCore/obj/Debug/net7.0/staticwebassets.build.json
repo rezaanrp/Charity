@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "we63yd/qZtp12vQrCO01CKre+Tv8+0MdSkpKJwz7l6M=",
+  "Hash": "rVQ9LGqowMcmlsrWhOtdJnC3XEWcZ4LBduZ2sIkcv9I=",
   "Source": "CharityTestCore",
   "BasePath": "_content/CharityTestCore",
   "Mode": "Default",
@@ -25553,7 +25553,7 @@
       "OriginalItemSpec": "wwwroot\\plugins\\timepicker\\bootstrap-timepicker.min.js"
     },
     {
-      "Identity": "C:\\Users\\reza\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\Quiz\\css\\jsQuizEngine.css",
+      "Identity": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\Quiz\\css\\jsQuizEngine.css",
       "SourceId": "CharityTestCore",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\reza\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\",
