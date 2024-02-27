@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Cdq7HY70EuWgGF1IH1BIOuqQvqu559Qhr0b5p0lJzuI=",
+  "Hash": "N2w8LMD0PINrCf+PXxL64iXoOCCxvIZIwT7KtZJCdh8=",
   "Source": "CharityTestCore",
   "BasePath": "_content/CharityTestCore",
   "Mode": "Default",
@@ -23460,6 +23460,23 @@
       "OriginalItemSpec": "wwwroot\\qu\\js\\quiz.js"
     },
     {
+      "Identity": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\quizmbti.js",
+      "SourceId": "CharityTestCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\",
+      "BasePath": "_content/CharityTestCore",
+      "RelativePath": "qu/js/quizmbti.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\qu\\js\\quizmbti.js"
+    },
+    {
       "Identity": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\script.js",
       "SourceId": "CharityTestCore",
       "SourceType": "Discovered",
@@ -23475,6 +23492,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\qu\\js\\script.js"
+    },
+    {
+      "Identity": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\scriptmbti.js",
+      "SourceId": "CharityTestCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\",
+      "BasePath": "_content/CharityTestCore",
+      "RelativePath": "qu/js/scriptmbti.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\qu\\js\\scriptmbti.js"
     },
     {
       "Identity": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\tilt.min.js",

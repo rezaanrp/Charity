@@ -28,7 +28,7 @@
                     <span onclick="checkAnswer(this)" data-opt="4"></span>
                     <span onclick="checkAnswer(this)" data-opt="3"></span>
                     <span onclick="checkAnswer(this)" data-opt="2"></span>
-                    <span onclick="checkAnswer(this)" data-opt="1"></span>
+                    <span  onclick="checkAnswer(this)" data-opt="1"></span>
                 </div>
                 <div class="footer">
                     <button hidden onclick="showResult(1)">Show Results</button>
@@ -60,7 +60,10 @@
           
 }
 @section Scripts{
-
+    <script src="~/qu/js/jquery-3.5.1.min.js"></script>
+    <script src="~/qu/js/quiz.js"></script>
+    <script src="~/qu/js/script.js"></script>
+    <script src="~/qu/js/tilt.min.js"></script>
     <script type="text/javascript">
         function submitStudent() {
             var group = { 'listofusers': formData };

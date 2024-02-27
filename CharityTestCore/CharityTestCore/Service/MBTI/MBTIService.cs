@@ -3,6 +3,7 @@ using CharityTestCore.Repository;
 using CharityTestCore.Repository.MBTI;
 using CharityTestCore.Repository.UserManagment;
 using DAL.DataBase;
+using NuGet.Protocol.Core.Types;
 
 namespace CharityTestCore.Service.MBTI
 {
@@ -70,7 +71,7 @@ namespace CharityTestCore.Service.MBTI
                 MBTIQuestionListPersonModel_.ResultTestTotal = ReAnswerultTeAnswert9;
             }
             else
-                MBTIQuestionListPersonModel_.ResultTestTotal = "$$";
+                MBTIQuestionListPersonModel_.ResultTestTotal = "آزمون ثبت نشده";
 
 
             return MBTIQuestionListPersonModel_;
@@ -202,6 +203,9 @@ namespace CharityTestCore.Service.MBTI
                 return -1;
             }
         }
-
+        public MBTIAnswerList? GetByUserId(string UserId)
+        {
+            return mBTIRepository.GetByUserId(UserId);
+        }
     }
 }

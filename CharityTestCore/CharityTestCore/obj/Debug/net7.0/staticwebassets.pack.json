@@ -5549,8 +5549,16 @@
       "PackagePath": "staticwebassets\\qu\\js\\quiz.js"
     },
     {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\quizmbti.js",
+      "PackagePath": "staticwebassets\\qu\\js\\quizmbti.js"
+    },
+    {
       "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\script.js",
       "PackagePath": "staticwebassets\\qu\\js\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\scriptmbti.js",
+      "PackagePath": "staticwebassets\\qu\\js\\scriptmbti.js"
     },
     {
       "Id": "C:\\Users\\co.tavili\\Source\\Repos\\Charity\\CharityTestCore\\CharityTestCore\\wwwroot\\qu\\js\\tilt.min.js",

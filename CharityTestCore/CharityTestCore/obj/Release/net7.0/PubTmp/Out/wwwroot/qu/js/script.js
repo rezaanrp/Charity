@@ -5,7 +5,7 @@ let score = 0;
 let wrong = 0;
 let totalQuestions = 95;
 let questions = quiz;
-var formData = [{ key: 0, value: 0 }];
+var formData = [{ id: 0, name: 0 }];
 
 $(function(){
     
@@ -18,18 +18,13 @@ $(function(){
 
     let timer = setInterval( function(){
         counter++;
-        min = Math.floor( (totalTime - counter) / 60) //calculating minutes
-        sec = totalTime - (min * 60) - counter //calculating seconds
+        min = Math.floor( (counter)/ 60) //calculating minutes
+        sec = (counter % 60)  //calculating seconds
 
         // display on screen
         $(".timerBox span").text(min +" : "+sec)
 
-        if(counter == totalTime)
-        {
-            alert("Time is up. Press OK to show result");
-            result();
-            clearInterval(timer);
-        }
+
     }, 1000); //Counter set for 1 sec interval
     // Timer code
 
@@ -71,27 +66,21 @@ function checkAnswer(option){
     attempt++;
 
     let optionClicked = $(option).data("opt");
-    if(optionClicked == questions[index].answer)
-    {
+
         $(option).addClass("correct");
         score++;
-    }
-    else
-    {
-        $(option).addClass("wrong")
-        wrong++;
-    }
-    formData.push({ code: qu++, value: optionClicked });
+
+    formData.push({ id: qu++, name: optionClicked });
   
   /*  formData.push("1", "4");*/
     /*    $(".s" + qu++).val(optionClicked);*/
-    console.log(formData);
-    $(".scoreBox span").text((score * 10))
+/*    console.log(formData);*/
+  /*  $(".scoreBox span").text((score * 10))*/
     $(".optionBox span").attr("onclick", "") // prevent selecting a different answer
 
     setTimeout(function() {
         showNext();
-    },1000);
+    },300);
 }
 
 // Function to check Answer
@@ -99,9 +88,9 @@ function checkAnswer(option){
 // Show next Question
 let num = 1
 function showNext(){
-    if(index <= 96)
+    if(index <= 93)
     {
-
+        console.log(index);
         index++;
         num++;
         // console.log(num);

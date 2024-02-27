@@ -14,6 +14,7 @@ namespace CharityTestCore.Repository.MBTI
         void DelMBTIQuestion(MBTIAnswerList item);
 
         void SaveChanges();
+         MBTIAnswerList? GetByUserId(string UserId);
 
     }
 }

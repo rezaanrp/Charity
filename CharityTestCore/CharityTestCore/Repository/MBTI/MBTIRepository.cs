@@ -30,6 +30,13 @@ namespace CharityTestCore.Repository.MBTI
             context.SaveChanges();
 
         }
+
+        public MBTIAnswerList? GetByUserId(string UserId)
+        {
+            return context.MBTIAnswerList.FirstOrDefault(x => x.UserId == UserId);
+
+        }
+
         public void SaveChanges()
         {
             context.SaveChanges();

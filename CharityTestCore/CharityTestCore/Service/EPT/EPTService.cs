@@ -289,7 +289,7 @@ namespace CharityTestCore.Service.EPT
             }
             else
             {
-                EPTListPersonModel_.ResultTestText = "$$";
+                EPTListPersonModel_.ResultTestText = "آزمون ثبت نشده";
 
             }
 

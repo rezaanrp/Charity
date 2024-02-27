@@ -1,6 +1,7 @@
 ﻿using CharityTestCore.Models;
 using CharityTestCore.Repository.MBTI;
 using CharityTestCore.Service;
+using CharityTestCore.Service.EPT;
 using CharityTestCore.Service.MBTI;
 using DAL.DataBase;
 using Microsoft.AspNetCore.Mvc;
@@ -54,11 +55,13 @@ namespace CharityTestCore.Controllers
 
             return View();
         }
-
-
         [HttpGet]
         public IActionResult Quiz()
         {
+            if (_mBTIService.GetByUserId(OnGetUserId()) != null)
+            {
+                return RedirectToAction("UserProfile", "Dashboard");
+            }
             ViewBag.Title = "آزمون شخصیت";
             return View();
 
@@ -72,7 +75,97 @@ namespace CharityTestCore.Controllers
         public IActionResult Quiz(List<UserModel> listofusers)
         {
 
-                return View();
+            if (_mBTIService.GetByUserId(OnGetUserId()) != null)
+            {
+                return RedirectToAction("UserProfile", "Dashboard");
+            }
+            var result = _mBTIService.AddMBTIQuestionList(OnGetUserId(),
+                                listofusers[1].Name,
+                                listofusers[2].Name,
+                                listofusers[3].Name,
+                                listofusers[4].Name,
+                                listofusers[5].Name,
+                                listofusers[6].Name,
+                                listofusers[7].Name,
+                                listofusers[8].Name,
+                                listofusers[9].Name,
+                                listofusers[10].Name,
+                                listofusers[11].Name,
+                                listofusers[12].Name,
+                                listofusers[13].Name,
+                                listofusers[14].Name,
+                                listofusers[15].Name,
+                                listofusers[16].Name,
+                                listofusers[17].Name,
+                                listofusers[18].Name,
+                                listofusers[19].Name,
+                                listofusers[20].Name,
+                                listofusers[21].Name,
+                                listofusers[22].Name,
+                                listofusers[23].Name,
+                                listofusers[24].Name,
+                                listofusers[25].Name,
+                                listofusers[26].Name,
+                                listofusers[27].Name,
+                                listofusers[28].Name,
+                                listofusers[29].Name,
+                                listofusers[30].Name,
+                                listofusers[31].Name,
+                                listofusers[32].Name,
+                                listofusers[33].Name,
+                                listofusers[34].Name,
+                                listofusers[35].Name,
+                                listofusers[36].Name,
+                                listofusers[37].Name,
+                                listofusers[38].Name,
+                                listofusers[39].Name,
+                                listofusers[40].Name,
+                                listofusers[41].Name,
+                                listofusers[42].Name,
+                                listofusers[43].Name,
+                                listofusers[44].Name,
+                                listofusers[45].Name,
+                                listofusers[46].Name,
+                                listofusers[47].Name,
+                                listofusers[48].Name,
+                                listofusers[49].Name,
+                                listofusers[50].Name,
+                                listofusers[51].Name,
+                                listofusers[52].Name,
+                                listofusers[53].Name,
+                                listofusers[54].Name,
+                                listofusers[55].Name,
+                                listofusers[56].Name,
+                                listofusers[57].Name,
+                                listofusers[58].Name,
+                                listofusers[59].Name,
+                                listofusers[60].Name,
+                                listofusers[61].Name,
+                                listofusers[62].Name,
+                                listofusers[63].Name,
+                                listofusers[64].Name,
+                                listofusers[65].Name,
+                                listofusers[66].Name,
+                                listofusers[67].Name,
+                                listofusers[68].Name,
+                                listofusers[69].Name,
+                                listofusers[70].Name,
+                                listofusers[71].Name,
+                                listofusers[72].Name,
+                                listofusers[73].Name,
+                                listofusers[74].Name,
+                                listofusers[75].Name,
+                                listofusers[76].Name,
+                                listofusers[77].Name,
+                                listofusers[78].Name,
+                                listofusers[79].Name,
+                                listofusers[80].Name
+
+                       );
+            return Json(new
+            {
+                result = true
+            });
 
         }
 
