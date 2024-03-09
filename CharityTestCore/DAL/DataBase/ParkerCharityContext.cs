@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
@@ -10,12 +11,14 @@ using System.Threading.Tasks;
 namespace DAL.DataBase
 {
   
-    public class ParkerCharityContext : DbContext
+    public class ParkerCharityContext : DbContext, IDataProtectionKeyContext
     {
         //public ParkerCharityContext(DbContextOptions<ParkerCharityContext> options) : base(options)
         //{
 
         //}
+        public DbSet<DataProtectionKey> DataProtectionKeys { get; set; } = null!;
+
         public DbSet<User> Users { get; set; }
         public DbSet<EptQuestionList> EptQuestion { get; set; }
         public DbSet<mGenGroup> mGenGroup { get; set; }
@@ -29,8 +32,8 @@ namespace DAL.DataBase
 
             //   base.OnConfiguring(optionsBuilder);
            // optionsBuilder.UseSqlServer(@"Data Source=172.25.42.55;TrustServerCertificate=True;Initial Catalog=ca8_db;User ID=sa;Password=kjhkj@56654ggfd");
-            optionsBuilder.UseSqlServer(@"Data Source=.;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=mehr;Password=bxvN~21112222");
-            // optionsBuilder.UseSqlServer(@"Data Source=.;TrustServerCertificate=True;Initial Catalog=ca7_db;User ID=sa;Password=K500at10");
+           // optionsBuilder.UseSqlServer(@"Data Source=.;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=mehr;Password=bxvN~21112222");
+            optionsBuilder.UseSqlServer(@"Data Source=.;TrustServerCertificate=True;Initial Catalog=ca7_db;User ID=sa;Password=K500at10");
 
             //     "DefaultConnection": "Data Source=.;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=sa;Password=kjhkj@56654ggfd"
 

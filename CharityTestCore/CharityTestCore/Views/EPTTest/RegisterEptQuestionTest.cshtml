@@ -1,0 +1,1718 @@
+﻿@model CharityTestCore.Models.EPTQuestion
+@{
+    // ViewBag.Title = "RegisterEptQuestion";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+@section Head {
+
+}
+@section Scripts {
+
+
+
+
+}
+@section Body {
+    <div class="container">
+
+        @using (Html.BeginForm())
+        {
+            <div style="margin-top:10px;color:red" class="form-group">
+
+                @Html.ValidationSummary()
+
+                @ViewBag.ErrorMessage
+            </div>
+
+            
+                                                    <div class="question-pool borderme w3-padding">
+                                                        <section class="quiz">
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <label> آیا دارای مهارت ویا تخصص معین هستین؟ </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        @Html.DropDownListFor(x => x.HaveSkill, new[] {
+                                                                new  SelectListItem() { Text ="بله" ,Value = bool.TrueString},
+                                                                new  SelectListItem() { Text ="خیر" ,Value = bool.TrueString}
+                                                                }, "یک گزینه را انتخاب کنید", new
+                                                                                                                        {
+                                                                                                                            @class = "form-control "
+                                                                                                                        })
+                                                                    </div>
+                                                                </div>
+
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <label> آیا قبلا اقدام به راه اندازی کسب و کاری کرده اید یا در راه اندازی کسب و کاری همکاری داشته اید؟</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        @Html.DropDownListFor(x => x.BeforeYouHaveJob, new[] {
+                                                                new  SelectListItem() { Text ="بله" ,Value = bool.TrueString},
+                                                                new  SelectListItem() { Text ="خیر" ,Value = bool.TrueString}
+                                                                }, "یک گزینه را انتخاب کنید", new
+                                                                                                                        {
+                                                                                                                            @class = "form-control"
+                                                                                                                        })
+                                                                    </div>
+                                                                </div>
+
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <label>  آیا در حال حاضر تمایلی به راه اندازی کسب و کار دارید؟</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        @Html.DropDownListFor(x => x.DoYouWantHaveJob, new[] {
+                                                                new  SelectListItem() { Text ="بله" ,Value = bool.TrueString},
+                                                                new  SelectListItem() { Text ="خیر" ,Value = bool.TrueString}
+                                                                }, "یک گزینه را انتخاب کنید", new
+                                                                                                                        {
+                                                                                                                            @class = "form-control"
+                                                                                                                        })
+                                                                    </div>
+                                                                </div>
+
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text">
+                                                                    1.براي کسب وضعيت بهتر حاضرم ريسک کنم حتي اگر از وضع فعلي خود راضي باشم .
+                                                                </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S01, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S01, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S01, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S01, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text">
+                                                                    2.گاهي اوقات حاضرم به خاطر سود بيشتر ريسک هاي بالاتري را بپذيرم .
+                                                                </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S02, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S02, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S02, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S02, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 3.خطر کردن نمک زندگي است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S03, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S03, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S03, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S03, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 4.زماني که اکثر افراد احتمال شکست کاري را مي دهند باز هم حاضرم ريسک انجام آن را بپذيرم. </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S04, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S04, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S04, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S04, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 5.اگر نتيجه انجام کاري به خطر کردنش بيرزد حتي با وجود مخالفت ديگران آن را انجام ميدهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S05, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S05, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S05, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S05, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 6.از خطر کردن لذت مي برم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S06, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S06, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S06, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S06, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 7.وقتي حاضرم به ريسک هاي بالاتري دست بزنم که ارزش آن را داشته باشد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S07, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S07, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S07, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S07, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 8.نسبت به مردم عادي بيشتر خطر مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S08, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S08, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S08, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S08, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 9.نتايج مطلوبتر معمولاً مرا به اين امر وا ميدارد که در جهت آنها خطرات بيشتري را بپذيرم. </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S09, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S09, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S09, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S09, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 10.اگر نتيجه انجام کاري برايم جذاب باشد، حاضرم براي رسيدن به آن، خطر بيشتري را بپذيرم. </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S10, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S10, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S10, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S10, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 11.خطراتي که مي پذيرم با نتايجي که به دست مي آورم توجيه مي شود . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S11, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S11, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S11, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S11, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 12.اگر ايده ي خوبي داشته باشم حاضرم کار و شغل فعلي خود را رها کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S12, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S12, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S12, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S12, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 13.حاضرم شانس خود را در معامله اي که نتايج آن مبهم است، امتحان کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S13, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S13, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S13, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S13, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 14.معتقدم که شروع يک کار جديد ارزش خطر کردن را دارد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S14, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S14, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S14, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S14, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 15.اطرافيان معمولاً خطر کردن هاي مرا منطقي مي دانند . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S15, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S15, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S15, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S15, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 16.به سر و کار داشتن با وضعيت هاي مبهم علاقه مندم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S16, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S16, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S16, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S16, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 17.وضعيت هاي نا آشنا مي توانند خوب هم باشند . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S17, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S17, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S17, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S17, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 18.بر اساس اطلاعات ناقص هم مي توان تصميم گيري کرد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S18, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S18, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S18, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S18, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 19.هرچه از زندگي بخواهم به دست مي آورم زيرا در راه رسيدن به آن سخت کار مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S19, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S19, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S19, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S19, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 20.از طريق سخت کوشي، پافشاري و توانايي مي توانيم هر چيزي را در زندگي تغيير دهيم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S20, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S20, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S20, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S20, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 21.افراد معمولاً به آنچه استحقاقش را دارند، دست مي يابند . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S21, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S21, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S21, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S21, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 22.به قدرت خودم براي تحقق هدف ها معتقدم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S22, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S22, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S22, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S22, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 23.موفق شدن حاصل زحمت کشيدن است نه شانس . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S23, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S23, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S23, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S23, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 24.مي توانم سرنوشت خود را در دست بگيرم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S24, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S24, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S24, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S24, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 25.به دست آوردن آنچه که مي خواهم، کمتر به اقبال و شانس بستگي دارد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S25, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S25, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S25, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S25, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 26.با تلاش بيشتر مي توانم در وضعيت فعلي ام تغيير ايجاد کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S26, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S26, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S26, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S26, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 27.فکر مي کنم بيشتر مردم اگر فقط از خود پشتکار نشان مي دادند، در زندگي موفق مي شدند . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S27, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S27, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S27, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S27, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 28.اگر شخصي در انجام کاري تلاش کند، حتماً موفق مي شود . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S28, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S28, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S28, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S28, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 29.خودم در موفقيت هايم موثرم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S29, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S29, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S29, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S29, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 30.سرانجام، هر کس به ارزش و احترامي که شايسته آن است خواهد رسيد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S30, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S30, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S30, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S30, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 31.شانس در زندگي نقش اندکي دارد. </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S31, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S31, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S31, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S31, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 32.احتمال انجام موفقيت آميز کار به تلاش شخصي من وابسته است. </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S32, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S32, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S32, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S32, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 33.تلاش زياد دليل تحقق و ارضاي خواسته هاي من است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S33, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S33, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S33, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S33, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 34.بيشتر بد بختي ها نتيجه ناداني، ناتواني، تنبلي و مانند اينهاست . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S34, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S34, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S34, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S34, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 35.پس از هر شکست، هدفم را از طريق ديگري دنبال مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S35, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S35, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S35, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S35, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 36.سعي مي کنم کار خود را حتي با وجود موانع زياد ادامه دهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S36, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S36, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S36, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S36, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 37.وقتي کاري را شروع مي کنم، آنرا تا دستيابي به نتيجه موفق ادامه مي دهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S37, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S37, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S37, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S37, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 38.خود را وقف کار مي کنم و به انجام آن متعهد مي شوم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S38, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S38, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S38, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S38, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 39.در اجراي برنامه تدوين شده خود، سخت تلاش مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S39, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S39, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S39, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S39, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 40.يک کار را تا رسيدن به نتيجه ادامه مي دهم حتي اگر مدت زيادي طول بکشد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S40, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S40, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S40, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S40, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 41.هنگام کار معمولاً با تمام وجود کار مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S41, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S41, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S41, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S41, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 42.براي حل مسائل و مشکلاتم اغلب تلاش زيادي مي کنم ونمي توانم به راحتي از آنها بگذرم. </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S42, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S42, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S42, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S42, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 43.کارهايي را که توانايي مرا افزايش مي دهند، به کارهاي آسان ترجيح مي دهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S43, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S43, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S43, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S43, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 44.وقتي شيوه خاصي براي حل مسئله نمي تواند کارساز باشد، به سرعت مي توانم فکرم را بر رويشيوه مناسب تر ديگري تغيير جهت دهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S44, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S44, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S44, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S44, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 45.شکست هاي متوالي مانع پيگيري اهدافم نمي شود . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S45, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S45, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S45, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S45, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 46.براي انجام کارها صبح زود بيدار مي شوم و تا ديروقت کار مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S46, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S46, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S46, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S46, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 47.مي توانم مدت زيادي بدون خستگي به انجام کار ادامه دهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S47, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S47, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S47, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S47, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 48.دست و پنجه نرم کردن با مشکل پيچيده، از حل مسئله ساده برايم جالب تر است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S48, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S48, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S48, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S48, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 49.براي رسيدن به اهدافي که تعيين کرده ام، حاضرم آسايش خود را فدا کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S49, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S49, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S49, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S49, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 50.در يک بازي رقابتي، دل مشغولي من بهتر بازي کردن است نه برنده شدن . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S50, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S50, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S50, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S50, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 51.همين حالا و في البداهه مي توانم تعداد بي شماري جمله بسازم که با کلمه "همه" شروع مي شود </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S51, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S51, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S51, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S51, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 52.نوشتن تعداد زيادي داستان تازه برايم آسان است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S52, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S52, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S52, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S52, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 53.نوشتن مترادف هاي بسيار براي کلمه "سريع"، برايم آسان است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S53, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S53, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S53, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S53, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 54.اگر در مسابقه اي شرکت کنم که در آن بايد تا حد امکان کلمه هاي بسياري را که با حرف "ج"شروع مي شود بيان کنم، از عهده اين کار بر مي آيم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S54, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S54, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S54, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S54, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 55.فرض کنيم همه راه هاي معمولي براي گرم کردن غذا را از دست داده ايم، تهيه فهرست طولاني ازراه هاي گرم کردن غذا برايم آسان است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S55, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S55, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S55, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S55, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 56.اگر به يک گردهمايي دعوت شوم تا مسائل جامعه را مورد بحث قرار دهم، تهيه فهرست طولاني از مسائل آن برايم آسان است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S56, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S56, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S56, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S56, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 57.براي توصيف موقعيت ها، اشيا و ... به راحتي به کلمات دست پيدا مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S57, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S57, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S57, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S57, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 58.به جز کاربرد رايج وسايل معمولاً مي توانم کاربرد هاي ديگري هم براي آنها پيدا کنم. </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S58, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S58, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S58, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S58, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 59.براي بيان يک انديشه به سهولت به کلمات مترادف دست پيدا مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S59, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S59, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S59, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S59, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 60.اگر از من دعوت شود به انجمن شهر براي دريافت کمک مالي پيشنهادهايي ارائه دهم به راحتي ازعهده اين کار بر مي آيم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S60, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S60, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S60, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S60, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 61.اگر به طور غير منتظره از من بخواهند بيش از پنج دقيقه در مورد يک موضوع صحبت کنم، به راحتي از پس آن بر مي آيم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S61, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S61, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S61, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S61, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 62.مي توانم در طراحي اسباب بازي هاي جديد براي کودکان مفيد باشم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S62, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S62, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S62, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S62, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 63.گاهي اوقات به قدري ايده هاي متنوع دارم که نمي دانم کدام را انتخاب کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S63, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S63, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S63, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S63, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 64.وقتي بخش مهمي از کارم را انجام مي دهم، معمولاً با حصول نتيجه راضي مي شوم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S64, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S64, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S64, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S64, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 65.از خوب انجام دادن وظايف خود لذت مي برم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S65, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S65, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S65, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S65, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 66.افرادي را که در جامعه به موفقيت بالايي رسيده اند تحسين مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S66, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S66, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S66, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S66, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 67.خوب انجام دادن کار مهمتر از تلاش براي راضي کردن ديگران است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S67, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S67, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S67, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S67, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 68.از حل مسائل دشوار لذت مي برم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S68, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S68, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S68, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S68, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 69.علاقه مند به تجربه غذا ها، مکان ها، و در کل تجارب جديد هستم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S69, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S69, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S69, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S69, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 70.داشتن پشتکار براي موفقيت در کارها خيلي مهم است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S70, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S70, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S70, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S70, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 71.در هر کار که احتمال شکست وجود داشته باشد، بالاخره احتمال موفقيت هم وجود دارد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S71, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S71, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S71, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S71, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 72.قبل از انجام هر تصميمي، مايلم تمام حقايق را بدانم، حتي اگر مدت زيادي طول بکشد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S72, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S72, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S72, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S72, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 73.چيزهايي که به آنها عادت کرده ام بهتر از چيزهاي جديد است . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S73, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S73, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S73, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S73, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 74.زندگي معمولي بر زندگي پر از تغيير ارجحيت دارد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S74, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S74, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S74, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S74, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 75.ترجيح مي دهم کارها را به روش معمولي انجام دهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S75, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S75, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S75, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S75, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 76.به زندگي منظم و جا افتاده که در آن، غالب مسائل زندگي پيش بيني شده است، علاقه مندم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S76, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S76, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S76, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S76, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 77.کارها را بايد به شيوه هاي آزمون شده انجام داد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S77, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S77, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S77, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S77, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 78.فعاليت هاي آشنا را بر فعاليت هاي ناآشنا ترجيح مي دهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S78, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S78, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S78, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S78, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 79.کار يکنواخت در مکان آرام را ترجيح مي دهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S79, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S79, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S79, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S79, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 80.در آينده ي هر فرد خيلي چيز ها به بخت خوب يا بد بستگي دارد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S80, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S80, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S80, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S80, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 81.در موقعيت هايي که جواب روشني وجود ندارد بسيار بي طاقت مي شوم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S81, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S81, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S81, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S81, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 82.يک شغل خوب، شغلي است که مکان، نوع کار و نحوه ي انجام آن روشن باشد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S82, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S82, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S82, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S82, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 83.برخي اوقات مردم ايده هاي مرا غير عادي و دست نيافتني مي پندارند . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S83, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S83, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S83, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S83, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 84.اغلب ايده هاي خوبي مطرح مي کنم، مخصوصاً وقتي که هيچ کاري انجام نمي دهم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S84, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S84, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S84, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S84, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 85.در مراحل انجام هر کاري، داراي ايده هاي جديد هستم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S85, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S85, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S85, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S85, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 86.براي انجام کارهايي که قبلاً توسط هيچ کس انجام نشده، اغلب به تخيل روي مي آورم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S86, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S86, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S86, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S86, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 87.از اين که با ديگران در مورد ايده هاي گوناگون بحث کنم، لذت مي برم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S87, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S87, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S87, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S87, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 88.از صرف وقت خود بر روي ايده هاي جديد لذت مي برم، حتي اگر اين ايده ها مزاياي عملي همراه نداشته باشد . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S88, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S88, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S88, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S88, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 89.از خلق چيزهاي جديد لذت مي برم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S89, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S89, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S89, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S89, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 90.هنگام تعيين هدف براي فعاليت هاي خود، ترجيح مي دهم هدف هاي سخت را انتخاب کنم. </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S90, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S90, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S90, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S90, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 91.در برابر مشکلات اغلب راه حل هاي سازنده اي پيشنهاد مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S91, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S91, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S91, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S91, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 92.به حل مسائل پيچيده و مبهم علاقه مندم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S92, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S92, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S92, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S92, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 93.براي انجام يک کار پيچيده معمولاً چندين روش پيشنهاد مي کنم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S93, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S93, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S93, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S93, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 94.اگر سرگرم ساختن وسيله اي باشم و ناگهان دريابم قطعه مهمي از آن را گم کرده ام و نتوانم آن را پيدا کنم، سعي مي کنم به جاي آن، يک قطعه ديگر بسازم . </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S94, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S94, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S94, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S94, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <section class="text"> 95.شغلي را دوست دارم که مستلزم فراهم کردن انديشه هاي بسيار باشد </section>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S95, 4)<div dir="ltr">کاملاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S95, 3)<div dir="ltr">نسبتاً موافقم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S95, 2)<div dir="ltr">نسبتاً مخالفم</div>
+                                                                </label>
+                                                                <label class="answer">
+                                                                    @Html.RadioButtonFor(m => m.S95, 1)<div dir="ltr">کاملاً مخالفم</div>
+                                                                </label>
+                                                            </section>
+
+                                                            <section class="question" style="display: none;   ">
+                                                                <input type="submit" class="btn btn-success btn-lg" value="ذخیره نتیجه آزمون" />
+                                                            </section>
+
+                                                        </section>
+                                                    </div>
+
+
+
+
+         
+
+        }
+    </div>
+
+}

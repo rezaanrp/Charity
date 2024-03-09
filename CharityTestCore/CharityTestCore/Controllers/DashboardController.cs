@@ -23,7 +23,7 @@ namespace CharityTestCore.Controllers
             mBTIService = _mBTIService;
             _userService = userService;
         }
-        [Authorize(Roles ="admin")]
+        [Authorize(Roles ="admin,superadmin")]
         public IActionResult Index()
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
@@ -83,7 +83,7 @@ namespace CharityTestCore.Controllers
 
         }
         [HttpPost]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin,superadmin")]
         public JsonResult load_data_users2(int id)
 		{
 			int totalRecord = 0;
@@ -151,7 +151,7 @@ namespace CharityTestCore.Controllers
         //    return View(ept);
 
         //}
-        [Authorize(Roles ="admin")]
+        [Authorize(Roles ="admin,superadmin")]
         public IActionResult EPTIsDelete(Guid? id)
         {
             eptservice.EptPersonDeleteById(id);
@@ -159,7 +159,7 @@ namespace CharityTestCore.Controllers
 
             return RedirectToAction("Index", null);
         }
-        [Authorize(Roles ="admin")]
+        [Authorize(Roles ="admin,superadmin")]
         public IActionResult MBTI(Guid? id)
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
@@ -176,7 +176,7 @@ namespace CharityTestCore.Controllers
             }
             return View(mm);
         }
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin,superadmin")]
         public IActionResult Ept(Guid? id)
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
@@ -185,7 +185,7 @@ namespace CharityTestCore.Controllers
 
             return View(eptservice.EptPersonList(id));
         }
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin,superadmin")]
         public IActionResult MBTIDelete(Guid? id)
         {
 
@@ -209,7 +209,7 @@ namespace CharityTestCore.Controllers
 
 
 
-        [Authorize(Roles ="admin")]
+        [Authorize(Roles ="admin,superadmin")]
         public IActionResult MBTIIsDelete(Guid? id)
         {
             mBTIService.MBTIPersonDeleteById(id);

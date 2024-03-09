@@ -59,7 +59,7 @@ namespace CharityTestCore.Controllers
                     IsPersistent = true
                 };
 
-                HttpContext.SignInAsync(principal, properties);
+                HttpContext.SignInAsync( principal, properties);
                 if(user.Role == "admin")
                 return RedirectToAction("Index","Dashboard");
                 else if(user.Role == "superadmin")

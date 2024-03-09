@@ -15,7 +15,7 @@ namespace CharityTestCore.Controllers
         {
             _userService = userService;
         }
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin,superadmin")]
         public IActionResult Index()
         {
             var userlist = new List<User>();
@@ -26,7 +26,7 @@ namespace CharityTestCore.Controllers
             }
             return View(userlist);
         }
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin,superadmin")]
         public IActionResult Edit(string id)
         {
             var m = _userService.GetByIdUserListModel(id);

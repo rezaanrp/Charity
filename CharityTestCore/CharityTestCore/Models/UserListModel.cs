@@ -39,11 +39,13 @@ namespace CharityTestCore.Models
 
         [StringLength(10)]
 		[Required(ErrorMessage = " وارد کردن  کد ملی اجباری می باشد")]
+		[MinLength(10,ErrorMessage ="فرمت کد ملی صحیح نمی باشد")]
 
 		public string NationalNumber { get; set; }
 
         [StringLength(11)]
 		[Required(ErrorMessage = " وارد کردن شماره تماس اجباری می باشد")]
+		[MinLength(11,ErrorMessage ="فرمت شماره همراه صحیح نمی باشد")]
 
 		public string MobileNumber { get; set; }
 

@@ -6,6 +6,7 @@ using CharityTestCore.Service.MBTI;
 using CharityTestCore.Service.UserManagment;
 using DAL.DataBase;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,7 +41,11 @@ builder.Services.AddAuthentication(options =>
     options.LoginPath = "/Login";
     options.LogoutPath = "/Logout";
     options.ExpireTimeSpan = TimeSpan.FromMinutes(120); // 1month
+    options.SlidingExpiration = true;
 });
+//builder.Services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Directory.GetCurrentDirectory())).SetDefaultKeyLifetime(TimeSpan.FromDays(30));
+builder.Services.AddDataProtection().PersistKeysToDbContext<ParkerCharityContext>()
+          .SetDefaultKeyLifetime(TimeSpan.FromDays(90));
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
