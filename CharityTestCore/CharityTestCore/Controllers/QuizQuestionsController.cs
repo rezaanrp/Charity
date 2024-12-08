@@ -49,10 +49,11 @@ namespace CharityTestCore.Controllers
         }
 
         [HttpGet]
-		public IActionResult Quiz()
+		public async Task<IActionResult>  Quiz()
 		{
+            var model = await _quizQuestionDiscService.GetAllAsync();
 
-			return View();
+            return View(model);
 
 		}
 		public class UserModel

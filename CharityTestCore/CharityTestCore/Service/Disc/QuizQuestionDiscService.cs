@@ -1,4 +1,5 @@
-﻿using DAL.DataBase;
+﻿using CharityTestCore.Models;
+using DAL.DataBase;
 
 public class QuizQuestionDiscService : IQuizQuestionDiscService
 {
@@ -14,10 +15,27 @@ public class QuizQuestionDiscService : IQuizQuestionDiscService
 		return await _quizQuestionDiscRepository.GetByIdAsync(id);
 	}
 
-	public async Task<IEnumerable<QuizQuestionDisc>> GetAllAsync()
+	public async Task<IEnumerable<QuizQuestionDiscViewModel>> GetAllAsync()
 	{
-		return await _quizQuestionDiscRepository.GetAllAsync();
-	}
+
+		var m = await _quizQuestionDiscRepository.GetAllAsync();
+		var model = new List<QuizQuestionDiscViewModel>();
+
+        foreach (var item in m)
+		{
+			var mi = new QuizQuestionDiscViewModel()
+			{
+				Id = item.Id,
+				Name = item.Name,
+				Category = item.Category,
+				QuestionNumber = item.QuestionNumber,	
+			};
+            model.Add(mi);	
+
+        }
+		return model;
+
+    }
 
 	public async Task AddAsync(QuizQuestionDisc quizQuestion)
 	{

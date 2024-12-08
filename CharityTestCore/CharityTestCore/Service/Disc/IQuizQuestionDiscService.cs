@@ -1,9 +1,10 @@
-﻿using DAL.DataBase;
+﻿using CharityTestCore.Models;
+using DAL.DataBase;
 
 public interface IQuizQuestionDiscService
 {
 	Task<QuizQuestionDisc> GetByIdAsync(int id);
-	Task<IEnumerable<QuizQuestionDisc>> GetAllAsync();
+	Task<IEnumerable<QuizQuestionDiscViewModel>> GetAllAsync();
 	Task AddAsync(QuizQuestionDisc quizQuestion);
 	Task UpdateAsync(QuizQuestionDisc quizQuestion);
 	Task DeleteAsync(int id);
