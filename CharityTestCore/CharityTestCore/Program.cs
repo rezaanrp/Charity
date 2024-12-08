@@ -29,6 +29,11 @@ builder.Services.AddScoped<IMBTIRepository, MBTIRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+builder.Services.AddScoped<IQuizQuestionDiscRepository, QuizQuestionDiscRepository>();
+builder.Services.AddScoped<IQuizAnswernDiscRepository, QuizAnswernDiscRepository>();
+builder.Services.AddScoped<IQuizQuestionDiscService,QuizQuestionDiscService>();
+builder.Services.AddScoped<IQuizAnswernDiscService,QuizAnswernDiscService>();
+builder.Services.AddScoped<QuizQuestionDiscService>(); // or AddTransient, AddSingleton depending on the desired lifetime
 
 builder.Services.AddAuthentication(options =>
 {

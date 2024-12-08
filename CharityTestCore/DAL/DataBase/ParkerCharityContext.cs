@@ -26,8 +26,9 @@ namespace DAL.DataBase
         public DbSet<MBTIAnswerList> MBTIAnswerList { get; set; }
         public DbSet<EptQuiz> EptQuiz { get; set; }
 
- 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		public DbSet<QuizQuestionDisc> QuizQuestionDiscs { get; set; }
+		public DbSet<QuizAnswernDisc> QuizAnswernDiscs { get; set; }
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
             //   base.OnConfiguring(optionsBuilder);
@@ -48,9 +49,16 @@ namespace DAL.DataBase
             modelBuilder.Entity<EptQuestionList>().Property(b => b.CreatedDate).HasDefaultValueSql("getdate()");
             modelBuilder.Entity<MBTIAnswerList>().Property(b => b.CreatedDate).HasDefaultValueSql("getdate()");
 
-            new Seed(modelBuilder).seeduser();
+			// تعریف ارتباطات
+			modelBuilder.Entity<QuizAnswernDisc>()
+				.HasOne(a => a.QuizQuestion)
+				.WithMany(q => q.QuizAnswers)
+				.HasForeignKey(a => a.QuizQuestionDiscId);
+
+			new Seed(modelBuilder).seeduser();
             new Seed(modelBuilder).SeedMbtiAnswer();
-            modelBuilder.Entity<User>().HasIndex(u => u.NationalNumber).IsUnique();
+            new Seed(modelBuilder).SeedDisc();
+			modelBuilder.Entity<User>().HasIndex(u => u.NationalNumber).IsUnique();
             modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique();
             ParkerCharityContext s = new ParkerCharityContext();
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DataBase
 {
-    public class mGenGroup
+	public class mGenGroup
     {
         [Key]
         public int ID { get; set; }
@@ -22,4 +22,5 @@ namespace DAL.DataBase
         [AllowNull]
         public string? Comment { get; set; }
     }
+
 }

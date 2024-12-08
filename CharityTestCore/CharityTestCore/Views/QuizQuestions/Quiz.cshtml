@@ -1,0 +1,534 @@
+﻿@{
+    // ViewBag.Title = "RegisterEptQuestion";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+@section Head{
+    <style>
+        .eachques {
+            display: none; /* پنهان کردن تمام سوالات به جز سوال جاری */
+        }
+
+            .eachques.active {
+                display: block; /* نمایش سوال فعال */
+            }
+
+        .quiz-form {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .question-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .tileradio {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .option {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+            .option p {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+        .box {
+            display: inline-block;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .best-option {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .worst-option {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .radio-input:checked + .box {
+            background-color: #2196f3;
+        }
+
+        .submit-button {
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .submit-button:hover {
+                background-color: #45a049;
+            }
+
+        .pagination-footer {
+            display: flex;
+            justify-content: center; /* مرکز کردن دکمه‌ها به صورت افقی */
+            align-items: center; /* مرکز کردن دکمه‌ها به صورت عمودی */
+            padding: 20px; /* کمی فاصله از بالا و پایین */
+            position: fixed; /* ثابت بودن footer در پایین صفحه */
+            bottom: 0; /* قرار گرفتن در پایین صفحه */
+            left: 0; /* از سمت چپ شروع می‌شود */
+            width: 100%; /* عرض کامل صفحه */
+            background-color: #f1f1f1; /* رنگ پس‌زمینه footer */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* سایه‌ی ظریف برای footer */
+        }
+
+            .pagination-footer button {
+                font-size: 14px; /* کوچک‌تر کردن فونت */
+                padding: 8px 16px; /* کاهش اندازه padding */
+                border-radius: 30px; /* گردتر شدن دکمه‌ها */
+                background-color: #4CAF50; /* رنگ سبز */
+                color: white;
+                border: 2px solid #4CAF50; /* اضافه کردن حاشیه */
+                cursor: pointer;
+                margin: 0 10px; /* فاصله بین دکمه‌ها */
+                transition: all 0.3s ease; /* انیمیشن برای تغییر رنگ */
+            }
+
+                .pagination-footer button:hover {
+                    background-color: #45a049; /* تغییر رنگ پس‌زمینه در حالت hover */
+                    border-color: #45a049; /* تغییر رنگ حاشیه در حالت hover */
+                }
+
+                .pagination-footer button:disabled {
+                    background-color: #f1f1f1; /* رنگ دکمه غیرفعال */
+                    color: #888; /* رنگ متن دکمه غیرفعال */
+                    cursor: not-allowed; /* تغییر کرسر به حالت غیرفعال */
+                    border-color: #ddd; /* رنگ حاشیه دکمه غیرفعال */
+                }
+
+
+
+
+    </style>
+
+
+}
+
+
+@section Body{
+
+    <form asp-action="SaveFormData" asp-controller="QuizQuestions" method="POST" class="quiz-form">
+        <!-- سوال ۱ -->
+        <div id="questionnaire">
+
+
+        <div class="eachques question" data-question-id="1" id="ques1">
+            <p class="question-text"><span>پرسش ۱: یکی از عبارت‌های زیر را به عنوان «بهترین توصیف» و یکی دیگر را به عنوان «بدترین توصیف» از خود انتخاب کنید.</span></p>
+
+            <div id="disc-test1" class="tileradio">
+                <div class="option">
+                    <p>نظام مند و مدیریت زمان خوب</p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques1" value="1" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques1" value="1" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <p>مضطرب و شتاب زده</p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques1" value="2" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques1" value="2" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <p>قابل اتکا و دارای پشتکار</p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques1" value="3" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques1" value="3" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <p>احساسی و عجول</p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques1" value="4" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques1" value="4" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="eachques question" data-question-id="2" id="ques2" style="display: none;">
+            <p class="question-text"><span>پرسش ۲: یکی از عبارت‌های زیر را به عنوان «بهترین توصیف» و یکی دیگر را به عنوان «بدترین توصیف» از خود انتخاب کنید.</span></p>
+
+            <div id="disc-test2" class="tileradio">
+                <div class="option">
+                    <p>بامحبت و مهربان</p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques2" value="1" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques2" value="1" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <p>ملایم و سازگار</p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques2" value="2" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques2" value="2" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <p>مصمم و نتیجه گرا</p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques2" value="3" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques2" value="3" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <p>راضی و خشنود</p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques2" value="4" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques2" value="4" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="eachques question" data-question-id="3" id="ques3" style="display: none;">
+            <p class="question-text"><span>پرسش 3: یکی از عبارت‌های زیر را به عنوان «بهترین توصیف» و یکی دیگر را به عنوان «بدترین توصیف» از خود انتخاب کنید.</span></p>
+
+            <div id="disc-test2" class="tileradio">
+                <div class="option">
+                        <p>
+                            نوآور و آرمانی
+                        </p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques3" value="1" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques3" value="1" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                        <p>
+                            محافظه کار و محتاط
+                        </p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques3" value="2" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques3" value="2" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                        <p>
+                            اجتماعی و خوش مشرب
+                        </p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques3" value="3" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques3" value="3" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                        <p>
+                            اصلاح طلب و اهل مذاکره
+                        </p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques3" value="4" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques3" value="4" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="eachques question" data-question-id="4" id="ques4" style="display: none;">
+            <p class="question-text"><span>پرسش 3: یکی از عبارت‌های زیر را به عنوان «بهترین توصیف» و یکی دیگر را به عنوان «بدترین توصیف» از خود انتخاب کنید.</span></p>
+
+            <div id="disc-test2" class="tileradio">
+                <div class="option">
+                    <p>
+                        نوآور و آرمانی
+                    </p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques3" value="1" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques3" value="1" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <p>
+                        محافظه کار و محتاط
+                    </p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques3" value="2" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques3" value="2" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <p>
+                        اجتماعی و خوش مشرب
+                    </p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques3" value="3" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques3" value="3" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+
+                <div class="option">
+                    <p>
+                        اصلاح طلب و اهل مذاکره
+                    </p>
+                    <label>
+                        <input class="radio-input" type="radio" name="best-description-ques3" value="4" data-part="a">
+                        <div class="box best-option">بهترین توصیف</div>
+                    </label>
+                    <label>
+                        <input class="radio-input" type="radio" name="worst-description-ques3" value="4" data-part="b">
+                        <div class="box worst-option">بدترین توصیف</div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- دکمه‌ها -->
+        <footer class="pagination-footer">
+            <button id="prev" type="button" class="btn btn-custom" onclick="navigateQuestion(event, -1)">قبلی</button>
+            <button id="next" type="button" class="btn btn-custom" onclick="navigateQuestion(event, 1)" disabled>بعدی</button>
+        </footer>
+
+        <button onclick="sendDataToServer()">ارسال</button>
+
+
+    </form>
+
+
+
+
+}
+@section Scripts{
+    <script>
+        function sendDataToServer() {
+            // جمع‌آوری داده‌ها
+            const data = [];
+            document.querySelectorAll(".eachques").forEach((question) => {
+                const questionId = question.getAttribute("data-question-id");
+                const bestAnswer = question.querySelector(`input[name="best-description-ques${questionId}"]:checked`);
+                const worstAnswer = question.querySelector(`input[name="worst-description-ques${questionId}"]:checked`);
+
+                if (bestAnswer && worstAnswer) {
+                    data.push({
+                        questionId: questionId,
+                        bestDescription: bestAnswer.value,
+                        worstDescription: worstAnswer.value,
+                    });
+                }
+            });
+
+            // بررسی اگر داده‌ای خالی باشد
+            if (data.length === 0) {
+                alert("لطفاً حداقل یک سوال را پاسخ دهید.");
+                return;
+            }
+
+            // ارسال داده‌ها با استفاده از fetch API
+            fetch('/QuizQuestions/SaveFormData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('input[name="__RequestVerificationToken"]').value // اگر از AntiForgeryToken استفاده می‌کنید
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        alert("داده‌ها با موفقیت ارسال شد!");
+                    } else {
+                        alert("مشکلی رخ داد. لطفاً دوباره تلاش کنید.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("ارسال داده‌ها با شکست مواجه شد.");
+                });
+        }
+
+
+
+
+    </script>
+
+    <script>
+        let currentPage = 1; // صفحه فعلی
+
+        function checkSelectionsForCurrentPage() {
+            const currentQuestions = document.querySelectorAll(`.question[data-question-id="${currentPage}"]`);
+            let allAnswered = true;
+
+            currentQuestions.forEach(question => {
+                const questionId = question.getAttribute('data-question-id');
+                const bestSelected = document.querySelector(`input[name="best-description-ques${questionId}"]:checked`);
+                const worstSelected = document.querySelector(`input[name="worst-description-ques${questionId}"]:checked`);
+
+                if (!bestSelected || !worstSelected) {
+                    allAnswered = false;
+                }
+            });
+
+            document.getElementById('next').disabled = !allAnswered;
+        }
+
+        function navigateQuestion(event, direction) {
+            event.preventDefault();
+
+            const totalPages = document.querySelectorAll('.question').length; // تعداد کل صفحات
+
+            if (direction === 1 && document.getElementById('next').disabled) {
+                alert('لطفاً برای ادامه، تمامی سوالات این صفحه را تکمیل کنید.');
+                return;
+            }
+
+            // تغییر صفحه فعلی
+            currentPage += direction;
+
+            // پنهان‌سازی سوالات صفحات دیگر
+            document.querySelectorAll('.question').forEach(question => {
+                question.style.display = question.getAttribute('data-question-id') == currentPage ? 'block' : 'none';
+            });
+
+            // به‌روزرسانی دکمه‌ها
+            document.getElementById('prev').disabled = currentPage === 1;
+            document.getElementById('next').disabled = true;
+
+            checkSelectionsForCurrentPage(); // بررسی انتخاب‌های صفحه جدید
+        }
+
+        // اضافه کردن event listener برای رادیو باتن‌ها
+        document.querySelectorAll('input[type="radio"]').forEach(input => {
+            input.addEventListener('change', checkSelectionsForCurrentPage);
+        });
+
+        // تنظیم نمایش اولیه صفحه
+        document.querySelectorAll('.question').forEach(question => {
+            question.style.display = question.getAttribute('data-question-id') == currentPage ? 'block' : 'none';
+        });
+
+        document.getElementById('prev').disabled = true; // صفحه اول دکمه "قبلی" غیرفعال است
+        checkSelectionsForCurrentPage(); // بررسی اولیه
+    </script>
+    <script type="text/javascript">
+        function submitStudent() {
+            var group = { 'listofusers': formData };
+            console.log(group);
+            $.ajax({
+                type: "POST",
+                data: group,
+                url: ' @Url.Action("Quiz","QuizQuestions")',
+                dataType: 'json',
+
+                success: function (result) {
+
+                    if (result) {
+                        console.log(result);
+                        window.location.href = "/Dashboard/UserProfile";
+                    }
+                    else {
+                        alert("آزمون شما قبلا در سیستم ثبت شده است");
+                    }
+                },
+                error: function () {
+
+                    console.log('Failed ');
+                    window.location.href = "/Dashboard/UserProfile";
+
+                }
+            })
+        }
+
+    </script>
+
+}

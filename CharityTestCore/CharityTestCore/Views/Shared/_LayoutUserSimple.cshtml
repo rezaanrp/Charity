@@ -65,45 +65,49 @@
                     </div>
 
                     <!-- Sidebar Menu -->
-                    <nav class="mt-2">
-                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                            <!-- Add icons to the links using the .nav-icon class
-                                 with font-awesome or any other icon font library -->
+                        <nav class="mt-2">
+                            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                                <!-- Add icons to the links using the .nav-icon class
+                                     with font-awesome or any other icon font library -->
 
-                            <li class="nav-item has-treeview menu-open">
-                                <a href="#" class="nav-link active">
-                                    <i class="nav-icon fa fa-table"></i>
-                                    <p>
-                                        لیست آزمون
-                                        <i class="fa fa-angle-left right"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                          
+                                <li class="nav-item has-treeview menu-open">
+                                    <a href="#" class="nav-link active">
+                                        <i class="nav-icon fa fa-table"></i>
+                                        <p>
+                                            لیست آزمون
+                                            <i class="fa fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
                                             <a href="@Url.Action("RegisterEptQuestionV2", "EPTTest")" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>ثبت آزمون استعداد یابی</p>
-                                        </a>
-                                    <li class="nav-item">
-                                        <a href="@Url.Action("Quiz", "MBTIQuestion")" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>ثبت آزمون شخصیت </p>
-                                        </a>
-                                    </li>
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>ثبت آزمون استعداد یابی</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="@Url.Action("Quiz", "MBTIQuestion")" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>ثبت آزمون شخصیت</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="@Url.Action("Quiz", "QuizQuestions")" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>ثبت آزمون دیسک</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="@Url.Action("ChangePassword", "Account")" class="nav-link">
+                                                <i class="fa fa-circle-o nav-icon"></i>
+                                                <p>تغییر رمز عبور</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
 
-                                    <li class="nav-item">
-                                        <a href="@Url.Action("ChangePassword", "Account")" class="nav-link">
-                                            <i class="fa fa-circle-o nav-icon"></i>
-                                            <p>تغییر رمز  عبور </p>
-                                        </a>
-                                    </li>
-                            </li>
-
-                                </ul>
-
-
-                    </nav>
                     <!-- /.sidebar-menu -->
                 </div>
             </div>
