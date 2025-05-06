@@ -15,4 +15,5 @@ namespace CharityTestCore.Models
         [Display(Name = "رمز عبور")]
         public string Password { get; set; }
     }
+
 }

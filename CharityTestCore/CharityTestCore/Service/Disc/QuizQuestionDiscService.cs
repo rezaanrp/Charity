@@ -10,12 +10,36 @@ public class QuizQuestionDiscService : IQuizQuestionDiscService
 		_quizQuestionDiscRepository = quizQuestionDiscRepository;
 	}
 
-	public async Task<QuizQuestionDisc> GetByIdAsync(int id)
+	public async Task<QuizQuestionDiscViewModel> GetByIdAsync(int id)
 	{
-		return await _quizQuestionDiscRepository.GetByIdAsync(id);
-	}
+		var result = await _quizQuestionDiscRepository.GetByIdAsync(id);
+		var model = new QuizQuestionDiscViewModel()
+		{
+			Id = result.Id,
+			ItemNumber = result.ItemNumber,
+			QuestionNumber = result.QuestionNumber,
+			Name = result.Name,
+			Category = result.Category,
 
-	public async Task<IEnumerable<QuizQuestionDiscViewModel>> GetAllAsync()
+		};
+		return model;
+	}
+    public async Task<QuizQuestionDiscViewModel> GetByQuestionNumberAsync(int questionnumber, int itemnumber)
+    {
+        var result = await _quizQuestionDiscRepository.GetByQuestionNumberAsync(questionnumber, itemnumber);
+        var model = new QuizQuestionDiscViewModel()
+        {
+            Id = result.Id,
+            ItemNumber = result.ItemNumber,
+            QuestionNumber = result.QuestionNumber,
+            Name = result.Name,
+            Category = result.Category,
+
+        };
+        return model;
+    }
+
+    public async Task<IEnumerable<QuizQuestionDiscViewModel>> GetAllAsync()
 	{
 
 		var m = await _quizQuestionDiscRepository.GetAllAsync();

@@ -46,12 +46,16 @@ namespace CharityTestCore.Controllers
             if (user != null)
             {
                 var claim = new List<Claim>()
-                {
-                    new Claim(ClaimTypes.Name,user.UserName.ToString() ),
-                    new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
-                    new Claim(ClaimTypes.SerialNumber,user.Id.ToString()),
-                    new Claim(ClaimTypes.Role,user.Role)
-                };
+{
+    new Claim(ClaimTypes.Name, user.UserName.ToString()),
+    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+    new Claim(ClaimTypes.SerialNumber, user.Id.ToString()),
+    new Claim(ClaimTypes.Role, user.Role),
+
+    new Claim("FirstName", user.Name ?? ""),
+    new Claim("LastName", user.Family ?? "")
+};
+
                 var identity = new ClaimsIdentity(claim, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 var properties = new AuthenticationProperties

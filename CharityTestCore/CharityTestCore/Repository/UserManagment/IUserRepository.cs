@@ -1,5 +1,6 @@
 ﻿using CharityTestCore.Models;
 using DAL.DataBase;
+using DAL.Dtos;
 
 namespace CharityTestCore.Repository.UserManagment
 {
@@ -17,10 +18,6 @@ namespace CharityTestCore.Repository.UserManagment
 
         public bool EditUsersList(Models.UserListModel item, string newpassword);
         public bool Delete(User item);
-
-
-
-
-
+        List<UserExamStatusDtos> GetUsersWithExamStatus();
     }
 }

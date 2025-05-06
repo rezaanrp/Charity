@@ -34,6 +34,7 @@ builder.Services.AddScoped<IQuizAnswernDiscRepository, QuizAnswernDiscRepository
 builder.Services.AddScoped<IQuizQuestionDiscService,QuizQuestionDiscService>();
 builder.Services.AddScoped<IQuizAnswernDiscService,QuizAnswernDiscService>();
 builder.Services.AddScoped<QuizQuestionDiscService>(); // or AddTransient, AddSingleton depending on the desired lifetime
+builder.Services.AddScoped<QuizAnswernDiscService>(); // or AddTransient, AddSingleton depending on the desired lifetime
 
 builder.Services.AddAuthentication(options =>
 {
@@ -52,11 +53,11 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddDataProtection().PersistKeysToDbContext<ParkerCharityContext>()
           .SetDefaultKeyLifetime(TimeSpan.FromDays(90));
 var app = builder.Build();
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<ParkerCharityContext>();
-    db.Database.Migrate();
-}
+//using (var scope = app.Services.CreateScope())
+//{
+//    var db = scope.ServiceProvider.GetRequiredService<ParkerCharityContext>();
+//    db.Database.Migrate();
+//}
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

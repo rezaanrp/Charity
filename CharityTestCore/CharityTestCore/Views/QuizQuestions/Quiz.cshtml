@@ -77,19 +77,28 @@
 
         .submit-button {
             width: 100%;
-            background-color: #4caf50;
+            background: linear-gradient(90deg, #4caf50, #45a049);
             color: white;
             font-size: 16px;
             font-weight: bold;
             padding: 12px;
             border: none;
-            border-radius: 6px;
+            border-radius: 50px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
 
             .submit-button:hover {
-                background-color: #45a049;
+                background: linear-gradient(90deg, #45a049, #3e8e41);
+                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+                transform: translateY(-2px);
+            }
+
+            .submit-button:active {
+                transform: translateY(2px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
 
         .pagination-footer {
@@ -109,17 +118,17 @@
                 font-size: 14px; /* کوچک‌تر کردن فونت */
                 padding: 8px 16px; /* کاهش اندازه padding */
                 border-radius: 30px; /* گردتر شدن دکمه‌ها */
-                background-color: #4CAF50; /* رنگ سبز */
+                background-color: #BC5AFF; /* رنگ سبز */
                 color: white;
-                border: 2px solid #4CAF50; /* اضافه کردن حاشیه */
+                border: 2px solid #CCA6CA; /* اضافه کردن حاشیه */
                 cursor: pointer;
                 margin: 0 10px; /* فاصله بین دکمه‌ها */
                 transition: all 0.3s ease; /* انیمیشن برای تغییر رنگ */
             }
 
                 .pagination-footer button:hover {
-                    background-color: #45a049; /* تغییر رنگ پس‌زمینه در حالت hover */
-                    border-color: #45a049; /* تغییر رنگ حاشیه در حالت hover */
+                    background-color: #AC5AF0; /* تغییر رنگ پس‌زمینه در حالت hover */
+                    border-color: #ACA6CA; /* تغییر رنگ حاشیه در حالت hover */
                 }
 
                 .pagination-footer button:disabled {
@@ -128,9 +137,6 @@
                     cursor: not-allowed; /* تغییر کرسر به حالت غیرفعال */
                     border-color: #ddd; /* رنگ حاشیه دکمه غیرفعال */
                 }
-
-
-
 
     </style>
 
@@ -145,122 +151,15 @@
         <div id="questionnaire">
 
 
-   @*          <div class="eachques question" data-question-id="1" id="ques1">
-                <p class="question-text"><span>پرسش ۱: یکی از عبارت‌های زیر را به عنوان «بهترین توصیف» و یکی دیگر را به عنوان «بدترین توصیف» از خود انتخاب کنید.</span></p>
 
-                <div id="disc-test1" class="tileradio">
-                    <div class="option">
-                        <p>نظام مند و مدیریت زمان خوب</p>
-                        <label>
-                            <input class="radio-input" type="radio" name="best-description-ques1" value="1" data-part="a">
-                            <div class="box best-option">بهترین توصیف</div>
-                        </label>
-                        <label>
-                            <input class="radio-input" type="radio" name="worst-description-ques1" value="1" data-part="b">
-                            <div class="box worst-option">بدترین توصیف</div>
-                        </label>
-                    </div>
-
-                    <div class="option">
-                        <p>مضطرب و شتاب زده</p>
-                        <label>
-                            <input class="radio-input" type="radio" name="best-description-ques1" value="2" data-part="a">
-                            <div class="box best-option">بهترین توصیف</div>
-                        </label>
-                        <label>
-                            <input class="radio-input" type="radio" name="worst-description-ques1" value="2" data-part="b">
-                            <div class="box worst-option">بدترین توصیف</div>
-                        </label>
-                    </div>
-
-                    <div class="option">
-                        <p>قابل اتکا و دارای پشتکار</p>
-                        <label>
-                            <input class="radio-input" type="radio" name="best-description-ques1" value="3" data-part="a">
-                            <div class="box best-option">بهترین توصیف</div>
-                        </label>
-                        <label>
-                            <input class="radio-input" type="radio" name="worst-description-ques1" value="3" data-part="b">
-                            <div class="box worst-option">بدترین توصیف</div>
-                        </label>
-                    </div>
-
-                    <div class="option">
-                        <p>احساسی و عجول</p>
-                        <label>
-                            <input class="radio-input" type="radio" name="best-description-ques1" value="4" data-part="a">
-                            <div class="box best-option">بهترین توصیف</div>
-                        </label>
-                        <label>
-                            <input class="radio-input" type="radio" name="worst-description-ques1" value="4" data-part="b">
-                            <div class="box worst-option">بدترین توصیف</div>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="eachques question" data-question-id="2" id="ques2" style="display: none;">
-                <p class="question-text"><span>پرسش ۲: یکی از عبارت‌های زیر را به عنوان «بهترین توصیف» و یکی دیگر را به عنوان «بدترین توصیف» از خود انتخاب کنید.</span></p>
-
-                <div id="disc-test2" class="tileradio">
-                    <div class="option">
-                        <p>بامحبت و مهربان</p>
-                        <label>
-                            <input class="radio-input" type="radio" name="best-description-ques2" value="1" data-part="a">
-                            <div class="box best-option">بهترین توصیف</div>
-                        </label>
-                        <label>
-                            <input class="radio-input" type="radio" name="worst-description-ques2" value="1" data-part="b">
-                            <div class="box worst-option">بدترین توصیف</div>
-                        </label>
-                    </div>
-
-                    <div class="option">
-                        <p>ملایم و سازگار</p>
-                        <label>
-                            <input class="radio-input" type="radio" name="best-description-ques2" value="2" data-part="a">
-                            <div class="box best-option">بهترین توصیف</div>
-                        </label>
-                        <label>
-                            <input class="radio-input" type="radio" name="worst-description-ques2" value="2" data-part="b">
-                            <div class="box worst-option">بدترین توصیف</div>
-                        </label>
-                    </div>
-
-                    <div class="option">
-                        <p>مصمم و نتیجه گرا</p>
-                        <label>
-                            <input class="radio-input" type="radio" name="best-description-ques2" value="3" data-part="a">
-                            <div class="box best-option">بهترین توصیف</div>
-                        </label>
-                        <label>
-                            <input class="radio-input" type="radio" name="worst-description-ques2" value="3" data-part="b">
-                            <div class="box worst-option">بدترین توصیف</div>
-                        </label>
-                    </div>
-
-                    <div class="option">
-                        <p>راضی و خشنود</p>
-                        <label>
-                            <input class="radio-input" type="radio" name="best-description-ques2" value="4" data-part="a">
-                            <div class="box best-option">بهترین توصیف</div>
-                        </label>
-                        <label>
-                            <input class="radio-input" type="radio" name="worst-description-ques2" value="4" data-part="b">
-                            <div class="box worst-option">بدترین توصیف</div>
-                        </label>
-                    </div>
-                </div>
-            </div>
- *@
             @for (int i = 0; i < 24; i++)
             {
                 <div class="eachques question" data-question-id="@string.Format("{0}",i+1)" id="@string.Format("ques{0}",i+1)">
                     <p class="question-text">
-                        <span>پرسش @i+1: یکی از عبارت‌های زیر را به عنوان «بهترین توصیف» و یکی دیگر را به عنوان «بدترین توصیف» از خود انتخاب کنید.</span>
+                        <span>پرسش @string.Format("{0}",i+1): یکی از عبارت‌های زیر را به عنوان «بهترین توصیف» و یکی دیگر را به عنوان «بدترین توصیف» از خود انتخاب کنید.</span>
                     </p>
 
-                    <div  id="@string.Format("disc-test{0}",i)" class="tileradio">
+                    <div id="@string.Format("disc-test{0}",i)" class="tileradio">
                         <div class="option">
                             <p> @Model[i*4].Name </p>
                             <label>
@@ -280,7 +179,7 @@
                                 <div class="box best-option">بهترین توصیف</div>
                             </label>
                             <label>
-                            <input class="radio-input" type="radio" name="@string.Format("worst-description-ques{0}", Model[i].Id)" value="2" data-part="b">
+                                <input class="radio-input" type="radio" name="@string.Format("worst-description-ques{0}", Model[i].Id)" value="2" data-part="b">
                                 <div class="box worst-option">بدترین توصیف</div>
                             </label>
                         </div>
@@ -292,7 +191,7 @@
                                 <div class="box best-option">بهترین توصیف</div>
                             </label>
                             <label>
-                            <input class="radio-input" type="radio" name="@string.Format("worst-description-ques{0}" , Model[i].Id)" value="3" data-part="b">
+                                <input class="radio-input" type="radio" name="@string.Format("worst-description-ques{0}" , Model[i].Id)" value="3" data-part="b">
                                 <div class="box worst-option">بدترین توصیف</div>
                             </label>
                         </div>
@@ -304,12 +203,19 @@
                                 <div class="box best-option">بهترین توصیف</div>
                             </label>
                             <label>
-                                <input class="radio-input" type="radio"  name="@string.Format("worst-description-ques{0}", Model[i].Id)" value="4" data-part="b">
+                                <input class="radio-input" type="radio" name="@string.Format("worst-description-ques{0}", Model[i].Id)" value="4" data-part="b">
                                 <div class="box worst-option">بدترین توصیف</div>
                             </label>
                         </div>
                     </div>
+                    @if(i == 23)
+                    {
+                    <button type="button" class="submit-button" onclick="sendDataToServer()">ارسال</button>
+
+                    }
                 </div>
+
+ 
             }
 
         </div>
@@ -320,7 +226,6 @@
             <button id="next" type="button" class="btn btn-custom" onclick="navigateQuestion(event, 1)" disabled>بعدی</button>
         </footer>
 
-        <button onclick="sendDataToServer()">ارسال</button>
 
 
     </form>
@@ -331,7 +236,34 @@
 }
 @section Scripts{
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const radioInputs = document.querySelectorAll(".radio-input");
+
+            radioInputs.forEach((input) => {
+                input.addEventListener("change", (event) => {
+                    const currentInput = event.target;
+                    const row = currentInput.closest(".option"); // ردیف مربوط به این ورودی
+
+                    // همه رادیوهای همان ردیف
+                    const allInputs = row.querySelectorAll(".radio-input");
+
+                    allInputs.forEach((input) => {
+                        if (input !== currentInput && input.checked) {
+                            // فقط از حالت انتخاب خارج کردن گزینه متضاد
+                            input.checked = false;
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+
+    <script>
         function sendDataToServer() {
+            // جلوگیری از رفتار پیش‌فرض فرم
+            event.preventDefault();
+
             // جمع‌آوری داده‌ها
             const data = [];
             document.querySelectorAll(".eachques").forEach((question) => {
@@ -381,6 +313,39 @@
 
 
     </script>
+    <script>
+        // بررسی تکمیل بودن تمام سوالات
+        function checkFormCompletion() {
+            const questions = document.querySelectorAll(".eachques");
+            let allAnswered = true;
+
+            questions.forEach((question) => {
+                const questionId = question.getAttribute("data-question-id");
+                const bestAnswer = question.querySelector(`input[name="best-description-ques${questionId}"]:checked`);
+                const worstAnswer = question.querySelector(`input[name="worst-description-ques${questionId}"]:checked`);
+
+                if (!bestAnswer || !worstAnswer) {
+                    allAnswered = false;
+                }
+            });
+
+            // فعال یا غیرفعال کردن دکمه ارسال
+            const submitButton = document.querySelector(".submit-button");
+            if (allAnswered) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        // افزودن رویداد برای بررسی وضعیت دکمه هنگام تغییر پاسخ‌ها
+        document.querySelectorAll("input[type='radio']").forEach((radio) => {
+            radio.addEventListener("change", checkFormCompletion);
+        });
+
+        // بررسی وضعیت دکمه در بارگذاری اولیه
+        document.addEventListener("DOMContentLoaded", checkFormCompletion);
+    </script>
 
     <script>
         let currentPage = 1; // صفحه فعلی
@@ -403,6 +368,7 @@
         }
 
         function navigateQuestion(event, direction) {
+
             event.preventDefault();
 
             const totalPages = document.querySelectorAll('.question').length; // تعداد کل صفحات

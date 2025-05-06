@@ -3,8 +3,11 @@ using DAL.DataBase;
 
 public interface IQuizQuestionDiscService
 {
-	Task<QuizQuestionDisc> GetByIdAsync(int id);
-	Task<IEnumerable<QuizQuestionDiscViewModel>> GetAllAsync();
+	Task<QuizQuestionDiscViewModel> GetByIdAsync(int id);
+	Task<QuizQuestionDiscViewModel> GetByQuestionNumberAsync(int questionnumber, int itemnumber);
+
+
+    Task<IEnumerable<QuizQuestionDiscViewModel>> GetAllAsync();
 	Task AddAsync(QuizQuestionDisc quizQuestion);
 	Task UpdateAsync(QuizQuestionDisc quizQuestion);
 	Task DeleteAsync(int id);

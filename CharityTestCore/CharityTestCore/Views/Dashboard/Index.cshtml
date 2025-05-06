@@ -26,6 +26,8 @@
                                 <th>نام خانوادگی</th>
                                 <th> کد ملی </th>
                                 <th>شماره تماس </th>
+                                <th> تست MBTI </th>
+                                <th> تست EPT </th>
                                 <th width="220px">عملیات</th>
                             </tr>
                         </thead>
@@ -48,16 +50,18 @@
         });
         $('body').on('click', '._quiez1', function () {
             var data = table2.row($(this).parents('tr')).data();
-            window.location.href = "/Dashboard/Mbti?id=" + data.id;
+            window.open("/Dashboard/Mbti?id=" + data.id, '_blank');
         });
+
         $('body').on('click', '._edit', function () {
             var data = table2.row($(this).parents('tr')).data();
             window.location.href = "/user/edit?id=" + data.id;
         });
         $('body').on('click', '._quiez2', function () {
             var data = table2.row($(this).parents('tr')).data();
-            window.location.href = "/Dashboard/Ept?id=" + data.id;
+            window.open("/Dashboard/Ept?id=" + data.id, '_blank');
         });
+
         $('body').on('click', '._delete', function () {
         
             var data = table2.row($(this).parents('tr')).data();
@@ -249,6 +253,8 @@
                     { data: "family", name: "Family" },
                     { data: "nationalNumber", name: "NationalNumber" },
                     { data: "mobileNumber", name: "MobileNumber" },
+                    { data: "hasMBTIText", name: "HasMBTIText" },
+                    { data: "hasEPTText", name: "HasEPTText" },
                     { data: null, "searchable": false, orderable: false },
                 ],
               

@@ -20,6 +20,6 @@ namespace CharityTestCore.Service.UserManagment
         bool EditUser(Models.UserListModel userListModel);
 
         UserListModel? GetByIdUserListModel(string Id);
-
-	}
+        List<UserExamStatusViewModel> GetAllByQuizUser();
+    }
 }

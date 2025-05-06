@@ -85,49 +85,28 @@ namespace CharityTestCore.Controllers
         [HttpPost]
         [Authorize(Roles = "admin,superadmin")]
         public JsonResult load_data_users2(int id)
-		{
-			int totalRecord = 0;
-			int filterRecord = 0;
+        {
+            int totalRecord = 0;
+            int filterRecord = 0;
+            var draw = Request.Form["draw"].FirstOrDefault();
+            var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+            var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+            var searchValue = Request.Form["search[value]"].FirstOrDefault();
+            int pageSize = Convert.ToInt32(Request.Form["length"].FirstOrDefault() ?? "0");
+            int skip = Convert.ToInt32(Request.Form["start"].FirstOrDefault() ?? "0");
+            var data = _userService.GetAllByQuizUser();
+            totalRecord = data.Count();
+            if (!string.IsNullOrEmpty(searchValue))
+            {
+                data = data.Where(y => y.NationalNumber.Contains(searchValue)).ToList();
+            }
+            filterRecord = data.Count();
+            var empList = data.Skip(skip).Take(pageSize).ToList();
+            var returnObj = new { draw = draw, recordsTotal = totalRecord, recordsFiltered = filterRecord, data = empList };
+            return Json(returnObj);
 
-			var draw = Request.Form["draw"].FirstOrDefault();
-
-
-			var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
-
-
-			var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
-
-
-			var searchValue = Request.Form["search[value]"].FirstOrDefault();
-
-
-			int pageSize = Convert.ToInt32(Request.Form["length"].FirstOrDefault() ?? "0");
-
-
-			int skip = Convert.ToInt32(Request.Form["start"].FirstOrDefault() ?? "0");
-
-
-
-			var data = _userService.GetAllUser();
-
-
-			totalRecord = data.Count();
-
-			if (!string.IsNullOrEmpty(searchValue))
-			{
-				data = data.Where(y => y.NationalNumber.Contains(searchValue)).ToList();
-
-			}
-
-			filterRecord = data.Count();
-
-			var empList = data.Skip(skip).Take(pageSize).ToList();
-
-			var returnObj = new { draw = draw, recordsTotal = totalRecord, recordsFiltered = filterRecord, data = empList };
-			return Json(returnObj);
-
-		}
-		public IActionResult UserProfile(Guid? id)
+        }
+        public IActionResult UserProfile(Guid? id)
         {
 
             string idd = OnGetUserId();

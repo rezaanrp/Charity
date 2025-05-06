@@ -1,4 +1,5 @@
 ﻿using DAL.DataBase;
+using DAL.Dtos;
 
 namespace CharityTestCore.Repository.UserManagment
 {
@@ -42,7 +43,30 @@ namespace CharityTestCore.Repository.UserManagment
 
 
 		}
-		public IEnumerable<User> Users
+
+        public List<UserExamStatusDtos> GetUsersWithExamStatus()
+        {
+            var users = context.Users.Where(u => !u.IsDelete).ToList();
+
+            var mbtiIds = context.MBTIAnswerList.Select(x => x.UserId).ToHashSet();
+            var eptIds = context.EptQuestion.Select(x => x.UserId_).ToHashSet();
+
+            var result = users.Select(u => new UserExamStatusDtos
+            {
+                Id = u.Id,
+                Name = u.Name,
+                Family = u.Family,
+                UserName = u.UserName,
+                NationalNumber = u.NationalNumber,
+                MobileNumber = u.MobileNumber,
+                HasMBTI = mbtiIds.Contains(u.Id.ToString()),
+                HasEPT = eptIds.Contains(u.Id.ToString())
+            }).ToList();
+
+            return result;
+        }
+
+        public IEnumerable<User> Users
         {
             get { return context.Users; }
         }

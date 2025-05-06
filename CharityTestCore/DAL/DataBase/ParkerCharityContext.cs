@@ -31,12 +31,13 @@ namespace DAL.DataBase
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            //   base.OnConfiguring(optionsBuilder);
-           // optionsBuilder.UseSqlServer(@"Data Source=172.25.42.55;TrustServerCertificate=True;Initial Catalog=ca8_db;User ID=sa;Password=kjhkj@56654ggfd");
-           // optionsBuilder.UseSqlServer(@"Data Source=.;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=mehr;Password=bxvN~21112222");
-            optionsBuilder.UseSqlServer(@"Data Source=172.25.42.55;TrustServerCertificate=True;Initial Catalog=ca7_db;User ID=sa;Password=R@y@23.60");
+            // حذف  base.OnConfiguring(optionsBuilder);
+            //حذف optionsBuilder.UseSqlServer(@"Data Source=172.25.42.55;TrustServerCertificate=True;Initial Catalog=ca8_db;User ID=sa;Password=kjhkj@56654ggfd");
+             optionsBuilder.UseSqlServer(@"Data Source=193.141.65.234,2019;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=mehr;Password=bxvN~21112222");
+           // optionsBuilder.UseSqlServer(@"Data Source=192.168.170.47;TrustServerCertificate=True;Initial Catalog=ca7_db;User ID=sa;Password=R@y@23.60");
 
-            //     "DefaultConnection": "Data Source=.;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=sa;Password=kjhkj@56654ggfd"
+
+            //  حذف   "DefaultConnection": "Data Source=.;TrustServerCertificate=True;Initial Catalog=quizmehr;User ID=sa;Password=kjhkj@56654ggfd"
 
 
         }

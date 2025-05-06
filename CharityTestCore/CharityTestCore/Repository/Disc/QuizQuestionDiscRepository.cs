@@ -16,8 +16,11 @@ public class QuizQuestionDiscRepository : IQuizQuestionDiscRepository
 							 .Include(q => q.QuizAnswers)
 							 .FirstOrDefaultAsync(q => q.Id == id);
 	}
-
-	public async Task<IEnumerable<QuizQuestionDisc>> GetAllAsync()
+	public async Task<QuizQuestionDisc> GetByQuestionNumberAsync(int questionnumber, int itemnumber)
+	{
+		return await _context.QuizQuestionDiscs.FirstOrDefaultAsync(x => x.QuestionNumber == questionnumber && x.ItemNumber == itemnumber);
+	}
+    public async Task<IEnumerable<QuizQuestionDisc>> GetAllAsync()
 	{
 		return await _context.QuizQuestionDiscs
 							 .Include(q => q.QuizAnswers)

@@ -1,7 +1,10 @@
 ﻿using CharityTestCore.Models;
 using CharityTestCore.Repository;
+using CharityTestCore.Repository.EPT;
+using CharityTestCore.Repository.MBTI;
 using CharityTestCore.Repository.UserManagment;
 using DAL.DataBase;
+using DAL.Dtos;
 using NewsAgency.Utilities;
 
 namespace CharityTestCore.Service.UserManagment
@@ -9,10 +12,20 @@ namespace CharityTestCore.Service.UserManagment
     public class UserService : IUserService
     {
         private readonly IUserRepository userRepository;
-        public UserService(IUserRepository _userRepository)
+        private readonly IEPTRepository _EPTRepository;
+        private readonly IMBTIRepository _mBTIRepository;
+        
+        public UserService(
+            IUserRepository _userRepository,
+            IEPTRepository EPTRepository,
+            IMBTIRepository mBTIRepository
+            
+            )
         {
 
             userRepository = _userRepository;
+            _EPTRepository = EPTRepository;
+            _mBTIRepository = mBTIRepository;
 
         }
 
@@ -81,26 +94,44 @@ namespace CharityTestCore.Service.UserManagment
 			}
 
 		}
-		public List<UserProfileModel>  GetAllUser()
+        public List<UserProfileModel> GetAllUser()
         {
-             var m = userRepository.usersList().ToList();
-            List<UserProfileModel> mm = new List<UserProfileModel>();
-            for (int i = 0; i < m.Count; i++)
-            {
-                UserProfileModel um = new UserProfileModel();
-                um.Id = m[i].Id;
-                um.Name = m[i].Name;
-                um.Family = m[i].Family;
-                um.Role = m[i].Role;
-                um.MobileNumber = m[i].MobileNumber;
-                um.NationalNumber = m[i].NationalNumber;    
-                um.UserName = m[i].UserName;
-                mm.Add(um);
-			}
-            return mm;
-		}
+            return userRepository.usersList()
+                .Select(u => new UserProfileModel
+                {
+                    Id = u.Id,
+                    Name = u.Name,
+                    Family = u.Family,
+                    Role = u.Role,
+                    MobileNumber = u.MobileNumber,
+                    NationalNumber = u.NationalNumber,
+                    UserName = u.UserName
+                })
+                .ToList();
+        }
 
-       public  UserProfileModel? GetProfile(string userid)
+        public List<UserExamStatusViewModel> GetAllByQuizUser()
+        {
+            var model = userRepository.GetUsersWithExamStatus().Select(u => new UserExamStatusViewModel
+            { 
+                Family = u.Family,
+                Role = u.Role,  
+                MobileNumber = u.MobileNumber,
+                NationalNumber = u.NationalNumber,
+                UserName = u.UserName,
+                Name = u.Name,
+                HasEPT = u.HasEPT,
+                HasMBTI = u.HasMBTI,
+                Id = u.Id,
+
+                
+            });
+
+            return model.ToList();
+
+
+        }
+        public UserProfileModel? GetProfile(string userid)
         {
 
             var u = userRepository.Users.FirstOrDefault(x => x.Id.ToString() == userid);
