@@ -68,6 +68,15 @@
                         </div>
                         <div class="info">
                             <a href="#" class="d-block">   @RenderSection("ProfileName") </a>
+
+                            @{
+                                var firstName = User.FindFirst("FirstName")?.Value;
+                                var lastName = User.FindFirst("LastName")?.Value;
+                            }
+                            @if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
+                            {
+                                 <a href="#" class="d-block">سلام، @firstName @lastName</a>
+                            }
                         </div>
                     </div>
 
