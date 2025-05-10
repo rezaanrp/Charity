@@ -8,7 +8,63 @@
 
 }
 @section Body {
+    <div class="row">
+        <div class="col-12">
+            <div class="card collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">فیلتر</h3>
 
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="mbtiFilter">تیپ شخصیت:</label>
+                            <select id="mbtiFilter" class="form-control">
+                                <option value="">همه</option>
+                                <option value="INTJ">INTJ</option>
+                                <option value="INTP">INTP</option>
+                                <option value="ENTJ">ENTJ</option>
+                                <option value="ENTP">ENTP</option>
+                                <option value="INFJ">INFJ</option>
+                                <option value="INFP">INFP</option>
+                                <option value="ENFJ">ENFJ</option>
+                                <option value="ENFP">ENFP</option>
+                                <option value="ISTJ">ISTJ</option>
+                                <option value="ISFJ">ISFJ</option>
+                                <option value="ESTJ">ESTJ</option>
+                                <option value="ESFJ">ESFJ</option>
+                                <option value="ISTP">ISTP</option>
+                                <option value="ISFP">ISFP</option>
+                                <option value="ESTP">ESTP</option>
+                                <option value="ESFP">ESFP</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button id="filterButton" class="btn btn-primary">
+                        <i class="fa fa-check"></i> تایید
+                    </button>
+
+
+
+                </div>
+                <!-- /.card-footer-->
+            </div>
+        </div>
+
+
+    </div>
     <div class="row">
 
 
@@ -215,16 +271,19 @@
 
         }
         function load_data2(id) {
-
+            var mbtiType = $('#mbtiFilter').val(); // مقدار انتخاب‌شده از فیلتر
             table2 = $('#userstable').DataTable({
                 //scrollY: '400px',
                 "scrollX": true,
                 destroy: true,
                 paging: false,
                 ajax: {
-                    url: "/Dashboard/load_data_users2?id=" + id,
-                    datatype: 'json',
+                    url: "/Dashboard/load_data_users2",
                     type: 'POST',
+                    data: function (d) {
+                        d.id = id;
+                        d.mbtiType = mbtiType; // پارامتر جدید برای فیلتر
+                    }
                 },
                 "language": {
                     "paginate": {
@@ -263,11 +322,12 @@
                     {
                         data: null,
                         defaultContent:
+                            '<div class="d-flex justify-content-around flex-wrap" style="width : 220px ">' +
                             '<button type="button" class="btn btn-icon btn-outline-success _edit" style="margin-left: 2px;" title="ویرایش"><i class="fa fa-pencil"></i></button>'
                             + '<button type="button" class="btn btn-icon btn-outline-primary _deletembti" title="حذف آزمون شخصیت"><i class="fa fa-trash"></i></button>'
                             + '<button type="button" class="btn btn-icon btn-outline-primary _quiez1" title="آزمون شخصیت "><i class="fa fa-list"></i></button>'
                             + '<button type="button" class="btn btn-icon btn-outline-secondary _deleteept" title="حذف آزمون استعداد یابی"><i class="fa fa-trash"></i></button>'
-                            + '<button type="button" class="btn btn-icon btn-outline-secondary _quiez2" title="آزمون استعداد یابی"><i class="fa fa-list"></i></button>',
+                            + '<button type="button" class="btn btn-icon btn-outline-secondary _quiez2" title="آزمون استعداد یابی"><i class="fa fa-list"></i></button>' + '</div>',
                         targets: -1
                     }
                 ],
@@ -279,267 +339,9 @@
 
             });
         }
-    </script>
-}
-@* @model CharityTestCore.Models.EPTListPersonModel
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutAdminSimple.cshtml";
-
-}
-@section ProfileName
-    {
-    @if (User.Identity.IsAuthenticated)
-        @User.Identity.Name
-        
-
-}
-@section Body{
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">لیست افراد</h3>
-                </div>
-                <div class="table-responsive-md">
-                    <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>نام و نام خانوادگی</th>
-                                    <th>شماره تلفن همراه</th>
-                                    <th> کد ملی</th>
-                                    <th>سن</th>
-                                    <th>نتیجه</th>
-                                    <th>عملیات</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if (Model != null)
-                                {
-                                    @foreach (var item in Model.Persons)
-                                    {
-                                        <tr>
-
-                                            <td> </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td></td>
-                                            <td> </td>
-                                            <td> @item.Result</td>
-                                            <td>
-                                            <a  asp-controller="Dashboard" asp-action="Index" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-                                            <a  asp-controller="Dashboard" asp-action="EPTDelete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-
-                                            </td>
-                                        </tr>
-                                    }
-                                }
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>نام و نام خانوادگی</th>
-                                    <th>شماره تلفن همراه</th>
-                                    <th> کد ملی</th>
-                                    <th>سن</th>
-                                    <th>نتیجه</th>
-                                    <th>عملیات</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </div>
-                <!-- /.card-header -->
-
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-        </div>
-        <!-- /.col -->
-    </div>
-    <!-- /.row         -->
-    @if (Model.ResultTestText != "$$")
-    {
-        <div class="info-box mb-3 bg-info">
-            <span class="info-box-icon"><i class="fa fa-tag"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text"> </span>
-                <span class="info-box-number">
-                    <h3>@Model.ResultTestText</h3>
-                </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-
-                        <h3 class="card-title">
-                            <i class="fa fa-text-width"></i>
-                            توضیحات
-                        </h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <dl>
-                            <dt>
-                                <h3>@Model.ResultTestText</h3>
-                            </dt>
-                            <dt>
-
-                            </dt>
-
-                            <dd> @Model.ResultTest1Text</dd>
-                            <dd> @Model.ResultTest2Text</dd>
-                            <dd> @Model.ResultTest3Text</dd>
-                            <dd> @Model.ResultTest4Text</dd>
-                            <dd> @Model.ResultTest5Text</dd>
-                            <dd> @Model.ResultTest6Text</dd>
-                            <dd> @Model.ResultTest7Text</dd>
-                            <dd> @Model.ResultTest8Text</dd>
-                        </dl>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-            </div>
-            <!-- ./col -->
-            <div class="col-md-6">
-                <!-- Bar chart -->
-                <div class="card card-primary card-outline">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="fa fa-bar-chart-o"></i>
-                            نمودار ستونی
-                        </h3>
-
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-widget="collapse">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-widget="remove">
-                                <i class="fa fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="bar-chart" style="height: 300px;">
-                        </div>
-                    </div>
-                    <!-- /.card-body-->
-                </div>
-                <!-- /.card -->
-
-            </div>
-            <!-- /.col -->
-        </div>
-    }
-}
-@section script{
-
-
-    <!-- FLOT CHARTS -->
-    <script src="../../plugins/flot/jquery.flot.min.js"></script>
-    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-    <script src="../../plugins/flot/jquery.flot.resize.min.js"></script>
-    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-    <script src="../../plugins/flot/jquery.flot.pie.min.js"></script>
-    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-    <script src="../../plugins/flot/jquery.flot.categories.min.js"></script>
-    <!-- Page script -->
-
-    <!---------------------------------------------------------------->
-
-
-
-
-
-
-    <script>
-        $(function () {
-            /*
-             * BAR CHART
-             * ---------
-             */
-
-            var bar_data = {
-                data: [
-                    ['ریسک پذیری متعادل', @Model.ResultTest1],
-                    [' کانون کنترل', @Model.ResultTest2],
-                    [' نیاز به موفقیت', @Model.ResultTest3],
-                    [' سلامت فکری', @Model.ResultTest4],
-                    [' عملگرایی', @Model.ResultTest5],
-                    [' تحمل ابهام', @Model.ResultTest6],
-                    [' رویا پردازی', @Model.ResultTest7],
-                    [' چالش طلبی', @Model.ResultTest8],
-                    [' کارآفرینی', @Model.ResultTest9],
-                ],
-                color: '#3c8dbc'
-            }
-            $.plot('#bar-chart', [bar_data], {
-                grid: {
-                    borderWidth: 1,
-                    borderColor: '#f3f3f3',
-                    tickColor: '#f3f3f3'
-                },
-                series: {
-                    bars: {
-                        show: true,
-                        barWidth: 0.5,
-                        align: 'center'
-                    }
-                },
-                xaxis: {
-                    mode: 'categories',
-                    tickLength: 0
-                }
-            })
-            /* END BAR CHART */
-
-
-        })
-
-        /*
-         * Custom Label formatter
-         * ----------------------
-         */
-        function labelFormatter(label, series) {
-            return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
-                + label
-                + '<br>'
-                + Math.round(series.percent) + '%</div>'
-        }
-    </script>
-
-    <script>
-        $(function () {
-            $("#example1").DataTable({
-                "language": {
-                    "paginate": {
-                        "next": "بعدی",
-                        "previous": "قبلی"
-                    }
-                },
-                "info": false,
-            });
-            $('#example2').DataTable({
-                "language": {
-                    "paginate": {
-                        "next": "بعدی",
-                        "previous": "قبلی"
-                    }
-                },
-                "info": false,
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "autoWidth": false
-            });
+        $('#filterButton').on('click', function () {
+            load_data2();
         });
     </script>
-} *@
+}

@@ -19,5 +19,6 @@ namespace CharityTestCore.Repository.UserManagment
         public bool EditUsersList(Models.UserListModel item, string newpassword);
         public bool Delete(User item);
         List<UserExamStatusDtos> GetUsersWithExamStatus();
+        void Update(User user);
     }
 }

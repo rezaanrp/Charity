@@ -1,5 +1,6 @@
 ﻿using DAL.DataBase;
 using DAL.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace CharityTestCore.Repository.UserManagment
 {
@@ -59,7 +60,7 @@ namespace CharityTestCore.Repository.UserManagment
                 UserName = u.UserName,
                 NationalNumber = u.NationalNumber,
                 MobileNumber = u.MobileNumber,
-                HasMBTI = mbtiIds.Contains(u.Id.ToString()),
+                HasMBTI = mbtiIds.Contains(u.Id),
                 HasEPT = eptIds.Contains(u.Id.ToString())
             }).ToList();
 
@@ -92,6 +93,12 @@ namespace CharityTestCore.Repository.UserManagment
                 return false;
             }
         }
+        public void Update(User user)
+        {
+            context.Users.Update(user);
+            context.SaveChanges();
+        }
+
         public void SaveChanges()
         {
             context.SaveChanges();

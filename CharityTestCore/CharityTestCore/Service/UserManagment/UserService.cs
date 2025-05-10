@@ -3,6 +3,7 @@ using CharityTestCore.Repository;
 using CharityTestCore.Repository.EPT;
 using CharityTestCore.Repository.MBTI;
 using CharityTestCore.Repository.UserManagment;
+using CharityTestCore.Tools;
 using DAL.DataBase;
 using DAL.Dtos;
 using NewsAgency.Utilities;
@@ -49,14 +50,18 @@ namespace CharityTestCore.Service.UserManagment
         public User? Authenticate(string username, string password)
         {
             string username_ = username.Trim().ToLower();
-            //if(!userRepository.Users.Any())
-            //{
-            //   new  DAL.DataBase.Seed().SeedData( );
-            //}
-            var u = userRepository.Users.FirstOrDefault(x => x.UserName == username_ && x.HashPassword == CryptographyHelper.Encrypt(password));
-            return u;
 
+            var u = userRepository.Users.FirstOrDefault(x => x.UserName == username_ && x.HashPassword == CryptographyHelper.Encrypt(password));
+
+            if (u != null)
+            {
+                u.LastLoginDate = DateTime.Now;
+                userRepository.Update(u); // مطمئن شو این متد تغییرات رو ذخیره می‌کنه
+            }
+
+            return u;
         }
+
         public Guid? AddUser(string username, string password, string name, string family, string role, string nationalcode,string mobile)
         {
             try
@@ -145,8 +150,8 @@ namespace CharityTestCore.Service.UserManagment
                     NationalNumber = u.NationalNumber,
                     Id = u.Id,
                     Role = u.Role,
-                   
-                    
+                    CreatedDate = u.CreatedDate,
+                    LastLoginDate = u.LastLoginDate,
 
                 };
                 return model;
@@ -211,6 +216,7 @@ namespace CharityTestCore.Service.UserManagment
 				model.UserName = us.UserName;
 				model.Id = us.Id;
 				model.Role = us.Role;
+  
 				return model;
 			}
 			else { return new UserListModel(); }

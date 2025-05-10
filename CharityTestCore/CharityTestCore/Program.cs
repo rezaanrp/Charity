@@ -79,3 +79,8 @@ app.MapControllerRoute(
 
 
 app.Run();
+
+
+//DELETE
+//FROM MBTIAnswerList 
+//WHERE UserId NOT IN (SELECT Id FROM Users);

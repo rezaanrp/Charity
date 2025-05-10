@@ -94,7 +94,15 @@ namespace CharityTestCore.Controllers
             var searchValue = Request.Form["search[value]"].FirstOrDefault();
             int pageSize = Convert.ToInt32(Request.Form["length"].FirstOrDefault() ?? "0");
             int skip = Convert.ToInt32(Request.Form["start"].FirstOrDefault() ?? "0");
+            var mbtiType = Request.Form["mbtiType"].FirstOrDefault();
+
             var data = _userService.GetAllByQuizUser();
+
+            if (!string.IsNullOrEmpty(mbtiType))
+            {
+                data = data.Where(y => y.HasMBTIText == mbtiType).ToList();
+            }
+
             totalRecord = data.Count();
             if (!string.IsNullOrEmpty(searchValue))
             {
@@ -108,9 +116,20 @@ namespace CharityTestCore.Controllers
         }
         public IActionResult UserProfile(Guid? id)
         {
+            Guid userId = OnGetUserGuid(); // فرض بر اینکه Guid برمی‌گردونه
+            string userIds = OnGetUserId(); // فرض بر اینکه Guid برمی‌گردونه
 
-            string idd = OnGetUserId();
-            ViewBag.UserNameAndFamily = _userService.GetProfile(idd).FullName;
+            var model_mbti = mBTIService.GetByUserId(userId);
+            var model_ept = eptservice.GetEptByUserId(userIds);
+
+            ViewBag.HasMBTI = model_mbti != null;
+            ViewBag.HasEPT = model_ept != null;
+
+            var profile = _userService.GetProfile(userIds); // فرض بر اینکه ورودی Guid می‌گیره
+            ViewBag.FullName = profile?.FullName ?? "کاربر محترم";
+            ViewBag.LastLogin = profile?.LastLoginDateFarsi;
+            ViewBag.JoinDate = profile?.CreatedDateFarsi;
+            
             return View();
         }
         //public IActionResult EPTDelete(Guid? id)

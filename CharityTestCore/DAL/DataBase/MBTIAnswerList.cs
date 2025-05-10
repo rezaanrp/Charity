@@ -13,8 +13,14 @@ namespace DAL.DataBase
     {
         [Key]
         public Guid Id { get; set; }
-        [MaxLength(60)]
-        public string UserId { get; set; }
+
+        [Required]
+        public Guid UserId { get; set; } // ✅ اصلاح شد
+
+        [ForeignKey("UserId")]
+        public User User { get; set; }   // ✅ افزودن navigation property
+        [MaxLength(4)]
+        public string Result { get; set; } = string.Empty;
         [AllowNull]
         public byte Answer1 { get; set; }
         [AllowNull]

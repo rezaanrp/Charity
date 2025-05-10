@@ -4,6 +4,7 @@ using DAL.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ParkerCharityContext))]
-    partial class ParkerCharityContextModelSnapshot : ModelSnapshot
+    [Migration("20250510101833_MBTIAnswerList11111111333333333")]
+    partial class MBTIAnswerList11111111333333333
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -623,11 +626,6 @@ namespace DAL.Migrations
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Result")
-                        .IsRequired()
-                        .HasMaxLength(4)
-                        .HasColumnType("nvarchar(4)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -1626,11 +1624,6 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETDATE()");
-
                     b.Property<string>("Family")
                         .IsRequired()
                         .HasMaxLength(30)
@@ -1643,9 +1636,6 @@ namespace DAL.Migrations
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
-
-                    b.Property<DateTime?>("LastLoginDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("MobileNumber")
                         .IsRequired()
@@ -1686,7 +1676,6 @@ namespace DAL.Migrations
                         new
                         {
                             Id = new Guid("bd7cb230-6834-4869-8b9a-8662558a7ef2"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Family = "سیستم",
                             HashPassword = "1hO2KL3nZdudecMmm3hT5sh7m7Y9P9R030JzQxRlpkg=",
                             IsDelete = false,
@@ -1699,7 +1688,6 @@ namespace DAL.Migrations
                         new
                         {
                             Id = new Guid("97842857-cc39-49e1-4449-08dc23f263f7"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Family = "سیستم",
                             HashPassword = "1hO2KL3nZdudecMmm3hT5sh7m7Y9P9R030JzQxRlpkg=",
                             IsDelete = false,

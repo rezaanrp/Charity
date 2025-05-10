@@ -9,10 +9,13 @@ namespace DAL.DataBase
 {
     public class User
     {
+        [Key]
         public Guid Id { get; set; }
 
+        [Required]
         [MaxLength(60)]
         public string UserName { get; set; }
+
 
         [MaxLength(60)]
         public string HashPassword { get; set; }
@@ -32,6 +35,9 @@ namespace DAL.DataBase
         public string MobileNumber { get; set; }
 
         public bool IsDelete { get; set; } = false;
+
+        public DateTime CreatedDate { get; set; } 
+        public DateTime? LastLoginDate { get; set; }
 
         public string FullName
         {

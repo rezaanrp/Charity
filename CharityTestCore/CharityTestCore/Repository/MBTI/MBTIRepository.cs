@@ -31,7 +31,7 @@ namespace CharityTestCore.Repository.MBTI
 
         }
 
-        public MBTIAnswerList? GetByUserId(string UserId)
+        public MBTIAnswerList? GetByUserId(Guid UserId)
         {
             return context.MBTIAnswerList.FirstOrDefault(x => x.UserId == UserId);
 

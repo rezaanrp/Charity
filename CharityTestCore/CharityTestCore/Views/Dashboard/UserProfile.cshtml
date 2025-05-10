@@ -9,8 +9,59 @@
  
 }
 @section Body {
+    <div class="card shadow-sm border-0" style="border-radius: 16px;">
+        <div class="card-body">
+            <h4 class="card-title mb-4">
+                <i class="fa fa-user-circle text-primary"></i> خوش‌آمدید، <strong>@ViewBag.FullName</strong>
+            </h4>
+
+            <ul class="list-unstyled mb-4">
+                <li><i class="fa fa-calendar-plus-o text-secondary"></i> <strong>تاریخ عضویت:</strong> @ViewBag.JoinDate</li>
+                <li><i class="fa fa-sign-in text-secondary"></i> <strong>آخرین ورود:</strong> @ViewBag.LastLogin</li>
+            </ul>
+
+            <label class="mb-1"><i class="fa fa-check-circle text-success"></i> وضعیت تکمیل پروفایل:</label>
+            <div class="progress" style="height: 20px; border-radius: 10px;">
+                <div class="progress-bar bg-success text-right px-2 fw-bold"
+                     role="progressbar"
+                     style="width: @ViewBag.ProfilePercent%"
+                     aria-valuenow="@ViewBag.ProfilePercent" aria-valuemin="0" aria-valuemax="100">
+                    @ViewBag.ProfilePercent%
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="callout @(ViewBag.HasMBTI == true ? "callout-info" : "callout-danger")">
+        <h6><i class="fa fa-info-circle"></i> وضعیت آزمون شخصیت </h6>
+
+        @if (ViewBag.HasMBTI == true)
+        {
+            <p>شما قبلاً در آزمون شخصیت شرکت کرده‌اید..</p>
+        }
+        else
+        {
+            <p>شما هنوز در آزمون شخصیت شرکت نکرده‌اید. لطفاً  در آزمون شرکت کنید.</p>
+        }
+    </div>
+
+    <div class="callout @(ViewBag.HasEPT == true ? "callout-info" : "callout-danger")">
+        <h6><i class="fa fa-info-circle"></i> وضعیت آزمون استعدادیابی </h6>
+
+        @if (ViewBag.HasEPT == true)
+        {
+            <p>شما قبلاً در آزمون استعدادیابی شرکت کرده‌اید. .</p>
+        }
+        else
+        {
+            <p>شما هنوز در آزمون استعدادیابی شرکت نکرده‌اید. .</p>
+        }
+    </div>
+
+
 
 }
+
 @section script {
 
 

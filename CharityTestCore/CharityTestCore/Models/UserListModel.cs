@@ -50,6 +50,7 @@ namespace CharityTestCore.Models
 		public string MobileNumber { get; set; }
 
 
+
         public string FullName
         {
             get { return Name + " " + Family; }

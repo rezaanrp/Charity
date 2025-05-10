@@ -29,6 +29,15 @@ namespace CharityTestCore.Controllers
             return claim.Value;
 
         }
+        public Guid OnGetUserGuid()
+        {
+            var claim = User.Claims.FirstOrDefault(o => o.Type == ClaimTypes.SerialNumber);
+            if (claim == null || !Guid.TryParse(claim.Value, out Guid userId))
+                return Guid.Empty;
+
+            return userId;
+        }
+
         public string OnGetUserRole()
         {
             var claim = User.Claims.FirstOrDefault(o => o.Type == ClaimTypes.Role);
