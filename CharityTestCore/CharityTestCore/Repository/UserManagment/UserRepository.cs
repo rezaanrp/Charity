@@ -49,8 +49,14 @@ namespace CharityTestCore.Repository.UserManagment
         {
             var users = context.Users.Where(u => !u.IsDelete).ToList();
 
-            var mbtiIds = context.MBTIAnswerList.Select(x => x.UserId).ToHashSet();
-            var eptIds = context.EptQuestion.Select(x => x.UserId_).ToHashSet();
+            var mbtiDict = context.MBTIAnswerList
+                            .GroupBy(x => x.UserId)
+                            .ToDictionary(g => g.Key, g => g.FirstOrDefault()?.Result);
+
+            var eptUserIds = context.EptQuestion
+                                .Select(x => x.UserId_)
+                                .Distinct()
+                                .ToHashSet();
 
             var result = users.Select(u => new UserExamStatusDtos
             {
@@ -60,12 +66,14 @@ namespace CharityTestCore.Repository.UserManagment
                 UserName = u.UserName,
                 NationalNumber = u.NationalNumber,
                 MobileNumber = u.MobileNumber,
-                HasMBTI = mbtiIds.Contains(u.Id),
-                HasEPT = eptIds.Contains(u.Id.ToString())
+                MbtiResult = mbtiDict.ContainsKey(u.Id) ? mbtiDict[u.Id] : null,
+                HasMBTI = mbtiDict.ContainsKey(u.Id) ,
+                HasEPT = eptUserIds.Contains(u.Id.ToString())
             }).ToList();
 
             return result;
         }
+
 
         public IEnumerable<User> Users
         {

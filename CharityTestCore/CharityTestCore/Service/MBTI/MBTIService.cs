@@ -80,6 +80,9 @@ namespace CharityTestCore.Service.MBTI
 
             // محاسبه تیپ شخصیت و نمرات
             var (mbtiType, results) = CalculateMBTI(answers);
+            answer.Result = mbtiType;
+
+            mBTIRepository.Update(answer);
 
             // دریافت توضیحات تیپ
             var typeInfo = mBTIRepository.MBTIQuestionList.FirstOrDefault(x => x.Question == mbtiType);

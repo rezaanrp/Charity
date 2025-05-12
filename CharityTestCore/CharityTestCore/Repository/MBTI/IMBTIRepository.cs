@@ -15,6 +15,6 @@ namespace CharityTestCore.Repository.MBTI
 
         void SaveChanges();
          MBTIAnswerList? GetByUserId(Guid UserId);
-
+        void Update(MBTIAnswerList entity);
     }
 }

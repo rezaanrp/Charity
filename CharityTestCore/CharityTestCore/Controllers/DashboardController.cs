@@ -101,7 +101,7 @@ namespace CharityTestCore.Controllers
 
             if (!string.IsNullOrEmpty(mbtiType))
             {
-                data = data.Where(y => y.HasMBTIText == mbtiType).ToList();
+                data = data.Where(y => y.MbtiResult == mbtiType).ToList();
             }
 
             totalRecord = data.Count();
@@ -208,7 +208,7 @@ namespace CharityTestCore.Controllers
         public IActionResult MBTI(Guid? id)
         {
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
-  
+            ViewBag.Title = "MBTI";
             var mm = mBTIService.MBTIPersonList(id);
             if(mm != null && id != null)
             {
@@ -224,6 +224,8 @@ namespace CharityTestCore.Controllers
         [Authorize(Roles = "admin,superadmin")]
         public IActionResult Ept(Guid? id)
         {
+            ViewBag.Title = "Ept";
+
             ViewBag.UsserNameAndFamily = "مدیر سیستم ";
             if(id != null)
                 ViewBag.FullName = _userService.GetById(id.ToString()).FullName;

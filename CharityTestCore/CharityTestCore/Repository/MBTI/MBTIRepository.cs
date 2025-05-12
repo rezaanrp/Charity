@@ -1,4 +1,5 @@
 ﻿using DAL.DataBase;
+using Microsoft.EntityFrameworkCore;
 
 namespace CharityTestCore.Repository.MBTI
 {
@@ -15,6 +16,12 @@ namespace CharityTestCore.Repository.MBTI
         {
             get { return context.MBTIAnswerList; }
 
+        }
+        public void Update(MBTIAnswerList entity)
+        {
+            context.MBTIAnswerList.Attach(entity);
+            context.Entry(entity).State = EntityState.Modified;
+            context.SaveChanges(); // اگر نخواهید جداگانه Save صدا بزنید
         }
         public void AddMBTIAnswerList(MBTIAnswerList item)
         {

@@ -127,6 +127,7 @@ namespace CharityTestCore.Service.UserManagment
                 Name = u.Name,
                 HasEPT = u.HasEPT,
                 HasMBTI = u.HasMBTI,
+                MbtiResult = u.MbtiResult,
                 Id = u.Id,
 
                 

@@ -20,6 +20,9 @@
 
         public string? MobileNumber { get; set; }
 
+        public string? MbtiResult { get; set; }
+        public string? EPTResult { get; set; }
+
         public string? HasMBTIText => HasMBTI == true ? "دارد" : "ندارد";
         public string? HasEPTText => HasEPT == true ? "دارد" : "ندارد";
 

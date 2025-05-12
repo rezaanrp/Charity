@@ -20,6 +20,8 @@ namespace DAL.Dtos
         public string? NationalNumber { get; set; }
 
         public string? MobileNumber { get; set; }
+        public string? MbtiResult { get; set; }
+        public string? EPTResult { get; set; }
 
   
 
