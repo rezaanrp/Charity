@@ -7,6 +7,7 @@ using CharityTestCore.Service.UserManagment;
 using DAL.DataBase;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CharityTestCore.Controllers
 {
@@ -129,8 +130,54 @@ namespace CharityTestCore.Controllers
             ViewBag.FullName = profile?.FullName ?? "کاربر محترم";
             ViewBag.LastLogin = profile?.LastLoginDateFarsi;
             ViewBag.JoinDate = profile?.CreatedDateFarsi;
-            
+            var profilePercent = CalculateProfileCompletion(profile, model_mbti != null, model_ept != null);
+            ViewBag.ProfilePercent = profilePercent;
+
             return View();
+        }
+        public int CalculateProfileCompletion(UserProfileModel user, bool HasMBTI, bool HasEPT)
+        {
+            int totalFields = 8;
+            int completedFields = 0;
+
+            if (!string.IsNullOrWhiteSpace(user.Name)) completedFields++;
+            if (!string.IsNullOrWhiteSpace(user.Family)) completedFields++;
+            if (!string.IsNullOrWhiteSpace(user.NationalNumber)) completedFields++;
+            if (!string.IsNullOrWhiteSpace(user.MobileNumber)) completedFields++;
+            if (!string.IsNullOrWhiteSpace(user.UserName)) completedFields++;
+            if (!string.IsNullOrWhiteSpace(user.Role)) completedFields++;
+            if (HasMBTI) completedFields++;
+            if (HasEPT) completedFields++;
+
+            return (int)((completedFields / (double)totalFields) * 100);
+        }
+
+        public IActionResult MyProfile()
+        {
+            Guid userId = OnGetUserGuid(); // فرض بر اینکه Guid برمی‌گردونه
+            string userIds = OnGetUserId(); // فرض بر اینکه Guid برمی‌گردونه
+            var profile = _userService.GetProfile(userIds); // فرض بر اینکه ورودی Guid می‌گیره
+            ViewData["IsReadOnly"] = false;
+            return View(profile);
+        }
+        [HttpPost]
+        public async Task<IActionResult> SaveMyProfile(UserProfileModel model)
+        {
+            if (!ModelState.IsValid)
+                return View("MyProfile", model);
+
+            var userId = OnGetUserGuid();
+
+            var result = await _userService.UpdateProfileAsync(model, userId);
+
+            if (!result)
+            {
+                ModelState.AddModelError("", "خطا در ذخیره اطلاعات.");
+                return View("MyProfile", model);
+            }
+
+            TempData["SuccessMessage"] = "پروفایل با موفقیت ذخیره شد.";
+            return RedirectToAction("UserProfile");
         }
         //public IActionResult EPTDelete(Guid? id)
         //{

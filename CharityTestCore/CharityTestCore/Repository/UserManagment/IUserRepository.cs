@@ -20,5 +20,7 @@ namespace CharityTestCore.Repository.UserManagment
         public bool Delete(User item);
         List<UserExamStatusDtos> GetUsersWithExamStatus();
         void Update(User user);
+        Task<User> GetByIdAsync(Guid id);
+        Task UpdateAsync(User user);
     }
 }

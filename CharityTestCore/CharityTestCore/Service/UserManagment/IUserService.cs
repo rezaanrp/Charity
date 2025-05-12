@@ -21,5 +21,6 @@ namespace CharityTestCore.Service.UserManagment
 
         UserListModel? GetByIdUserListModel(string Id);
         List<UserExamStatusViewModel> GetAllByQuizUser();
+        Task<bool> UpdateProfileAsync(UserProfileModel model, Guid currentUserId);
     }
 }

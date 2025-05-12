@@ -75,6 +75,15 @@ namespace CharityTestCore.Repository.UserManagment
         {
             return context.Users.FirstOrDefault(x => x.Id.ToString() ==  id);
         }
+        public async Task<User> GetByIdAsync(Guid id)
+        {
+            return await context.Users.FirstOrDefaultAsync(u => u.Id == id);
+        }
+        public async Task UpdateAsync(User user)
+        {
+            context.Users.Update(user);
+            await context.SaveChangesAsync();
+        }
         public IEnumerable<mGenGroup> mGenGroup
         {
             get { return context.mGenGroup; }

@@ -238,5 +238,24 @@ namespace CharityTestCore.Service.UserManagment
 
         }
 
+
+        public async Task<bool> UpdateProfileAsync(UserProfileModel model, Guid currentUserId)
+        {
+            var user = await userRepository.GetByIdAsync(currentUserId);
+            if (user == null) return false;
+
+            // اعتبارسنجی ID ارسالی
+            if (user.Id != model.Id)
+                return false;
+
+            user.Name = model.Name;
+            user.Family = model.Family;
+            user.NationalNumber = model.NationalNumber;
+            user.MobileNumber = model.MobileNumber;
+
+            await userRepository.UpdateAsync(user);
+            return true;
+        }
+
     }
 }
