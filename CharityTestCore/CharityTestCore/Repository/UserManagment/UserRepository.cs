@@ -1,5 +1,6 @@
 ﻿using DAL.DataBase;
 using DAL.Dtos;
+using Domain.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace CharityTestCore.Repository.UserManagment

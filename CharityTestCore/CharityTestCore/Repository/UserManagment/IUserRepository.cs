@@ -1,6 +1,6 @@
 ﻿using CharityTestCore.Models;
-using DAL.DataBase;
 using DAL.Dtos;
+using Domain.Model;
 
 namespace CharityTestCore.Repository.UserManagment
 {

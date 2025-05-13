@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.DataBase
+namespace Domain.Model
 {
-	public class mGenGroup
+    public class mGenGroup
     {
         [Key]
         public int ID { get; set; }

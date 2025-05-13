@@ -1,8 +1,6 @@
-﻿using Domain.Model;
-
-namespace CharityTestCore.Models
+﻿namespace Domain.Model
 {
-    public class QuizAnswernDiscViewModel
+    public class QuizAnswernDisc
     {
         public int Id { get; set; }
         public int QuizQuestionDiscId { get; set; }
@@ -11,4 +9,5 @@ namespace CharityTestCore.Models
 
         public QuizQuestionDisc QuizQuestion { get; set; } // ارتباط با QuizQuestionDisc
     }
+
 }

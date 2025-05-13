@@ -1,7 +1,7 @@
 ﻿using CharityTestCore.Models;
 using CharityTestCore.Repository;
 using CharityTestCore.Repository.EPT;
-using DAL.DataBase;
+using Domain.Model;
 
 namespace CharityTestCore.Service.EPT
 {

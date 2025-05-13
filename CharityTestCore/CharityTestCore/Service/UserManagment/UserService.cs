@@ -4,8 +4,8 @@ using CharityTestCore.Repository.EPT;
 using CharityTestCore.Repository.MBTI;
 using CharityTestCore.Repository.UserManagment;
 using CharityTestCore.Tools;
-using DAL.DataBase;
 using DAL.Dtos;
+using Domain.Model;
 using NewsAgency.Utilities;
 
 namespace CharityTestCore.Service.UserManagment

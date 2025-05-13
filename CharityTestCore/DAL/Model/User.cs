@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.DataBase
+namespace Domain.Model
 {
     public class User
     {
@@ -36,7 +36,7 @@ namespace DAL.DataBase
 
         public bool IsDelete { get; set; } = false;
 
-        public DateTime CreatedDate { get; set; } 
+        public DateTime CreatedDate { get; set; }
         public DateTime? LastLoginDate { get; set; }
 
         public string FullName

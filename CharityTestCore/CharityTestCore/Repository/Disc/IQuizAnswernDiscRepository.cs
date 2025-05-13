@@ -1,4 +1,4 @@
-﻿using DAL.DataBase;
+﻿using Domain.Model;
 
 public interface IQuizAnswernDiscRepository
 {

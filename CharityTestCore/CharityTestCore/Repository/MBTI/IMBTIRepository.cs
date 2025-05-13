@@ -1,4 +1,4 @@
-﻿using DAL.DataBase;
+﻿using Domain.Model;
 
 namespace CharityTestCore.Repository.MBTI
 {

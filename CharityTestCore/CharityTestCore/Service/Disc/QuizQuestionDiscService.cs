@@ -1,5 +1,5 @@
 ﻿using CharityTestCore.Models;
-using DAL.DataBase;
+using Domain.Model;
 
 public class QuizQuestionDiscService : IQuizQuestionDiscService
 {

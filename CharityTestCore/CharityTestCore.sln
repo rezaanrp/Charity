@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharityTestCore", "CharityTestCore\CharityTestCore.csproj", "{2A4A3FE2-00A9-480E-91BA-7E1048B996F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{868BDDDA-9A1E-476D-A98C-CB0C5AF0265A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "DAL\Domain.csproj", "{868BDDDA-9A1E-476D-A98C-CB0C5AF0265A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{028ADF56-C0E5-4116-93AB-9ADA85466050}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{868BDDDA-9A1E-476D-A98C-CB0C5AF0265A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{868BDDDA-9A1E-476D-A98C-CB0C5AF0265A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{868BDDDA-9A1E-476D-A98C-CB0C5AF0265A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{028ADF56-C0E5-4116-93AB-9ADA85466050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{028ADF56-C0E5-4116-93AB-9ADA85466050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{028ADF56-C0E5-4116-93AB-9ADA85466050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{028ADF56-C0E5-4116-93AB-9ADA85466050}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

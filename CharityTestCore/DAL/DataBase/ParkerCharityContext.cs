@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
+﻿using Domain.Model;
+using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DataBase
 {
-  
+
     public class ParkerCharityContext : DbContext, IDataProtectionKeyContext
     {
         //public ParkerCharityContext(DbContextOptions<ParkerCharityContext> options) : base(options)

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.DataBase
+namespace Domain.Model
 {
     public class MBTIAnswerList
     {
@@ -181,7 +181,7 @@ namespace DAL.DataBase
         public byte Answer79 { get; set; }
         [AllowNull]
         public byte Answer80 { get; set; }
-        public bool IsDelete { get; set; }  = false;
+        public bool IsDelete { get; set; } = false;
 
         public DateTime CreatedDate { get; set; }
     }

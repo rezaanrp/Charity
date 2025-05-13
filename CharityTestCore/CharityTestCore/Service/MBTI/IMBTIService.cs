@@ -1,6 +1,6 @@
 ﻿using CharityTestCore.Models;
 using CharityTestCore.Repository.MBTI;
-using DAL.DataBase;
+using Domain.Model;
 
 namespace CharityTestCore.Service.MBTI
 {

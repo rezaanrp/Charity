@@ -1,4 +1,5 @@
 ﻿using DAL.DataBase;
+using Domain.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace CharityTestCore.Repository.MBTI

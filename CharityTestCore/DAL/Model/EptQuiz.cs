@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.DataBase
+namespace Domain.Model
 {
     public class EptQuiz
     {
         [Key]
-        public Guid Id{ get; set; }
+        public Guid Id { get; set; }
         public string Question { get; set; }
         public string Answer1 { get; set; }
         public string Answer2 { get; set; }

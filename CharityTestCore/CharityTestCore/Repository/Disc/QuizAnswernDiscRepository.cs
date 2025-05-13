@@ -1,4 +1,5 @@
 ﻿using DAL.DataBase;
+using Domain.Model;
 using Microsoft.EntityFrameworkCore;
 
 public class QuizAnswernDiscRepository : IQuizAnswernDiscRepository

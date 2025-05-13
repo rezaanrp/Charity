@@ -2,7 +2,7 @@
 using CharityTestCore.Repository;
 using CharityTestCore.Repository.MBTI;
 using CharityTestCore.Repository.UserManagment;
-using DAL.DataBase;
+using Domain.Model;
 using NuGet.Protocol.Core.Types;
 
 namespace CharityTestCore.Service.MBTI
