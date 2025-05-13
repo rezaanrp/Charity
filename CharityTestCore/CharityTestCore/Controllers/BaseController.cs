@@ -1,9 +1,8 @@
 ﻿using CharityTestCore.Models;
-using CharityTestCore.Repository;
 using CharityTestCore.Service;
 using CharityTestCore.Service.EPT;
 using CharityTestCore.Service.UserManagment;
-using DAL.DataBase;
+using Domain.DataBase;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 

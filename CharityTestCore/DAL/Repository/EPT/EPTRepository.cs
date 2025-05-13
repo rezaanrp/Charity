@@ -1,5 +1,5 @@
-﻿using CharityTestCore.Models;
-using DAL.DataBase;
+﻿
+using Domain.DataBase;
 using Domain.Model;
 
 namespace CharityTestCore.Repository.EPT

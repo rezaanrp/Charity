@@ -1,5 +1,5 @@
 ﻿using CharityTestCore.Models;
-using DAL.DataBase;
+using Domain.DataBase;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

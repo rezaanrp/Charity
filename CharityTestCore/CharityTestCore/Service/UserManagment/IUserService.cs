@@ -1,6 +1,4 @@
 ﻿using CharityTestCore.Models;
-using CharityTestCore.Repository;
-using CharityTestCore.Repository.UserManagment;
 using Domain.Model;
 
 namespace CharityTestCore.Service.UserManagment

@@ -1,6 +1,4 @@
 ﻿using CharityTestCore.Models;
-using CharityTestCore.Repository;
-using CharityTestCore.Repository.EPT;
 using Domain.Model;
 
 namespace CharityTestCore.Service.EPT

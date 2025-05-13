@@ -4,7 +4,7 @@ using CharityTestCore.Repository.UserManagment;
 using CharityTestCore.Service.EPT;
 using CharityTestCore.Service.MBTI;
 using CharityTestCore.Service.UserManagment;
-using DAL.DataBase;
+using Domain.DataBase;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;

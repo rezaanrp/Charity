@@ -1,4 +1,4 @@
-﻿using DAL.DataBase;
+﻿using Domain.DataBase;
 using DAL.Dtos;
 using Domain.Model;
 using Microsoft.EntityFrameworkCore;
@@ -17,34 +17,34 @@ namespace CharityTestCore.Repository.UserManagment
         {
             context.Users.Add(item);
         }
-		public bool EditUsersList(Models.UserListModel item,string newpassword)
-		{
-            try
-            {
-				var mm = context.Users.FirstOrDefault(x => x.Id == item.Id);
-                if (mm != null)
-                {
-					mm.MobileNumber = item.MobileNumber;
-					mm.NationalNumber = item.NationalNumber;
-					mm.Name = item.Name;
-					mm.Family = item.Family;
-					mm.HashPassword = newpassword;
-					context.SaveChanges();
-					return true;
+		//public bool EditUsersList(Models.UserListModel item,string newpassword)
+		//{
+  //          try
+  //          {
+		//		var mm = context.Users.FirstOrDefault(x => x.Id == item.Id);
+  //              if (mm != null)
+  //              {
+		//			mm.MobileNumber = item.MobileNumber;
+		//			mm.NationalNumber = item.NationalNumber;
+		//			mm.Name = item.Name;
+		//			mm.Family = item.Family;
+		//			mm.HashPassword = newpassword;
+		//			context.SaveChanges();
+		//			return true;
 
-				}
-				return false;
+		//		}
+		//		return false;
 
-			}
-			catch (Exception)
-            {
+		//	}
+		//	catch (Exception)
+  //          {
 
-                return false;
-            }
+  //              return false;
+  //          }
 
 
 
-		}
+		//}
 
         public List<UserExamStatusDtos> GetUsersWithExamStatus()
         {

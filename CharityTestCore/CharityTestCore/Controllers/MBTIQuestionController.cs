@@ -1,9 +1,8 @@
 ﻿using CharityTestCore.Models;
-using CharityTestCore.Repository.MBTI;
 using CharityTestCore.Service;
 using CharityTestCore.Service.EPT;
 using CharityTestCore.Service.MBTI;
-using DAL.DataBase;
+using Domain.DataBase;
 using Microsoft.AspNetCore.Mvc;
 using static CharityTestCore.Controllers.EPTTestController;
 

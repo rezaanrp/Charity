@@ -1,4 +1,4 @@
-﻿using DAL.DataBase;
+﻿using Domain.DataBase;
 using Domain.Model;
 using Microsoft.EntityFrameworkCore;
 

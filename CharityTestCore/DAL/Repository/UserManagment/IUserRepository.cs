@@ -1,4 +1,4 @@
-﻿using CharityTestCore.Models;
+﻿
 using DAL.Dtos;
 using Domain.Model;
 
@@ -16,7 +16,7 @@ namespace CharityTestCore.Repository.UserManagment
 
         public User? GetUserById(string id);
 
-        public bool EditUsersList(Models.UserListModel item, string newpassword);
+        //public bool EditUsersList(Models.UserListModel item, string newpassword);
         public bool Delete(User item);
         List<UserExamStatusDtos> GetUsersWithExamStatus();
         void Update(User user);

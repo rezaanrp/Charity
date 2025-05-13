@@ -1,5 +1,4 @@
 ﻿using CharityTestCore.Models;
-using CharityTestCore.Repository.MBTI;
 using Domain.Model;
 
 namespace CharityTestCore.Service.MBTI

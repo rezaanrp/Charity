@@ -1,7 +1,5 @@
-﻿using CharityTestCore.Repository;
-using CharityTestCore.Repository.UserManagment;
-using CharityTestCore.Service.UserManagment;
-using DAL.DataBase;
+﻿using CharityTestCore.Service.UserManagment;
+using Domain.DataBase;
 using Domain.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

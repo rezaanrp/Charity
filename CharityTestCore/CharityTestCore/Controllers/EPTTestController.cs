@@ -1,6 +1,4 @@
 ﻿using CharityTestCore.Models;
-using CharityTestCore.Repository;
-using CharityTestCore.Repository.EPT;
 using CharityTestCore.Service;
 using CharityTestCore.Service.EPT;
 using Microsoft.AspNetCore.Authorization;

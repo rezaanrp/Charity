@@ -1,4 +1,4 @@
-﻿using DAL.DataBase;
+﻿using Domain.DataBase;
 
 namespace CharityTestCore.Models
 {

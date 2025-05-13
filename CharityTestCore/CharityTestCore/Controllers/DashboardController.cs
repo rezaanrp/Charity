@@ -1,10 +1,8 @@
 ﻿using CharityTestCore.Models;
-using CharityTestCore.Repository.EPT;
-using CharityTestCore.Repository.MBTI;
 using CharityTestCore.Service.EPT;
 using CharityTestCore.Service.MBTI;
 using CharityTestCore.Service.UserManagment;
-using DAL.DataBase;
+using Domain.DataBase;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

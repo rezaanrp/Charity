@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL.DataBase
+namespace Domain.DataBase
 {
 
     public class ParkerCharityContext : DbContext, IDataProtectionKeyContext

@@ -5,9 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using CharityTestCore.Service.UserManagment;
-using CharityTestCore.Repository.EPT;
-using CharityTestCore.Service.EPT;
-using CharityTestCore.Repository.UserManagment;
 
 namespace CharityTestCore.Controllers
 {
